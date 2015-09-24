@@ -176,7 +176,7 @@ app = Flask(__name__, template_folder= os.path.join(os.path.dirname(os.path.absp
 @app.route("/")
 def hello():
     category = "change password"
-    recipient = ["zebadongre8@gmail.com"]
+    recipient = ["zebadhongre8@gmail.com"]
     subject, template_name = get_template_details(category=category)
     generate_email(category=category, template_name=template_name, subject=subject, recipient=recipient, sender="hello@mycuteoffice.com")
     #generate_email('leena khote<leenakhote23@gmail.com>')
