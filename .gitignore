@@ -1,0 +1,9 @@
+.idea/
+*.iml
+*.pyc
+.DS_Store
+*.log
+nose
+media/
+test-media/
+venv/
