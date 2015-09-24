@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>{% block title_block %} {% endblock title_block %}</title>
+</head>
+<body>
+{% block body %}
+<table width="100%" style="padding: 30px 0px; font-family:arial; background-color: #F5F5F5;" border="0">
+
+
+    <tr>
+        <td>
+            <table align="center" bgcolor="#FFF" cellpadding="0" cellspacing="0" style="width:90%; min-width: 400px; max-width: 600px; padding:0px; border:1px solid #E7E7E7;">
+
+                <!------------ HEADER BLOCK ----------->
+                <tr>
+                    <td valign="top" align="center" style="padding: 5px 25px;">
+                        {% block header %}
+                            <a href="https://mycuteoffice.com">
+                                  <img src="https://mycuteoffice.com/sites/all/themes/bootstrap/mco_theme/logo.png">
+                            </a>
+                        {% endblock header %}
+                    </td>
+                </tr>
+
+                <!------------ CONTENT BLOCK ------------>
+                <tr>
+                    <td style="padding: 15px 20px;">
+                        {% block content %}  {% endblock content %}
+                    </td>
+                </tr>
+
+                <!------------ FOOTER BLOCK ------------>
+                <tr>
+                    <td align="right">
+                        {% block footer %}
+                            <table width="100%" style="border-top:1px solid #ddd; margin-top: 10px; padding: 15px 30px;">
+                                <tr>
+                                    <td align="left" style="font-size: 12px; font-style: italic;">
+                                        Want to know more about My Cute Office? <a href="http://sendgrid.softlayer.com/wf/click?upn=7iKxh5Y10IcGjY0hBDZqn1cPAGQ5Y9a9Jl5mIC9T9k1PQ5im1zpiH1b7fYJkiksN_XrS0sghVXjBid2gJmsF-2FJQJb6LcGxkVR4ozHluE1ravVTC6TD-2FMfAXEIFrPQfqbkthNseenfZUyNSXumzp-2FBO4gtpurmsTr1O0JAsGzfr9O0bXO3mdoQDO5pcNVGrLBZPtrzvgbbhsD-2BLJY6kp-2FL1Z5cWBYRlxcNeYizgBzudanNkoxhnnlkFJuUQWnu5rZGGEN4j3-2BlJOBJPhpsUkIRpQ-3D-3D" target="_blank">Contact</a> us!
+                                    </td>
+                                    <td align="right">
+                                        <table align="right">
+                                            <tr style="font-size: 12px; font-style: italic;">
+                                                <td>Let's connect!</td>
+                                                <td><a href="http://sendgrid.softlayer.com/wf/click?upn=7iKxh5Y10IcGjY0hBDZqn-2F-2BIMEtNw3fIqx8Aj7QDUgW-2BGEo5f00uaVxP50QjKiZI_XrS0sghVXjBid2gJmsF-2FJQJb6LcGxkVR4ozHluE1ravVTC6TD-2FMfAXEIFrPQfqbkokodrd9x7QIAa-2BGYTGmeBLHZLcrjc4bLv1LjEpxGJjhXHPve5WLhHc1GzJ6RyknKEr2EWEW7oUHKsfBw5YsN73xtsFZIxhGHpwsiy8blKheJt2Zpx4Zhogl9zLPtscJ0iX2y0J9LGRMdzZ7UVP5iPw-3D-3D" target="_blank"><img src="https://ci5.googleusercontent.com/proxy/3hUCX6keTwCVuzX_GewWE3bzcP_Nv0Goo54u9EQO51orhxMHZMNYVhzZD2Vk7ZjSfyTvGsU9isg2Nue8cIwHPMFY11z84Nla6e06E3DtXb3aOzR7hptiQfr7Tr_5MLsdnT2JARNQ3w=s0-d-e1-ft#https://mycuteoffice.com/sites/all/themes/bootstrap/mco_theme/images/fb_color.png" width="25" class="CToWUd"></a></td>
+                                                <td><a href="http://sendgrid.softlayer.com/wf/click?upn=7iKxh5Y10IcGjY0hBDZqn8lq4M7HwclKO2dVl2dRBWSTaDm23nqLBtz-2Bg2-2BDfwlO_XrS0sghVXjBid2gJmsF-2FJQJb6LcGxkVR4ozHluE1ravVTC6TD-2FMfAXEIFrPQfqbk56IYa0DrXm5EPjk0NVKbgXqTFDExeC098XQqEswIzsw9U5Bbxkh35n7uZcysyUl6UfHxtssgv5-2FQHUzT9WQoer0o-2BF58XPC8TTPdpi5xISEA05Taav2sscKkdujc3LkjoaryfbseUj7-2Fwo3vcyRghA-3D-3D" target="_blank"><img src="https://ci4.googleusercontent.com/proxy/RG9nXhwIXg0YPmq-DXE0QDxyVSMb4LMoiJImCMXv8pkUSMGJBYSfRX7tQ86mC0kcowLMljyuD1Wstf8a8AwkwmShdtAnbBtBgbHGZQ44_Zp4gLvP1HAG7S8yWfG_hFwnwPmt9K9KPoozwPCC=s0-d-e1-ft#https://mycuteoffice.com/sites/all/themes/bootstrap/mco_theme/images/twitter_color.png" width="25" class="CToWUd"></a></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        {% endblock footer %}
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+
+</table>
+{% endblock body %}
+</body>
+</html>
+
+
+
