@@ -33,7 +33,7 @@ def get_email_template(template_name):
     return html, text
 
 def send_changepassword_email(recipient='zeba dhongre<zeba@mailinator.com>'):
-    html, text = get_email_template("systemfeedback")
+    html, text = get_email_template("space_provider/systemfeedback")
     message = generate_message( [recipient], "Feedback Please!!!" ,html, text,
                                'zeba dhongre<zebadhongre8@gmail.com>')
     send_email(message)
