@@ -12,12 +12,14 @@ from email.mime.text import MIMEText
 
 sg = sendgrid.SendGridClient('hello@mycuteoffice.com', 'mycuteofficeemail')
 
+
 def get_email_template(template_name):
     html = render_template("%s.html" % template_name)
     text = render_template("%s.txt" % template_name)
     return html, text
 
-def generate_message(recipients,subject,html_body,text_body,sender ,category):
+
+def generate_message(recipients, subject, html_body, text_body, sender, category):
     message = sendgrid.Mail()
     message.add_to(recipients)
     message.set_subject(subject)
@@ -27,38 +29,46 @@ def generate_message(recipients,subject,html_body,text_body,sender ,category):
     message.add_category(category)
     return message
 
+
 def send_email(message):
-    try :
+    try:
         msg = sg.send(message)
-    except SendGridClientError as sgce :
-        raise SendGridClientError(sgce.code , sgce.read())
+        return msg
+    except SendGridClientError as sgce:
+        raise SendGridClientError(sgce.code, sgce.read())
+
 
 def generate_email(category, template_name, sender, recipient, subject):
-    html,text = get_email_template(template_name=template_name)
-    message = generate_message(recipients=recipient, subject=subject, html_body=html, text_body=text,
+    html, text = get_email_template(template_name=template_name)
+    message = generate_message(recipients=recipient, subject=subject,
+                               html_body=html, text_body=text,
                                sender=sender, category=category)
     send_email(message)
 
+
 def get_template_details(category):
-    if category == "change password" :
+    if category == "change password":
         subject = "your password has been changed"
         template_name = "changepassword"
     if category.find("_provider_"):
-        subject,template_name = get_space_provider_template(category)
+        subject, template_name = get_space_provider_template(category)
     if category.find("_seeker_"):
-        subject,template_name = get_space_seeker_template(category)
+        subject, template_name = get_space_seeker_template(category)
     if category.find("admin"):
-        subject,template_name = get_admin_template(category)
+        subject, template_name = get_admin_template(category)
     return subject, template_name
 
+
 def get_space_provider_template(category):
+    subject = None
+    template_name = None
     if category == "space_provider_space_progress":
         subject = "space completion progress"
         template_name = "space_provider/space_progress_email"
     elif category == "space_provider_space_status_changed":
         subject = "space status is changed"
         template_name = "space/provider/space_status_change"
-    elif category == "space_provider_space_status_complete" :
+    elif category == "space_provider_space_status_complete":
         subject = "space status is complete"
         template_name = "space_provider/space_status_complete"
     elif category == "space_provider_enquiry_space":
@@ -72,10 +82,10 @@ def get_space_provider_template(category):
         template_name = "space_provider/enq_status"
     elif category == "space_provider_new_booking":
         subject = "New Booking intimation"
-        template_name ="space_provider/new_booking_intimation"
+        template_name = "space_provider/new_booking_intimation"
     elif category == "space_provider_booking_status":
         subject = "booking status changed"
-        template_name ="space_provider/booking_status_change"
+        template_name = "space_provider/booking_status_change"
     elif category == "space_provider_booking_reminder":
         subject = "Reminder of visit"
         template_name = "space_provider/booking_reminder"
@@ -93,7 +103,10 @@ def get_space_provider_template(category):
         template_name = "space_provider/systemfeedback"
     return subject, template_name
 
+
 def get_space_seeker_template(category):
+    subject = None
+    template_name = None
     if category == "space_seeker_enquiry_created":
         subject = "enquiry created"
         template_name = "space_seeker/ss_enq_created"
@@ -141,7 +154,10 @@ def get_space_seeker_template(category):
         template_name = "space_seeker/ss_feedback_system"
     return subject, template_name
 
+
 def get_admin_template(category):
+    subject = None
+    template_name = None
     if category == "admin_space_approval_waiting":
         subject = "Space waiting for approval"
         template_name = "admin/admin_space_await_approval"
@@ -184,16 +200,17 @@ def get_admin_template(category):
     return subject, template_name
 
 
-app = Flask(__name__, template_folder= os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates"))
+app = Flask(__name__, template_folder=os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates"))
+
 
 @app.route("/")
 def hello():
     category = "space_seeker_enquiry_created"
-    recipient = ["leenakhote23@gmail.com"]
+    recipient = ["srahul07@gmail.com"]
     subject, template_name = get_template_details(category=category)
     generate_email(category=category, template_name=template_name, subject=subject, recipient=recipient, sender="hello@mycuteoffice.com")
-    #generate_email('leena khote<leenakhote23@gmail.com>')
     return render_template("index.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
