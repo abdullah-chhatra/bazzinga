@@ -65,9 +65,9 @@ def get_space_provider_template(category):
     if category == "space_progress":
         subject = "space completion progress"
         template_name = "space_provider/space_progress_email"
-    elif category == "space_status_changed":
+    elif category == "space_status_change":
         subject = "space status is changed"
-        template_name = "space/provider/space_status_change"
+        template_name = "space_provider/space_status_change"
     elif category == "space_status_complete":
         subject = "space status is complete"
         template_name = "space_provider/space_status_complete"
@@ -76,7 +76,7 @@ def get_space_provider_template(category):
         template_name = "space_provider/enq_space"
     elif category == "enquiry_reply":
         subject = "rply posted to enquiry"
-        template_name = "space_provider/enq_rply"
+        template_name = "space_provider/enq_reply"
     elif category == "enquiry_status":
         subject = "enquiry status changed"
         template_name = "space_provider/enq_status"
@@ -178,7 +178,7 @@ def get_admin_template(category):
         template_name = "admin/admin_enq_status"
     elif category == "requirement_owner_noreply":
         subject = "No reply by owner for 48 hours"
-        template_name = "admin/admin_req_owner_noreply"
+        template_name = "admin/admin_req_noreply"
     elif category == "requirement_created":
         subject = "new requirement"
         template_name = "admin_req_new"
@@ -190,13 +190,13 @@ def get_admin_template(category):
         template_name = "admin/admin_booking_new"
     elif category == "booking_owner_noreply":
         subject = "No reply by owner for approval for more than 12 hours"
-        template_name = "admin_booking_noreply12hr"
+        template_name = "admin/admin_booking_noreply12hr"
     elif category == "booking_status":
         subject = "Accept / reject booking by owner"
-        template_name = "admin_booking_status"
+        template_name = "admin/admin_booking_status"
     elif category == "booking_cancel":
         subject = "Request to cancel booking by seeker"
-        template_name = "admin_cancel_booking"
+        template_name = "admin/admin_cancel_booking"
     return subject, template_name
 
 
@@ -205,9 +205,9 @@ app = Flask(__name__, template_folder=os.path.join(os.path.dirname(os.path.abspa
 
 @app.route("/")
 def hello():
-    author = "seeker"
-    category = "enquiry_created"
-    recipient = ["leenakhote23@gmail.com"]
+    author = "provider"
+    category = "booking_status"
+    recipient = ["khote.leena5@gmail.com"]
     subject, template_name = get_template_details(category=category, author= author)
     generate_email(category=category, template_name=template_name, subject=subject, recipient=recipient, sender="hello@mycuteoffice.com")
     return render_template("index.html")
