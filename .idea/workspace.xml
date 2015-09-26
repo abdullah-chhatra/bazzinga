@@ -1,7 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="097ed387-6d5f-46fa-8103-2cd5259f6b8d" name="Default" comment="added author">
+    <list default="true" id="097ed387-6d5f-46fa-8103-2cd5259f6b8d" name="Default" comment="changes of template name">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/admin/admin_booking_new.html" afterPath="$PROJECT_DIR$/templates/admin/book_new.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/admin/admin_booking_new.txt" afterPath="$PROJECT_DIR$/templates/admin/book_new.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/admin/admin_booking_noreply12hr.html" afterPath="$PROJECT_DIR$/templates/admin/book_noreply.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/admin/admin_booking_noreply12hr.txt" afterPath="$PROJECT_DIR$/templates/admin/book_noreply.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/admin/admin_booking_status.html" afterPath="$PROJECT_DIR$/templates/admin/book_status.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/admin/admin_booking_status.txt" afterPath="$PROJECT_DIR$/templates/admin/book_status.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/admin/admin_cancel_booking.html" afterPath="$PROJECT_DIR$/templates/admin/book_cancel.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/admin/admin_cancel_booking.txt" afterPath="$PROJECT_DIR$/templates/admin/book_cancel.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/admin/admin_enq_created.html" afterPath="$PROJECT_DIR$/templates/admin/enq_created.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/admin/admin_enq_created.txt" afterPath="$PROJECT_DIR$/templates/admin/enq_created.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/admin/admin_enq_reply.html" afterPath="$PROJECT_DIR$/templates/admin/enq_reply.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/admin/admin_enq_reply.txt" afterPath="$PROJECT_DIR$/templates/admin/enq_reply.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/admin/admin_enq_status.html" afterPath="$PROJECT_DIR$/templates/admin/enq_status.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/admin/admin_enq_status.txt" afterPath="$PROJECT_DIR$/templates/admin/enq_status.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/admin/admin_new_cityadd.html" afterPath="$PROJECT_DIR$/templates/admin/new_cityadd.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/admin/admin_new_cityadd.txt" afterPath="$PROJECT_DIR$/templates/admin/new_cityadd.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/admin/admin_no_reply.html" afterPath="$PROJECT_DIR$/templates/admin/no_reply.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/admin/admin_req_new.html" afterPath="$PROJECT_DIR$/templates/admin/req_new.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/admin/admin_req_new.txt" afterPath="$PROJECT_DIR$/templates/admin/req_new.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/admin/admin_req_noreply.html" afterPath="$PROJECT_DIR$/templates/admin/req_noreply.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/admin/admin_req_noreply.txt" afterPath="$PROJECT_DIR$/templates/admin/req_noreply.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/admin/admin_req_reply.html" afterPath="$PROJECT_DIR$/templates/admin/req_reply.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/admin/admin_req_reply.txt" afterPath="$PROJECT_DIR$/templates/admin/req_reply.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/admin/admin_revoke_space.html" afterPath="$PROJECT_DIR$/templates/admin/revoke_space.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/admin/admin_revoke_space.txt" afterPath="$PROJECT_DIR$/templates/admin/revoke_space.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/admin/admin_space_await_approval.html" afterPath="$PROJECT_DIR$/templates/admin/space_await_approval.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/admin/admin_space_await_approval.txt" afterPath="$PROJECT_DIR$/templates/admin/space_await_approval.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/admin/admin_space_seeker.html" afterPath="$PROJECT_DIR$/templates/admin/space_seeker.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/admin/admin_space_seeker.txt" afterPath="$PROJECT_DIR$/templates/admin/space_seeker.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_provider/booking_cancel_confirm.html" afterPath="$PROJECT_DIR$/templates/space_provider/book_cancel_confirm.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_provider/booking_cancel_confirm.txt" afterPath="$PROJECT_DIR$/templates/space_provider/book_cancel_confirm.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_provider/booking_cancel_req.html" afterPath="$PROJECT_DIR$/templates/space_provider/book_cancel_req.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_provider/booking_cancel_req.txt" afterPath="$PROJECT_DIR$/templates/space_provider/book_cancel_req.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_provider/booking_reminder.html" afterPath="$PROJECT_DIR$/templates/space_provider/book_new.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_provider/booking_reminder.txt" afterPath="$PROJECT_DIR$/templates/space_provider/book_new.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_provider/booking_status_change.html" afterPath="$PROJECT_DIR$/templates/space_provider/book_reminder.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_provider/booking_status_change.txt" afterPath="$PROJECT_DIR$/templates/space_provider/book_reminder.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_provider/new_booking_intimation.html" afterPath="$PROJECT_DIR$/templates/space_provider/book_status.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_provider/new_booking_intimation.txt" afterPath="$PROJECT_DIR$/templates/space_provider/book_status.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_provider/space_seeker_feedback.html" afterPath="$PROJECT_DIR$/templates/space_provider/feedback_space.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_provider/space_seeker_feedback.txt" afterPath="$PROJECT_DIR$/templates/space_provider/feedback_space.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_provider/systemfeedback.html" afterPath="$PROJECT_DIR$/templates/space_provider/feedback_system.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_provider/systemfeedback.txt" afterPath="$PROJECT_DIR$/templates/space_provider/feedback_system.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_seeker/ss_book_cancel.html" afterPath="$PROJECT_DIR$/templates/space_seeker/book_cancel.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_seeker/ss_book_cancel.txt" afterPath="$PROJECT_DIR$/templates/space_seeker/book_cancel.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_seeker/ss_book_cancel_confrm.html" afterPath="$PROJECT_DIR$/templates/space_seeker/book_cancel_confrm.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_seeker/ss_book_cancel_confrm.txt" afterPath="$PROJECT_DIR$/templates/space_seeker/book_cancel_confrm.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_seeker/ss_book_incomp_rem.html" afterPath="$PROJECT_DIR$/templates/space_seeker/book_incomp_rem.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_seeker/ss_book_incomp_rem.txt" afterPath="$PROJECT_DIR$/templates/space_seeker/book_incomp_rem.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_seeker/ss_book_receipt.html" afterPath="$PROJECT_DIR$/templates/space_seeker/book_receipt.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_seeker/ss_book_receipt.txt" afterPath="$PROJECT_DIR$/templates/space_seeker/book_receipt.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_seeker/ss_book_reminder.html" afterPath="$PROJECT_DIR$/templates/space_seeker/book_reminder.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_seeker/ss_book_reminder.txt" afterPath="$PROJECT_DIR$/templates/space_seeker/book_reminder.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_seeker/ss_book_status.html" afterPath="$PROJECT_DIR$/templates/space_seeker/book_status.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_seeker/ss_book_status.txt" afterPath="$PROJECT_DIR$/templates/space_seeker/book_status.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_seeker/ss_enq_accpt_rej.html" afterPath="$PROJECT_DIR$/templates/space_seeker/enq_accpt_rej.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_seeker/ss_enq_accpt_rej.txt" afterPath="$PROJECT_DIR$/templates/space_seeker/enq_accpt_rej.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_seeker/ss_enq_closed.html" afterPath="$PROJECT_DIR$/templates/space_seeker/enq_closed.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_seeker/ss_enq_closed.txt" afterPath="$PROJECT_DIR$/templates/space_seeker/enq_closed.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_seeker/ss_enq_created.html" afterPath="$PROJECT_DIR$/templates/space_seeker/enq_created.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_seeker/ss_enq_created.txt" afterPath="$PROJECT_DIR$/templates/space_seeker/enq_created.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_seeker/ss_enq_reply.html" afterPath="$PROJECT_DIR$/templates/space_seeker/enq_reply.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_seeker/ss_enq_reply.txt" afterPath="$PROJECT_DIR$/templates/space_seeker/enq_reply.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_seeker/ss_feedback_spaceowner.html" afterPath="$PROJECT_DIR$/templates/space_seeker/feedback_space.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_seeker/ss_feedback_spaceowner.txt" afterPath="$PROJECT_DIR$/templates/space_seeker/feedback_spaceowner.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_seeker/ss_feedback_system.html" afterPath="$PROJECT_DIR$/templates/space_seeker/feedback_system.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_seeker/ss_feedback_system.txt" afterPath="$PROJECT_DIR$/templates/space_seeker/feedback_system.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_seeker/ss_req_created.html" afterPath="$PROJECT_DIR$/templates/space_seeker/req_created.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_seeker/ss_req_created.txt" afterPath="$PROJECT_DIR$/templates/space_seeker/req_created.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_seeker/ss_req_reminder.html" afterPath="$PROJECT_DIR$/templates/space_seeker/req_reminder.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_seeker/ss_req_reminder.txt" afterPath="$PROJECT_DIR$/templates/space_seeker/req_reminder.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_seeker/ss_req_suggestion.html" afterPath="$PROJECT_DIR$/templates/space_seeker/req_suggestion.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/space_seeker/ss_req_suggestion.txt" afterPath="$PROJECT_DIR$/templates/space_seeker/req_suggestion.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/emails.py" afterPath="$PROJECT_DIR$/emails.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -39,10 +112,22 @@
       <file leaf-file-name="emails.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/emails.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.63355047">
-              <caret line="208" column="30" selection-start-line="208" selection-start-column="30" selection-end-line="208" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.92671007">
+              <caret line="69" column="52" selection-start-line="69" selection-start-column="52" selection-end-line="69" selection-end-column="52" />
               <folding>
                 <element signature="e#22#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workspot.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../scraper/workspot.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="31" column="4" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="4" />
+              <folding>
+                <element signature="e#85#95#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -95,9 +180,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="53" />
-    <option name="y" value="-4" />
+    <option name="y" value="24" />
     <option name="width" value="1313" />
-    <option name="height" value="772" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -152,39 +237,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="venv" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bazinga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bazinga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bazinga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bazinga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="space_provider" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -211,7 +264,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../scraper" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../scraper/workspot.py" />
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
@@ -456,7 +509,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="53" y="-4" width="1313" height="772" extended-state="6" />
+    <frame x="53" y="24" width="1313" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -470,14 +523,14 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39906833" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -495,9 +548,9 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2496124" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -530,6 +583,44 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/send_email.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+          <folding>
+            <element signature="e#22#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/emails.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#22#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../scraper/workspot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="4" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="4" />
+          <folding>
+            <element signature="e#85#95#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/send_email.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -730,6 +821,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../scraper/workspot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="4" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="4" />
+          <folding>
+            <element signature="e#85#95#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -740,8 +841,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/emails.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63355047">
-          <caret line="208" column="30" selection-start-line="208" selection-start-column="30" selection-end-line="208" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.92671007">
+          <caret line="69" column="52" selection-start-line="69" selection-start-column="52" selection-end-line="69" selection-end-column="52" />
           <folding>
             <element signature="e#22#31#0" expanded="true" />
           </folding>
