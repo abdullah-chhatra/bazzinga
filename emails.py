@@ -48,173 +48,81 @@ def generate_email(category, template_name, sender, recipient, subject, name):
                                sender=sender, category=category)
     send_email(message)
 
+def get_subject(category):
+    return {
+            "space_progress"  : "space completion progress",
+            "space_status_change" : "space_status_change",
+            "space_status_complete" :"space_status_complete",
+            "enquiry_space" : "enquiry addded to space",
+            "enquiry_reply" : "rwply to enquiry",
+            "enquiry_status" : "enquiry status",
+            "enquiry_closed" : "enquiry closed",
+            "enquiry_accept_reject" : "enquiry accept / reject",
+            "enquiry_created" : "enquiry created",
+            "book_new" : "new booking",
+            "book_status" : "booking status ",
+            "book_reminder" : "booking reminder",
+            "book_cancel" : "booking cancel",
+            "book_cancel_confirm" : "book cancel/confirm",
+            "book_incomp_reminder": "booking incomplete reminder",
+            "book_receipt" : "booking receipt",
+            "requirement_created" : "requirement created",
+            "requirement_reminder" : "requirement reminder",
+            "requirement_suggestion" : "requirement suggestion",
+            "requirement_new" : "requirement new",
+            "requirement_reply" : "requirement rely",
+            "requirement_noreply" : "requirement noreply",
+            "revoke_space" : "revoke space",
+            "space_awaited_approval" : "space awaited / approval",
+            "feedback_space" : "space feedback",
+            "feedback_system" : "system feedback",
+            "change_password" : "change password"
 
-def get_template_details(category,author):
-    if category == "change password":
-        subject = "your password has been changed"
-        template_name = "space_seeker/changepassword"
-    if author == "provider":
-        subject, template_name = get_space_provider_template(category)
-    if author == "seeker":
-        subject, template_name = get_space_seeker_template(category)
-    if author == "admin":
-        subject, template_name = get_admin_template(category)
-    return subject, template_name
+    }[category]
 
+def get_template_(category,author):
+    return {"space_progress"  : author+"/space_progress_email",
+            "space_status_change" : author+"/space_status_change",
+            "space_status_complete" : author+"/space_status_complete",
+            "enquiry_space" : author+"/enq_space",
+            "enquiry_reply" : author+"/enq_reply",
+            "enquiry_status" : author+"/enq_status",
+            "enquiry_closed" : author+"/enq_closed",
+            "enquiry_accept_reject" : author+"enq_accpt_rej",
+            "enquiry_created" : author+"enq_created",
+            "book_new" : author+"/book_new",
+            "book_status" : author+"/book_status",
+            "book_reminder" : author+"/book_reminder",
+            "book_cancel" : author+"/book_cancel",
+            "book_cancel_confirm" : author+"/book_cancel_confirm",
+            "book_incomp_reminder": author +"/book_incomp_rem",
+            "book_receipt" : author +"/book_receipt",
+            "requirement_created" : author +"/req_created",
+            "requirement_reminder" : author +"/req_reminder",
+            "requirement_suggestion" :author + "/req_suggestion",
+            "requirement_new" : author + "/req_new",
+            "requirement_reply" : author + "/req_reply",
+            "requirement_noreply" : author + "/req_noreply",
+            "revoke_space" : author + "/revoke_space",
+            "space_awaited_approval" : author + "/space_await_approval",
+            "feedback_space" : author+"/feedback_space",
+            "feedback_system" : author+"/feedback_system",
+            "change_password" : author + "/changepassword"
 
-def get_space_provider_template(category):
-    subject = None
-    template_name = None
-    if category == "space_progress":
-        subject = "space completion progress"
-        template_name = "space_provider/space_progress_email"
-    elif category == "space_status_change":
-        subject = "space status is changed"
-        template_name = "space_provider/space_status_change"
-    elif category == "space_status_complete":
-        subject = "space status is complete"
-        template_name = "space_provider/space_status_complete"
-    elif category == "enquiry_space":
-        subject = "enquiry added to space"
-        template_name = "space_provider/enq_space"
-    elif category == "enquiry_reply":
-        subject = "rply posted to enquiry"
-        template_name = "space_provider/enq_reply"
-    elif category == "enquiry_status":
-        subject = "enquiry status changed"
-        template_name = "space_provider/enq_status"
-    elif category == "new_booking":
-        subject = "New Booking intimation"
-        template_name = "space_provider/new_booking_intimation"
-    elif category == "booking_status":
-        subject = "booking status changed"
-        template_name = "space_provider/booking_status_change"
-    elif category == "booking_reminder":
-        subject = "Reminder of visit"
-        template_name = "space_provider/booking_reminder"
-    elif category == "booking_cancel":
-        subject = "Seekers request to cancel booking"
-        template_name = "space_provider/booking_cancel_req"
-    elif category == "booking_cancel_confirm":
-        subject = "Admins confirmation to cancel booking"
-        template_name = "space_provider/booking_cancel_confirm"
-    elif category == "feedback_space":
-        subject = "Feedback about Space seeker"
-        template_name = "space_provider/space_seeker_feedback"
-    elif category == "feedback_system":
-        subject = "Feedback about system"
-        template_name = "space_provider/systemfeedback"
-    return subject, template_name
-
-
-def get_space_seeker_template(category):
-    subject = None
-    template_name = None
-    if category == "enquiry_created":
-        subject = "enquiry created"
-        template_name = "space_seeker/ss_enq_created"
-    elif category == "enquiry_reply":
-        subject = "Reply to enquiry by space owner or admin"
-        template_name = "space_seeker/ss_enq_reply"
-    elif category == "enquiry_status":
-        subject = "Enquiry status"
-        template_name = "space_seeker/ss_enq_accpt_rej"
-    elif category == "enquiry_closed":
-        subject = "Enquiry closed by automated process for inactivity"
-        template_name = "space_seeker/ss_enq_closed"
-    elif category == "requirement_created":
-        subject = "New requirement created"
-        template_name = "space_seeker/ss_req_created"
-    elif category == "requirement_suggestion":
-        subject = "Suggestions based on requirement"
-        template_name = "space_seeker/ss_req_suggestion"
-    elif category == "requirement_reminder":
-        subject = "Reminder for more suggestions"
-        template_name = "space_seeker/ss_req_reminder"
-    elif category == "booking_incomplete":
-        subject = "Booking incmplete reminder"
-        template_name = "space_seeker/ss_book_incomp_rem"
-    elif category == "booking_receipt":
-        subject = "Booking receipt"
-        template_name = "space_seeker/ss_book_receipt"
-    elif category == "booking_status":
-        subject = "Booking status"
-        template_name = "space_seeker/ss_book_status"
-    elif category == "booking_reminder":
-        subject = "Reminder to visit"
-        template_name = "space_seeker/ss_book_reminder"
-    elif category == "booking_cancel":
-        subject = "Request to cancel booking"
-        template_name = "space_seeker/ss_book_cancel"
-    elif category == "booking_cancel_confirm":
-        subject = "Cancel booking approval or disapproval by admin"
-        template_name = "space_seeker/ss_book_cancel_confirm"
-    elif category == "feedback_space":
-        subject = "Feedback about Space owner"
-        template_name = "space_seeker/ss_feedback_spaceowner"
-    elif category == "feedback_system":
-        subject = "Feedback about system"
-        template_name = "space_seeker/ss_feedback_system"
-    return subject, template_name
-
-
-def get_admin_template(category):
-    subject = None
-    template_name = None
-    if category == "space_approval_waiting":
-        subject = "Space waiting for approval"
-        template_name = "admin/admin_space_await_approval"
-    elif category == "space_revoked":
-        subject = "Revoked space"
-        template_name = "admin/admin_revoke_space"
-    elif category == "new_city_added":
-        subject = "New city addition"
-        template_name = "admin/admin_new_cityadd"
-    elif category == "enquiry_created":
-        subject = "New enquiry created"
-        template_name = "admin/admin_enq_created"
-    elif category == "enquiry_reply":
-        subject = "Reply to enquiry by space owner or space seeker"
-        template_name = "admin/admin_enq_reply"
-    elif category == "enquiry_status":
-        subject = "Enquiry accept / reject by space owner"
-        template_name = "admin/admin_enq_status"
-    elif category == "requirement_owner_noreply":
-        subject = "No reply by owner for 48 hours"
-        template_name = "admin/admin_req_noreply"
-    elif category == "requirement_created":
-        subject = "new requirement"
-        template_name = "admin_req_new"
-    elif category == "requirement_reply":
-        subject = "Reply by space seeker to reminder for more suggestion"
-        template_name = "admin/admin_req_reply"
-    elif category == "booking_created":
-        subject = "New booking"
-        template_name = "admin/admin_booking_new"
-    elif category == "booking_owner_noreply":
-        subject = "No reply by owner for approval for more than 12 hours"
-        template_name = "admin/admin_booking_noreply12hr"
-    elif category == "booking_status":
-        subject = "Accept / reject booking by owner"
-        template_name = "admin/admin_booking_status"
-    elif category == "booking_cancel":
-        subject = "Request to cancel booking by seeker"
-        template_name = "admin/admin_cancel_booking"
-    return subject, template_name
-
+    }[category]
 
 app = Flask(__name__, template_folder=os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates"))
 
 @app.route("/")
 def hello():
     name= "leena"
-    author = "provider"
-    category = "space_progress"
-    recipient = ["dhongre.zeba@gmail.com"]
-    subject, template_name = get_template_details(category=category, author= author)
-    generate_email(category=category, template_name=template_name, subject=subject, name='Zeba', recipient=recipient, sender="hello@mycuteoffice.com")
-    return render_template("space_provider/booking_status_change.html", name=name)
-
+    author = "space_provider"
+    category = "feedback_system"
+    subject = get_subject(category)
+    template_name = get_template_(category,author)
+    recipient = ["khote.leena5@gmail.com"]
+    generate_email(category=category, template_name=template_name, subject=subject, name="Zeba", recipient=recipient, sender="hello@mycuteoffice.com")
+    return render_template("index.html", name= name)
 
 
 if __name__ == "__main__":
