@@ -2,6 +2,8 @@ __author__ = 'leena'
 
 import os
 from flask import Flask
+from flask import render_template
+import jinja2
 from flask_mail import Mail, Message
 import sendgrid
 from sendgrid import SendGridClient, Mail
@@ -13,10 +15,11 @@ from email.mime.text import MIMEText
 sg = sendgrid.SendGridClient('hello@mycuteoffice.com', 'mycuteofficeemail')
 
 
-def get_email_template(template_name):
-    html = render_template("%s.html" % template_name)
-    text = render_template("%s.txt" % template_name)
+def get_email_template(template_name, name):
+    html = render_template("%s.html" % template_name, name=name)
+    text = render_template("%s.txt" % template_name, name=name)
     return html, text
+
 
 
 def generate_message(recipients, subject, html_body, text_body, sender, category):
@@ -38,8 +41,8 @@ def send_email(message):
         raise SendGridClientError(sgce.code, sgce.read())
 
 
-def generate_email(category, template_name, sender, recipient, subject):
-    html, text = get_email_template(template_name=template_name)
+def generate_email(category, template_name, sender, recipient, subject, name):
+    html, text = get_email_template(template_name=template_name, name=name)
     message = generate_message(recipients=recipient, subject=subject,
                                html_body=html, text_body=text,
                                sender=sender, category=category)
@@ -202,15 +205,16 @@ def get_admin_template(category):
 
 app = Flask(__name__, template_folder=os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates"))
 
-
 @app.route("/")
 def hello():
+    name= "leena"
     author = "provider"
-    category = "booking_status"
-    recipient = ["khote.leena5@gmail.com"]
+    category = "space_progress"
+    recipient = ["dhongre.zeba@gmail.com"]
     subject, template_name = get_template_details(category=category, author= author)
-    generate_email(category=category, template_name=template_name, subject=subject, recipient=recipient, sender="hello@mycuteoffice.com")
-    return render_template("index.html")
+    generate_email(category=category, template_name=template_name, subject=subject, name='Zeba', recipient=recipient, sender="hello@mycuteoffice.com")
+    return render_template("space_provider/booking_status_change.html", name=name)
+
 
 
 if __name__ == "__main__":
