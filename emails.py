@@ -46,19 +46,35 @@ def generate_email(category, template_name, sender, recipient, subject):
     send_email(message)
 
 def get_subject(category):
-    return {  "space_progress" : "space completion progress",
-              "space_status_change" : "space status is changed" ,
-              "space_status_complete" : "space status is complete" ,
-              "enquiry_reply" : "Reply to enquiry by space owner or space seeker",
-              "enquiry_space" : "enquiry added to space",
-              "enquiry_status" : "Enquiry status",
-              "book_new" : "New Booking intimation",
-              "book_status" : "booking status changed",
-              "book_reminder" : "Reminder of visit",
-              "book_cancel" : "Seekers request to cancel booking",
-              "book_cancel_confirm" : "Admins confirmation to cancel booking",
-              "feedback_space" : "Feedback about Space",
-              "feedback_system" : "Feedback about system"
+    return {
+            "space_progress"  : "space completion progress",
+            "space_status_change" : "space_status_change",
+            "space_status_complete" :"space_status_complete",
+            "enquiry_space" : "enquiry addded to space",
+            "enquiry_reply" : "rwply to enquiry",
+            "enquiry_status" : "enquiry status",
+            "enquiry_closed" : "enquiry closed",
+            "enquiry_accept_reject" : "enquiry accept / reject",
+            "enquiry_created" : "enquiry created",
+            "book_new" : "new booking",
+            "book_status" : "booking status ",
+            "book_reminder" : "booking reminder",
+            "book_cancel" : "booking cancel",
+            "book_cancel_confirm" : "book cancel/confirm",
+            "book_incomp_reminder": "booking incomplete reminder",
+            "book_receipt" : "booking receipt",
+            "requirement_created" : "requirement created",
+            "requirement_reminder" : "requirement reminder",
+            "requirement_suggestion" : "requirement suggestion",
+            "requirement_new" : "requirement new",
+            "requirement_reply" : "requirement rely",
+            "requirement_noreply" : "requirement noreply",
+            "revoke_space" : "revoke space",
+            "space_awaited_approval" : "space awaited / approval",
+            "feedback_space" : "space feedback",
+            "feedback_system" : "system feedback",
+            "change_password" : "change password"
+
     }[category]
 
 def get_template_(category,author):
@@ -76,11 +92,16 @@ def get_template_(category,author):
             "book_reminder" : author+"/book_reminder",
             "book_cancel" : author+"/book_cancel",
             "book_cancel_confirm" : author+"/book_cancel_confirm",
-            "book_incomp_reminder": author +"book_incomp_rem",
-            "book_receipt" : "book_receipt",
-            "requirement_created" : "req_created",
-            "requirement_reminder" : "req_reminder",
-            "requirement_suggestion" : "req_suggestion",
+            "book_incomp_reminder": author +"/book_incomp_rem",
+            "book_receipt" : author +"/book_receipt",
+            "requirement_created" : author +"/req_created",
+            "requirement_reminder" : author +"/req_reminder",
+            "requirement_suggestion" :author + "/req_suggestion",
+            "requirement_new" : author + "/req_new",
+            "requirement_reply" : author + "/req_reply",
+            "requirement_noreply" : author + "/req_noreply",
+            "revoke_space" : author + "/revoke_space",
+            "space_awaited_approval" : author + "/space_await_approval",
             "feedback_space" : author+"/feedback_space",
             "feedback_system" : author+"/feedback_system",
             "change_password" : author + "/changepassword"
@@ -93,7 +114,7 @@ app = Flask(__name__, template_folder=os.path.join(os.path.dirname(os.path.abspa
 @app.route("/")
 def hello():
     author = "space_provider"
-    category = "space_progress"
+    category = "feedback_system"
     subject = get_subject(category)
     template_name = get_template_(category,author)
     recipient = ["khote.leena5@gmail.com"]
