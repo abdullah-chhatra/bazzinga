@@ -9,6 +9,7 @@ from sendgrid.exceptions import (SendGridClientError)
 from flask import render_template
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from subscriber import subscribe_data
 
 sg = sendgrid.SendGridClient('hello@mycuteoffice.com', 'mycuteofficeemail')
 
@@ -113,6 +114,8 @@ app = Flask(__name__, template_folder=os.path.join(os.path.dirname(os.path.abspa
 
 @app.route("/")
 def hello():
+    #category , author , sender , receiver = subscribe_data()
+    #print( author ,category , receiver , sender)
     author = "space_provider"
     category = "feedback_system"
     subject = get_subject(category)
