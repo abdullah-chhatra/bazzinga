@@ -1,1 +1,13 @@
 ss: cancel Booking: cancel booking request
+
+Dear {{ name['name'] }},
+
+We have received your request to cancel the booking ID: {{ space_seeker['book_id'] }}
+
+The request has been received by the Space ID: {{ space_seeker['space_id'] }}
+
+You will receive a notification when the request is approved or disapproved.
+
+THANK YOU!
+
+Team MyCuteOffice.com

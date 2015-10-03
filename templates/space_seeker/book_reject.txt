@@ -1,0 +1,11 @@
+ss: Booking: booking accpt /reject status
+
+Dear {{ name['name'] }},
+
+We regret to inform you that your booking (Booking ID: {{ space_seeker['book_id'] }} ) for the Space ID: {{ space_seeker['space_id'] }} has been rejected. The amount will be credited back to your account within next 5 working days.
+
+However, below are the spaces that match your criteria.
+
+THANK YOU!
+
+Team MyCuteOffice.com

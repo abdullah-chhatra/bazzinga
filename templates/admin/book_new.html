@@ -3,14 +3,23 @@
   <table width="100%" style="height: 100%;" cellpadding="15" cellspacing="0" border="0">
 		<tr>
             <td>
-                <p style="font-weight: 600">Hi Zeba,</p>
-				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-				    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-				    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-				    when an unknown printer took a galley of type and scrambled it to make a type
-				    specimen book. It has survived not only five centuries, but also the leap into
-				    electronic typesetting, remaining essentially unchanged.
+                <p style="font-weight: 600">Dear {{ admin['name'] }},</p>
+				<p style="line-height: 1.8; font-size: 15px; font-family: Verdana;">
+                     A new booking request has been generated with booking ID:&nbsp;<span style="font-weight: 600;">  {{ admin['book_id'] }} </span>
 				</p>
+                <p style="line-height: 1.8; font-size: 15px; font-family: Verdana;">
+                    Booking request details
+                    Name:&nbsp;<span style="font-weight: 600;">  {{ details['name'] }} </span> <br />
+                    Contact:&nbsp;<span style="font-weight: 600;">  {{ details['contact'] }} </span> <br />
+                    Email Address:&nbsp;<span style="font-weight: 600;">  {{ details['email'] }} </span><br />
+                    User Industry:&nbsp;<span style="font-weight: 600;">  {{ details['user_industry'] }} </span> <br />
+                    Space ID:&nbsp;<span style="font-weight: 600;">  {{ admin['space_id'] }} </span> <br />
+                    From Date:&nbsp;<span style="font-weight: 600;">  {{ details['from_date'] }} </span><br />
+                    To Date:&nbsp;<span style="font-weight: 600;">  {{ details['to_date'] }} </span> <br />
+                    From Time: &nbsp;<span style="font-weight: 600;">  {{ details['from_time'] }} </span><br />
+                    To Time:&nbsp;<span style="font-weight: 600;">  {{ details['to_time'] }} </span> <br />
+                    Facilities included:&nbsp;<span style="font-weight: 600;">  {{ details['facility'] }} </span>
+                </p>
             </td>
         </tr>
   </table>

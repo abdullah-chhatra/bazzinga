@@ -1,1 +1,13 @@
 Space seeker: Enquiry: New enquiry created
+
+Dear {{ name['name'] }},
+
+You have generated enquiry for the Space ID: {{ space_seeker['space_id'] }}
+
+Your Enquiry ID is: {{ space_seeker['enq_id'] }}
+
+You will receive the details of the space within 24 hours.
+
+Thank You,
+
+Team MyCuteOffice

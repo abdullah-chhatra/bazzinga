@@ -1,0 +1,12 @@
+ss: Booking: accpt reject status
+
+Dear {{ name['name'] }},
+
+Congratulations! Your booking (Booking ID {{ space_seeker['book_id'] }} ) for the Space ID: {{ space_seeker['space_id'] }} has been accepted.
+Please find below the details of the space.
+
+However, below are the spaces that match your criteria.
+
+THANK YOU!
+
+Team MyCuteOffice.com
