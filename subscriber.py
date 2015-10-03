@@ -4,10 +4,17 @@ import redis
 import time
 import pickle
 import json
+import os
+from flask import Flask
+from emails import email_data
+from flask import render_template
 
 r = redis.StrictRedis(host='localhost', port=6379, db=0)
 p = r.pubsub()
 p.subscribe('lee')
+
+
+app = Flask(__name__, template_folder=os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates"))
 
 
 def subscribe_data():
@@ -20,8 +27,17 @@ def subscribe_data():
                 category = json.loads(data)['category']
                 author = json.loads(data)['author']
                 sender = json.loads(data)['sender']
-                receiver1 = json.loads(data)['receiver']
-                receiver = "leenakhote23@gmail.com"
-                print category , author , sender , receiver
+                subject = json.loads(data)['subject']
+                receiver = json.loads(data)['receiver']
+                print category , author, sender , receiver , subject
+                email_data(category , author , sender , receiver , subject)
+            time.sleep(0.5)
 
-    return category ,author , sender , receiver
+@app.route("/")
+def index():
+    subscribe_data()
+    return render_template("index.html")
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
