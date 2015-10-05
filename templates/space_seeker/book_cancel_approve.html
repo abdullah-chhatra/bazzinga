@@ -3,9 +3,9 @@
   <table width="100%" style="height: 100%;" cellpadding="15" cellspacing="0" border="0">
 		<tr>
             <td>
-                <p style="font-weight: 600">Dear {{ name['name'] }},</p>
+                <p style="font-weight: 600">Dear {{ email_content.get('name', '') }},</p>
 				<p style="line-height: 1.8; font-size: 15px; font-family: Verdana;">
-                    The cancellation for your booking ID:&nbsp;<span style="font-weight: 600;">  {{ space_seeker['book_id'] }} </span> has been approved by the space provider.<br />
+                    The cancellation for your booking ID:&nbsp;<span style="font-weight: 600;">  {{ email_content.get('book_id', '') }} </span> has been approved by the space provider.<br />
                     You will receive the refund amount within 5 working days.
 				</p>
             </td>

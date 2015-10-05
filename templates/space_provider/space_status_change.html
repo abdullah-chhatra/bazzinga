@@ -3,7 +3,8 @@
   <table width="100%" style="height: 100%;" cellpadding="15" cellspacing="0" border="0">
 		<tr>
             <td>
-                <p style="font-weight: 600">Dear {{ space_provider['name'] }},</p>
+                <p style="font-weight: 600">Hi {{ email_content.get('name', '') }},</p>
+
 				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
 				    Congratulations! Your space with Space ID: <b>{{ space_provider['space_id'] }}</b> is now Published and will appear in the search results.
 				</p>

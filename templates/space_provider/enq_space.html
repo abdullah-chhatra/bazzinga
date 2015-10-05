@@ -3,7 +3,9 @@
   <table width="100%" style="height: 100%;" cellpadding="15" cellspacing="0" border="0">
 		<tr>
             <td>
-                <p style="font-weight: 600">Dear {{ space_provider['name'] }},</p>
+
+                <p style="font-weight: 600">Hi {{ email_content.get('name', '') }},</p>
+
 				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
 				    <b>{{ space_provider['ss_name'] }}</b> has liked your space and requested for a visit.<br /><br />
                     <b>{{ space_provider['ss_name'] }}'s message:</b><br />

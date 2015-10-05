@@ -3,7 +3,8 @@
   <table width="100%" style="height: 100%;" cellpadding="15" cellspacing="0" border="0">
 		<tr>
             <td>
-                <p style="font-weight: 600">Dear {{ space_provider['name'] }},</p>
+
+                <p style="font-weight: 600">Hi {{ email_content.get('name', '') }},</p>
 				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
 				   The Booking ID: <b>{{ space_provider['book_id'] }}</b> has requested to cancel the booking for your space ID: <b>{{ space_provider['space_id'] }}</b><br /><br />
                     <b><u>The details of the booking</u></b>:<br />
