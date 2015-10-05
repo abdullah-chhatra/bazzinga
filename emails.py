@@ -1,13 +1,16 @@
 __author__ = 'leena'
 
 import os
+
+from flask import render_template
+
 import sendgrid
 from sendgrid.exceptions import (SendGridClientError)
-from flask import render_template
-from templateConfig import get_template_name
+from config.subscriber_config import get_template_name
+from config import library as settings
 
 
-sg = sendgrid.SendGridClient('hello@mycuteoffice.com', 'mycuteofficeemail')
+sg = sendgrid.SendGridClient(settings.SG_USER, settings.SG_PASS)
 
 
 def generate_template(template_name, **kwargs):
@@ -42,5 +45,3 @@ def email_notifier(category, author, sender, recipient, subject, **kwargs):
                                html_body=html, text_body=text,
                                sender=sender, category=category)
     send_email(message)
-
-

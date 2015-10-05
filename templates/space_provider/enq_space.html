@@ -3,13 +3,14 @@
   <table width="100%" style="height: 100%;" cellpadding="15" cellspacing="0" border="0">
 		<tr>
             <td>
-                <p style="font-weight: 600">Hi {{ name }},</p>
+                <p style="font-weight: 600">Dear {{ space_provider['name'] }},</p>
 				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-				    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-				    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-				    when an unknown printer took a galley of type and scrambled it to make a type
-				    specimen book. It has survived not only five centuries, but also the leap into
-				    electronic typesetting, remaining essentially unchanged.
+				    <b>{{ space_provider['ss_name'] }}</b> has liked your space and requested for a visit.<br /><br />
+                    <b>{{ space_provider['ss_name'] }}'s message:</b><br />
+                    {{ space_provider['msg'] }}<br /><br />
+                    <a style="display: inline_block; padding: 10px 30px; background-color: #000; color: #FFF; border: 1px solid gray; text-decoration: none; letter-spacing: 1px;" href="{{ space_provider['link'] }}" target="_blank"><b>Reply</b></a><br /><br />
+                    My Cute Office has shared your contact details and address with the enquirer.<br />
+                    If you have any queries, please feel free to contact us on 7738888577 / hello@mycuteoffice.com
 				</p>
             </td>
         </tr>

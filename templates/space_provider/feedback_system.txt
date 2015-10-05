@@ -1,7 +1,17 @@
-Hi zeba,
+Space Provider: feedback; feedback about system
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-when an unknown printer took a galley of type and scrambled it to make a type
-specimen book. It has survived not only five centuries, but also the leap into
-electronic typesetting, remaining essentially unchanged.
+Dear {{ space_provider['name'] }},
+
+Thanks you for using MyCuteOffice.com.
+
+Review your experience based on the following.
+
+1. Search process for the space
+2. Essential details about the user made available by MyCuteOffice
+3. Communication with the space provider
+4. Payment system
+
+THANK YOU!
+
+Team MyCuteOffice.com
+

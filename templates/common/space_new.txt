@@ -1,0 +1,11 @@
+common: New spaces matching your requirement
+
+Dear {{ common['name'] }},
+
+Haven’t found a space matching your requirement?
+New spaces matching your requirement have been added.
+Check them out below.
+
+THANK YOU!
+
+Team MyCuteOffice.com

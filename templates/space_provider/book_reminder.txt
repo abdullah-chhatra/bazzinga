@@ -1,7 +1,28 @@
-Hi zeba,
+Space_provider:booking: Seeker’s request to cancel the booking
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-when an unknown printer took a galley of type and scrambled it to make a type
-specimen book. It has survived not only five centuries, but also the leap into
-electronic typesetting, remaining essentially unchanged.
+
+Dear {{ space_provider['name'] }},
+
+The Booking ID: {{ space_provider['book_id'] }} has requested to cancel the booking for your space ID: {{ space_provider['space_id'] }}
+
+The details of the booking:
+
+User Name: {{ details['name'] }}
+
+User Industry: {{ details['user_industry'] }}
+
+Type Of Space Required: {{ details['space_type'] }}
+
+From: {{ details['from_date'] }}
+
+To: {{ details['to_date'] }}
+
+Timings of use: {{ details['from_time'] }} to {{ details['to_time'] }}
+
+Facility required: {{ details['facility'] }}
+
+As per the cancellation policy of MyCuteOffice.com, (25% / 50% / 75%) of the transaction value will be remitted to you. The remaining will be returned back to the user.
+
+THANK YOU!
+
+Team MyCuteOffice.com

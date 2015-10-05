@@ -3,13 +3,18 @@
   <table width="100%" style="height: 100%;" cellpadding="15" cellspacing="0" border="0">
 		<tr>
             <td>
-                <p style="font-weight: 600">Hi {{ name }},</p>
+                <p style="font-weight: 600">Dear {{ space_provider['name'] }},</p>
 				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-				    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-				    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-				    when an unknown printer took a galley of type and scrambled it to make a type
-				    specimen book. It has survived not only five centuries, but also the leap into
-				    electronic typesetting, remaining essentially unchanged.
+				    The conference room / cabin space usage for your space ID {{ space_provider['space_id'] }} is due on {{ space_provider['due_date'] }} for the Booking ID: {{ space_provider['book_id'] }}<br /><br />
+                    <b><u>The details of the booking</u></b>:<br />
+                    <b>User Name:</b> {{ details['name'] }}<br />
+                    <b>User Industry:</b> {{ details['user_industry'] }}<br />
+                    <b>Type Of Space Required:</b> {{ details['space_type'] }}<br />
+                    <b>From:</b> {{ details['from_date'] }} <br />
+                    <b>To:</b> {{ details['from_date'] }} <br />
+                    <b>Timings of use:</b> {{ details['from_time'] }} to {{ details['to_time'] }}<br />
+                    <b>Facility required:</b> {{ details['facility'] }}<br /><br />
+                    Please ensure the space is available as per the details mentioned above.
 				</p>
             </td>
         </tr>
