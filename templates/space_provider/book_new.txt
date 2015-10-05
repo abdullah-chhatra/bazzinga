@@ -1,7 +1,32 @@
-Hi zeba,
+Space_provider: booking: New Booking Intimation.
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-when an unknown printer took a galley of type and scrambled it to make a type
-specimen book. It has survived not only five centuries, but also the leap into
-electronic typesetting, remaining essentially unchanged.
+
+Dear {{ space_provider['name'] }},
+
+There is a booking request for your space (Space ID: {{ space_provider['space_id'] }}) from a user.
+
+The details of the booking:
+
+User Name: {{ details['name'] }}
+
+User Industry: {{ details['user_industry'] }}
+
+Type Of Space Required: {{ details['space_type'] }}
+
+From: {{ details['from_date'] }}
+
+To: {{ details['to_date'] }}
+
+Timings of use: {{ details['from_time'] }} to {{ details['to_time'] }}
+
+Facility required: {{ details['facility'] }}
+
+Please ensure the space is available as per the details mentioned above.
+
+Please confirm the booking.
+
+Click here if you require to chat with the user.
+
+THANK YOU!
+
+Team MyCuteOffice.com

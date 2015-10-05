@@ -1,0 +1,11 @@
+Space Provider: booking: bookin cancel approva by admin
+
+Dear {{ space_provider['name'] }},
+
+The booking ID: {{ space_provider['book_id'] }} for your space ID: {{ space_provider['space_id'] }} has been cancelled.
+
+The amount, as per the cancellation policy of MyCuteOffice.com, will be remitted within 5 working days.
+
+THANK YOU!
+
+Team MyCuteOffice.com
