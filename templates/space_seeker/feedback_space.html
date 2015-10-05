@@ -3,14 +3,17 @@
   <table width="100%" style="height: 100%;" cellpadding="15" cellspacing="0" border="0">
 		<tr>
             <td>
-                <p style="font-weight: 600">Hi Zeba,</p>
-				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-				    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-				    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-				    when an unknown printer took a galley of type and scrambled it to make a type
-				    specimen book. It has survived not only five centuries, but also the leap into
-				    electronic typesetting, remaining essentially unchanged.
+                <p style="font-weight: 600">Dear {{ name['name'] }},</p>
+				<p style="line-height: 1.8; font-size: 15px; font-family: Verdana;">
+                    You booked and used the (conference room / cabin space) in space ID:&nbsp;<span style="font-weight: 600;"> {{ space_seeker['space_id'] }} </span>.
 				</p>
+                <p style="line-height: 1.8; font-size: 15px; font-family: Verdana;">
+                <b>Please select a rating based on the following.</b><br /><br />
+                    5. The quality of space<br />
+                    6. The facilities available as per the requirement<br />
+                    7. The location of the space<br />
+                    8. Check-in process in the space
+                </p>
             </td>
         </tr>
   </table>

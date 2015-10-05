@@ -1,0 +1,1 @@
+common: Password Recovery: Change password

@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% block content %}
+  <table width="100%" style="height: 100%;" cellpadding="15" cellspacing="0" border="0">
+		<tr>
+            <td>
+                <p style="font-weight: 600">Dear {{ name['name'] }},</p>
+				<p style="line-height: 1.8; font-size: 15px; font-family: Verdana;">
+				   Congratulations! Your enquiry (Enquiry ID:&nbsp;<span style="font-weight: 600;">  {{ space_seeker['enq_id'] }} </span> ) for the Space ID: &nbsp;<span style="font-weight: 600;">{{ space_seeker['space_id'] }}</span> has been accepted.
+                    Please find below the details of the space.
+				</p>
+            </td>
+        </tr>
+  </table>
+{% endblock content %}

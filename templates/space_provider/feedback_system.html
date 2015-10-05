@@ -1,17 +1,88 @@
 {% extends 'layout.html' %}
 {% block content %}
-  <table width="100%" style="height: 100%;" cellpadding="15" cellspacing="0" border="0">
+  <table width="100%" style="height: 100%; font-family: verdana;" cellpadding="10" cellspacing="0" border="0">
 		<tr>
-            <td>
-                <p style="font-weight: 600">Hi Zeba,</p>
-				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-				    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-				    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-				    when an unknown printer took a galley of type and scrambled it to make a type
-				    specimen book. It has survived not only five centuries, but also the leap into
-				    electronic typesetting, remaining essentially unchanged.
-				</p>
+
+		<!-- ============ LEFT COLUMN (MENU) ============== -->
+            <td width="35%" valign="top" style="font-family: verdana; border-right: 1px solid #f1f1f1; padding:0;">
+                <p style="box-sizing: border-box; padding: 10px 15px 15px 15px; font-size: 15px; line-height: 2; margin: 0;">
+                <b>Billing Address: </b><br>
+                {{ billing_address['name'] }} <br>
+                {{ billing_address['city'] }} {{ billing_address['state'] }}<br>
+                Phone Number: <br>
+                {{ billing_address['phone'] }}
+                </p>
+                <p  style="box-sizing: border-box; padding: 10px 15px 15px 15px; font-size: 15px; line-height: 2; margin: 0;">
+                <b>Space User Details:</b><br>
+                Name: {{ sud['name'] }}<br>
+                Email: {{ sud['email'] }}<br>
+                Payment Method: <br>{{ sud['pay_method'] }}<br>
+                </p>
+
             </td>
-        </tr>
-  </table>
+
+		<!-- ============ RIGHT COLUMN (CONTENT) ============== -->
+            <td width="65%" valign="top" style="padding: 0;">
+               <table width="100%" style="height: 100%; margin-left: 15px;" cellpadding="10" cellspacing="0" border="0">
+                <tr>
+                   <td style="vertical-align: top;">
+                    <p style="box-sizing: border-box; font-size: 15px; line-height: 2; font-family: verdana; margin: 0;">
+                        <b>Overview:</b><br>
+                        Space: <a href="{{ sud['link'] }}">{{ sud['space'] }}</a><br>
+                        Booking Type: {{ sud['book_type'] }}<br>
+                        Duration: {{ sud['start'] }}<span>&nbsp; to &nbsp;</span>{{ sud['end'] }}<br>
+                    </p>
+                   </td>
+                </tr>
+
+                <tr>
+                    <td style="vertical-align: top; padding-top: 42px;">
+                         <table style="width:100%">
+                          <tr style="font-size: 15px;  font-family: verdana; line-height: 2;">
+                              <th align="left">Booking ID</th>
+                              <td align="left">{{ book_summary['book_id'] }}</td>
+                          </tr>
+                          <tr style="font-size: 15px;  font-family: verdana;">
+                            <th align="left">Booking Date</th>
+                            <td align="left">{{ book_summary['book_date'] }}</td>
+                          </tr>
+                        </table>
+                   <td>
+                </tr>
+
+                <tr>
+                    <td style="vertical-align: top; padding-top: 28px; ">
+                         <table style="width:100%; line-height: 1.5;">
+                          <tr style="font-size: 15px; font-family: verdana;">
+                            <th colspan="2" align="left" width="100px" style="line-height: 2;">Booking Summary:</th>
+                          </tr>
+                          <tr style="font-size: 15px; font-family: verdana;">
+                            <td style="font-family: verdadna;" width="100px">Title</td>
+                            <td style="font-family: verdadna;" width="145px" align="left">{{ book_summary['title'] }}</td>
+                          </tr>
+                          <tr style="font-size: 15px;  font-family: verdana;">
+                            <td style="font-family: verdadna;" width="100px">Unit Price</td>
+                            <td style="font-family: verdadna;" width="145px" align="left">{{ book_summary['unit_price'] }}</td>
+                          </tr>
+                          <tr style="font-size: 15px;  font-family: verdana;">
+                            <td style="font-family: verdadna;" width="100px">Quantity</td>
+                            <td style="font-family: verdadna;" width="145px" align="left">{{ book_summary['quantity'] }}</td>
+                          </tr>
+                          <tr style="font-size: 15px;  font-family: verdana;">
+                            <td style="font-family: verdadna;" width="100px">Total</td>
+                            <td style="font-family: verdadna;" width="145px" align="left">{{ book_summary['total'] }}</td>
+                          </tr>
+
+                        </table>
+                   <td>
+                </tr>
+               </table>
+            </td>
+		</tr>
+        <tr>
+            <td colspan="2" valign="top" align="right">
+ 	  	<p style="display: inline-block; background-color: #000; color: #fff; padding: 10px; margin-right: 122px; font-weight: 600;">Booking Total: &nbsp; <span>{{ book_summary['book_total'] }}</span></p>
+     	    </td>
+         </tr>
+		</table>
 {% endblock content %}

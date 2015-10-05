@@ -1,1 +1,10 @@
 Admin: Booking: No reply by owner for approval for more than 12 hours
+
+Dear {{ admin['name'] }},
+
+The booking confirmation for booking ID:  {{ admin['book_id'] }}  for the Space ID:  {{ admin['space_id'] }}  is overdue.
+Kindly contact the space provider.
+
+THANK YOU!
+
+Team MyCuteOffice.com

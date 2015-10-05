@@ -1,1 +1,10 @@
-Add Space: Space waiting for approval
+admin: Add Space: Space waiting for approval
+
+Dear {{ admin['name'] }},
+
+The approval of the Space ID: {{ admin['space_id'] }} is Pending.
+
+THANK YOU!
+
+Team MyCuteOffice.com
+
