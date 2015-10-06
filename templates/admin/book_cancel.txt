@@ -1,8 +1,8 @@
 admin : cancel booking: Request to cancel booking by seeker
 
-Dear {{ admin['name'] }},
+Dear {{ email_content.get('name','') }}},
 
-The user of Booking ID:  {{ admin['book_id'] }}  has requested to cancel the booking for the Space ID:  {{ admin['space_id'] }}
+The user of Booking ID:  {{ email_content.get('book_id','') }}  has requested to cancel the booking for the Space ID:  {{ email_content.get('space_id','') }}
 
 THANK YOU!
 

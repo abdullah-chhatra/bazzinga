@@ -1,11 +1,12 @@
 SS: Requirement: New requirement created
 
-Dear {{ name['name'] }},
+Dear {{ email_content.get('name', '') }},
 
 Your requirement is generated on MyCuteOffice.com
-Your Requirement ID is {{ space_seeker['req_id'] }}
+Your Requirement ID is {{ email_content.get('req_id', '') }}
+
 Your message received:
-“ Lorem Ipsum is simply dummy text of the printing and typesetting industry. “
+{{ email_content.get('msg', '') }}
 
 THANK YOU!
 

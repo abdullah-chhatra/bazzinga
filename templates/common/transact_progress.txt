@@ -1,8 +1,8 @@
 Common: transaction progress email
 
-Dear {{ common['name'] }},
+Dear {{ email_content.get('name','') }},
 
-You’re just {{ common['percent'] }}% away from completing your booking.
+You’re just {{ email_content.get('percent','') }}% away from completing your booking.
 
 Click here to resume the booking.
 

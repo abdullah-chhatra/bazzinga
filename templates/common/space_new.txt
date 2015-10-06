@@ -1,6 +1,6 @@
 common: New spaces matching your requirement
 
-Dear {{ common['name'] }},
+Dear {{ email_content.get('name','') }},
 
 Haven’t found a space matching your requirement?
 New spaces matching your requirement have been added.

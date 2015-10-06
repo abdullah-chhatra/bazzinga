@@ -1,11 +1,11 @@
 Admin add space: Admin Revoke Space
 
-Dear {{ admin['name'] }},
+Dear {{ email_content.get('name','') }},
 
-The Space ID: {{ admin['space_id'] }} has been revoked.
+The Space ID: {{ email_content.get('space_id','') }} has been revoked.
 
 Reason for Revoking:
-{{ admin['msg'] }}
+{{ email_content.get('msg','') }}
 
 THANK YOU!
 

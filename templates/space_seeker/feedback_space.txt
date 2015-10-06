@@ -1,8 +1,8 @@
 Space seeker: feedback: Feedback about Space owner
 
-Dear {{ name['name'] }},
+Dear {{email_content.get('name', '') }},
 
-You booked and used the (conference room / cabin space) in space ID: {{ space_seeker['space_id'] }}
+You booked and used the (conference room / cabin space) in space ID: {{email_content.get('space_id', '') }}
 
 Please select a rating based on the following.
 

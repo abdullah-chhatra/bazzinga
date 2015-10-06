@@ -5,7 +5,7 @@
             <td>
                 <p style="font-weight: 600">Dear {{ email_content.get('name', '') }},</p>
 				<p style="line-height: 1.8; font-size: 15px; font-family: Verdana;">
-                    We regret to inform you that your booking (Booking ID:&nbsp;<span style="font-weight: 600;"> {{ email_content.get('book_id', '') }} </span> ) for the Space ID:&nbsp;<span style="font-weight: 600;">  {{ space_seeker['space_id'] }} </span>  has been rejected.
+                    We regret to inform you that your booking (Booking ID:&nbsp;<span style="font-weight: 600;"> {{ email_content.get('book_id', '') }} </span> ) for the Space ID:&nbsp;<span style="font-weight: 600;">  {{ email_content.get('space_id', '') }} </span>  has been rejected.
                     The amount will be credited back to your account within next 5 working days.
 				</p>
                 <p>However, below are the spaces that match your criteria.</p>

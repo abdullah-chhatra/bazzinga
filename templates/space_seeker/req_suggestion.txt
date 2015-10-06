@@ -1,6 +1,6 @@
 SS: Requirement:Suggestions based on requirement
 
-Dear {{ name['name'] }},
+Dear {{ email_content.get('name', '') }},
 
 Below are the spaces that match your requirement.
 

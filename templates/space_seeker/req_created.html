@@ -3,15 +3,15 @@
   <table width="100%" style="height: 100%;" cellpadding="15" cellspacing="0" border="0">
 		<tr>
             <td>
-                <p style="font-weight: 600">Dear {{ name['name'] }},</p>
+                <p style="font-weight: 600">Dear {{ email_content.get('name', '') }},</p>
 				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
 
                      Your requirement is generated on MyCuteOffice.com<br />
 
-                     Your Requirement ID is &nbsp;<span style="font-weight: 600;  font-style: italic;"> {{ space_seeker['req_id'] }} </span><br />
+                     Your Requirement ID is &nbsp;<span style="font-weight: 600;  font-style: italic;"> {{ email_content.get('req_id', '') }} </span><br />
 
                      Your message received:<br />
-                     “<span style="font-weight: 600; font-style: italic;"> {{ space_seeker['msg'] }} </span> “
+                     “<span style="font-weight: 600; font-style: italic;"> {{ email_content.get('msg', '') }} </span> “
                 </p>
             </td>
         </tr>

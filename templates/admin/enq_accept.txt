@@ -1,8 +1,8 @@
 admin: enquiry: Enquiry accept / reject by space owner
 
-Dear {{ admin['name'] }},
+Dear {{ email_content.get('name','') }},
 
-The Space ID: {{ admin['space_id'] }}  has Accepted the Enquiry ID: {{ admin['enq_id'] }}
+The Space ID: {{ email_content.get('space_id','') }}  has Accepted the Enquiry ID: {{ email_content.get('enq_id','') }}
 
 THANK YOU!
 

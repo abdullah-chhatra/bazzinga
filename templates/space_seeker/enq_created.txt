@@ -1,10 +1,10 @@
 Space seeker: Enquiry: New enquiry created
 
-Dear {{ name['name'] }},
+Dear {{ email_content.get('name', '') }},
 
-You have generated enquiry for the Space ID: {{ space_seeker['space_id'] }}
+You have generated enquiry for the Space ID: {{ email_content.get('space_id', '') }}
 
-Your Enquiry ID is: {{ space_seeker['enq_id'] }}
+Your Enquiry ID is: {{ email_content.get('ennq_id', '') }}
 
 You will receive the details of the space within 24 hours.
 
