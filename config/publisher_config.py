@@ -2,9 +2,9 @@ __author__ = 'zeba'
 
 
 def get_msg(sender, recipient):
-    author = "space_seeker"
+    author = "space_provider"
     category = "feedback_space"
-    subject = "Feedback about the system"
+    subject = "Review the space user ID:"
 
     msg = {"sender": sender, "recipient": recipient, "author": author, "category": category,
             "subject": subject, "email_content": get_template_content(subject)
@@ -47,5 +47,11 @@ def get_template_content(subject):
                 "Booking reminder (Booking ID:)" :{"name" : "Zeba Dhongre", "book_id":"1234", "space_id":"9887", "due_date":"07 oct 2015"},
                 "Review the Space ID:" :{"name" : "Zeba Dhongre", "book_id":"1234", "space_id":"9887"},
                 "Feedback about the system" :{"name" : "Zeba Dhongre"},
+                "Your request to cancel booking ID:" :{"name" : "Zeba Dhongre", "book_id":"1234", "space_id":"9887"},
+                "Cancel booking approval by the admin" :{"name" : "Zeba Dhongre", "book_id":"1234"},
+                "Cancel booking disapproval by the admin" :{"name" : "Zeba Dhongre", "book_id":"1234"},
+                #space provider Templates
+                "Booked a space / conference room through MyCuteOffice.com? Review us." :{"name" : "Zeba Dhongre"},
+                "Review the space user ID:" :{"name" : "Zeba Dhongre", "uid":"AB34", "space_id":"#9887"},
 
        }[subject]
