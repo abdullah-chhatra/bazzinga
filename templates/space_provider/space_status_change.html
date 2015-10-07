@@ -6,7 +6,7 @@
                 <p style="font-weight: 600">Hi {{ email_content.get('name', '') }},</p>
 
 				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-				    Congratulations! Your space with Space ID: <b>{{ space_provider['space_id'] }}</b> is now Published and will appear in the search results.
+				    Congratulations! Your space with Space ID: &nbsp;<b>{{ email_content.get('space_id', '') }}</b>&nbsp; is now Published and will appear in the search results.
 				</p>
             </td>
         </tr>

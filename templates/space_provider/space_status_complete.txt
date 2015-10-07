@@ -1,6 +1,6 @@
-Dear {{ space_provider['name'] }},
+Dear {{ email_content.get('name', '') }},
 
-Thank you for listing your space with us! Your Space ID is: {{ space_provider['space_id'] }}
+Thank you for listing your space with us! Your Space ID is: {{ email_content.get('space_id', '') }}
 Your listing in now 100% complete.
 
 Acceptance of terms & conditions:

@@ -11,7 +11,7 @@ User Name: {{ email_content.get('user_name' , '') }}
 
 User Industry: {{ email_content.get('user_industry' , '') }}
 
-Space Type: {{ email_content.get('space_type' , '') }}
+Type Of Space Required: {{ email_content.get('space_type' , '') }}
 
 From: {{ email_content.get('from_date' , '') }}
 

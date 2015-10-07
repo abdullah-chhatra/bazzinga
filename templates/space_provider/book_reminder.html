@@ -5,7 +5,7 @@
             <td>
                 <p style="font-weight: 600">Dear {{ email_content.get('name' , '') }},</p>
 				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-				    The conference room / cabin space usage for your space ID {{ email_content.get('space_id' , '') }} is due on {{ email_content.get('due_date' , '') }} for the Booking ID: {{ email_content.get('book_id' , '') }}<br /><br />
+				    The conference room / cabin space usage for your space ID <b>{{ email_content.get('space_id' , '') }}</b> is due on <b>{{ email_content.get('due_date' , '') }}</b> for the Booking ID: {{ email_content.get('book_id' , '') }}<br /><br />
                     <b><u>The details of the booking</u></b>:<br />
                     <b>User Name:</b> {{ email_content.get('user_name' , '') }}<br />
                     <b>User Industry:</b> {{ email_content.get('user_industry' , '') }}<br />

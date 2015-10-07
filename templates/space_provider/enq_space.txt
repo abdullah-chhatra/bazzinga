@@ -1,12 +1,12 @@
 Space_provider: Enquiry: Enquiry added by space seekers
 
-Dear {{ space_provider['name'] }},
+Dear {{ email_content.get('name', '') }},
 
-{{ space_provider['ss_name'] }} has liked your space and requested for a visit.
+{{ email_content.get('ss_name', '') }} has liked your space and requested for a visit.
 
-{{ space_provider['ss_name'] }}'s message:
+{{ email_content.get('ss_name', '') }}'s message:
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+{{ email_content.get('msg', '') }}
 
 Reply
 

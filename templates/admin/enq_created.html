@@ -3,10 +3,18 @@
   <table width="100%" style="height: 100%;" cellpadding="15" cellspacing="0" border="0">
 		<tr>
             <td>
-                <p style="font-weight: 600">Dear {{ template_data['name'] }},</p>
+                <p style="font-weight: 600">Dear {{ email_content.get('name' , '') }},</p>
 				<p style="line-height: 1.8; font-size: 15px; font-family: Verdana;">
-                    The user of Booking ID:&nbsp;<span style="font-weight: 600;">  {{ admin['book_id'] }} </span>&nbsp;has requested to cancel the booking for the Space ID:&nbsp;<span style="font-weight: 600;">  {{ admin['book_id'] }} </span>
-				</p>
+                    <b>A new enquiry has been created as follows:</b><br />
+                    Space ID:&nbsp;&nbsp;<b>{{ email_content.get('space_id' , '') }}</b><br />
+                    Name:&nbsp;&nbsp;<b>{{ email_content.get('name' , '') }}</b><br />
+                    Mobile:&nbsp;&nbsp;<b>{{ email_content.get('mobile' , '') }}</b><br />
+                    Email:&nbsp;&nbsp;<b>{{ email_content.get('email' , '') }}</b><br />
+                    Message:&nbsp;&nbsp;<b>{{ email_content.get('msg' , '') }}</b><br />
+                    Contact Person:&nbsp;&nbsp;<b>{{ email_content.get('contact_person' , '') }}</b><br />
+                    Contact Email:&nbsp;&nbsp;<b>{{ email_content.get('contact_email' , '') }}</b><br />
+                    Contact Phone:&nbsp;&nbsp;<b>{{ email_content.get('contact_mobile' , '') }}</b><br />
+                </p>
             </td>
         </tr>
   </table>

@@ -44,6 +44,7 @@ def get_template_name(category):
             "new_booking": "new_booking",
             "signup": "signup",
             "space_add":"space_add",
-            "transaction_progress" :"transact_progress"
+            "transaction_progress" :"transact_progress",
+            "proposal":"proposal"
     }[category]
 
