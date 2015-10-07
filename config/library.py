@@ -2,10 +2,13 @@ import os
 
 
 HOST = "localhost"
-PORT = 6379
+PORT = 5000
 
-TEMPLATE_DIR = os.path.join(os.getcwd(), "templates")  #os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates")
+TEMPLATE_DIR = os.path.join(os.getcwd(), "templates")
 
+# Redis configuration
+REDIS_HOST = "localhost"
+REDIS_PORT = 6379
 # DB List
 DB_INDEX = 0
 
