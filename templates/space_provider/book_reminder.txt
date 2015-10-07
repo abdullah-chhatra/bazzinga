@@ -1,25 +1,25 @@
 Space_provider:booking: Seeker’s request to cancel the booking
 
 
-Dear {{ space_provider['name'] }},
+Dear {{ email_content.get('name' , '') }},
 
-The Booking ID: {{ space_provider['book_id'] }} has requested to cancel the booking for your space ID: {{ space_provider['space_id'] }}
+The Booking ID: {{ email_content.get('book_id' , '') }} has requested to cancel the booking for your space ID: {{email_content.get('space_id' , '') }}
 
 The details of the booking:
 
-User Name: {{ details['name'] }}
+User Name: {{ email_content.get('user_name' , '') }}
 
-User Industry: {{ details['user_industry'] }}
+User Industry: {{ email_content.get('user_industry' , '') }}
 
-Type Of Space Required: {{ details['space_type'] }}
+Type Of Space Required: {{ email_content.get('space_type' , '') }}
 
-From: {{ details['from_date'] }}
+From: {{ email_content.get('from_date' , '') }}
 
-To: {{ details['to_date'] }}
+To: {{ email_content.get('to_date' , '') }}
 
-Timings of use: {{ details['from_time'] }} to {{ details['to_time'] }}
+Timings of use: {{ email_content.get('from_time' , '') }} to {{ email_content.get('to_time' , '') }}
 
-Facility required: {{ details['facility'] }}
+Facility required: {{ email_content.get('facility' , '') }}
 
 As per the cancellation policy of MyCuteOffice.com, (25% / 50% / 75%) of the transaction value will be remitted to you. The remaining will be returned back to the user.
 

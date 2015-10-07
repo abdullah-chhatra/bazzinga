@@ -1,8 +1,8 @@
 Space Provider: booking: bookin cancel approva by admin
 
-Dear {{ space_provider['name'] }},
+Dear {{ email_content.get('name' , '') }},
 
-The booking ID: {{ space_provider['book_id'] }} for your space ID: {{ space_provider['space_id'] }} has been cancelled.
+The booking ID: {{ email_content.get('book_id' , '') }} for your space ID: {{ email_content.get('space_id' , '') }} has been cancelled.
 
 The amount, as per the cancellation policy of MyCuteOffice.com, will be remitted within 5 working days.
 

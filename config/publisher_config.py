@@ -3,9 +3,8 @@ __author__ = 'zeba'
 
 def get_msg(sender, recipient):
     author = "space_provider"
-    category = "feedback_space"
-    subject = "Review the space user ID:"
-
+    category = "book_new"
+    subject = "book_new"
     msg = {"sender": sender, "recipient": recipient, "author": author, "category": category,
             "subject": subject, "email_content": get_template_content(subject)
         }
@@ -14,6 +13,7 @@ def get_msg(sender, recipient):
 
 
 def get_template_content(subject):
+
        return { #common Templates
                 "Your password has been changed" :{"name" : "Zeba Dhongre", "user_name" : "zeba", "link": "https://www.google.com"},
                 "Password reset request" :{"name" : "Zeba Dhongre", "link": "https://www.google.com"},
@@ -53,5 +53,5 @@ def get_template_content(subject):
                 #space provider Templates
                 "Booked a space / conference room through MyCuteOffice.com? Review us." :{"name" : "Zeba Dhongre"},
                 "Review the space user ID:" :{"name" : "Zeba Dhongre", "uid":"AB34", "space_id":"#9887"},
-
+                "book_new" : {"name" : "lee" ,"space_id" :"675" ,"user_name" : "leena_khote" , "user_industry" : "mco" , "space_type" : 'cabin' ,"from_date" :"10/10/2015" , "to_date" :"10/10/2016" , "from_time" : "10 am" , "to_time" : "8 pm" , "facility" : "all"}
        }[subject]

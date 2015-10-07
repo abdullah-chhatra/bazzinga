@@ -6,15 +6,15 @@
 
                 <p style="font-weight: 600">Hi {{ email_content.get('name', '') }},</p>
 				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-				   The Booking ID: <b>{{ space_provider['book_id'] }}</b> has requested to cancel the booking for your space ID: <b>{{ space_provider['space_id'] }}</b><br /><br />
+				   The Booking ID: <b>{{ email_content.get('book_id' , '') }}</b> has requested to cancel the booking for your space ID: <b>{{email_content.get('space_id' , '') }}</b><br /><br />
                     <b><u>The details of the booking</u></b>:<br />
-                    <b>User Name:</b> {{ details['name'] }}<br />
-                    <b>User Industry:</b> {{ details['user_industry'] }}<br />
-                    <b>Facility required:</b> {{ details['space_type'] }}<br />
-                    <b>From:</b> {{ details['from_date'] }} <br />
-                    <b>To:</b> {{ details['from_date'] }} <br />
-                    <b>Timings of use:</b> {{ details['from_time'] }} to {{ details['to_time'] }}<br />
-                    <b>Facility required:</b> {{ details['facility'] }}<br /><br />
+                    <b>User Name:</b> {{ email_content.get('user_name' , '') }}<br />
+                    <b>User Industry:</b> {{ email_content.get('user_industry' , '') }}<br />
+                    <b>Facility required:</b> {{ email_content.get('space_type' , '') }}<br />
+                    <b>From:</b> {{email_content.get('from_date' , '') }} <br />
+                    <b>To:</b> {{ email_content.get('to_date' , '') }} <br />
+                    <b>Timings of use:</b> {{ email_content.get('from_time' , '') }} to {{ email_content.get('to_time' , '') }}<br />
+                    <b>Facility required:</b> {{ email_content.get('facility' , '') }}<br /><br />
                     As per the cancellation policy of MyCuteOffice.com, (25% / 50% / 75%) of the transaction value will be remitted to you. The remaining will be returned back to the user.
 				</p>
             </td>
