@@ -1,6 +1,6 @@
 Admin: Booking: No reply by owner for approval for more than 12 hours
 
-Dear {{ email_content.get('name','') }}},
+Dear {{ email_content.get('name','') |title}},
 
 The booking confirmation for booking ID:  {{ email_content.get('book_id','') }} for the Space ID:  {{ email_content.get('space_id','') }} is overdue.
 Kindly contact the space provider.

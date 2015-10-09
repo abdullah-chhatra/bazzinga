@@ -1,6 +1,6 @@
 SS: Booking: Book Receipt
 
-Dear {{ email_content.get('name', '') }},
+Dear {{ email_content.get('name', '')|title }},
 
 Congratulations! Your booking (Booking ID: {{ email_content.get('book_id', '') }} ) has been confirmed.
 Your booking details are:

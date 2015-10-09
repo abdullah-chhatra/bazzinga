@@ -4,7 +4,7 @@
 		<tr>
             <td>
 
-                <p style="font-weight: 600">Hi {{ email_content.get('name', '') }},</p>
+                <p style="font-weight: 600">Hi {{ email_content.get('name', '')|title }},</p>
 
 				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
 				    <b>{{ email_content.get('ss_name', '') }}</b> has liked your space and requested for a visit.<br /><br />

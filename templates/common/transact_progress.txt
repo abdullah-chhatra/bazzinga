@@ -1,6 +1,6 @@
 Common: transaction progress email
 
-Dear {{ email_content.get('name','') }},
+Dear {{ email_content.get('name','')|title }},
 
 You’re just {{ email_content.get('percent','') }}% away from completing your booking.
 

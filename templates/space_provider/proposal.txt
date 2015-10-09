@@ -1,4 +1,4 @@
-Dear {{ email_content.get('name', '') }},
+Dear {{ email_content.get('name', '')|title }},
 
 I'm Neelay Jain, Co-founder of My Cute Office. We, at My Cute Office, believe that new businesses should save time and money involved in getting an office and rather invest that in growing their business. We do this by helping companies share spare office spaces with each other. These can be booked quickly on short-term basis.
 

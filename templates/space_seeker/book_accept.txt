@@ -1,6 +1,6 @@
 ss: Booking: accpt reject status
 
-Dear {{ email_content.get('name', '') }},
+Dear {{ email_content.get('name', '')|title }},
 
 Congratulations! Your booking (Booking ID {{ email_content.get('book_id', '') }} ) for the Space ID: {{ email_content.get('space_id', '') }} has been accepted.
 Please find below the details of the space.

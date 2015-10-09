@@ -1,6 +1,6 @@
 SS: Booking:Booking incmplete reminder
 
-Dear {{ email_content.get('name', '') }},
+Dear {{ email_content.get('name', '')|title }},
 
 Your booking (Booking ID:{{ email_content.get('name', '') }} ) is Incomplete. Click below to complete your booking.
 

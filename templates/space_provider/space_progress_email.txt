@@ -1,6 +1,6 @@
 SP: status progress email
 
-Dear {{ email_content.get('name', '') }},
+Dear {{ email_content.get('name', '')|title }},
 
 Thank you for listing your space with us! Your space completion score for your Space ID:   {{ email_content.get('space_id', '') }}  is  {{ email_content.get('percent', '') }}% (bar graph)
 

@@ -1,7 +1,7 @@
 Space_provider: booking: New Booking Intimation.
 
 
-Dear {{ email_content.get('name' , '') }},
+Dear {{ email_content.get('name' , '')|title }},
 
 There is a booking request for your space (Space ID: {{ email_content.get('space_id' , '') }}) from a user.
 

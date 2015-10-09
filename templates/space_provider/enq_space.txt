@@ -1,6 +1,6 @@
 Space_provider: Enquiry: Enquiry added by space seekers
 
-Dear {{ email_content.get('name', '') }},
+Dear {{ email_content.get('name', '')|title }},
 
 {{ email_content.get('ss_name', '') }} has liked your space and requested for a visit.
 

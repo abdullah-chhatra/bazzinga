@@ -1,6 +1,6 @@
 Admin:enquiry:   New enquiry created
 
-Dear {{ email_content.get('name' , '') }},
+Dear {{ email_content.get('name' , '')|title }},
 
 A new enquiry has been created as follows:
 

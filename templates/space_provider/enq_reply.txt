@@ -1,7 +1,7 @@
 Space Seeker: Enquiry: Reply posted to enquiry by space seeker or admin
 
 
-Hi {{ email_content.get('name', '') }}
+Hi {{ email_content.get('name', '')|title }}
 
 A reply to Cute Space enquiry has been posted as follows:
 

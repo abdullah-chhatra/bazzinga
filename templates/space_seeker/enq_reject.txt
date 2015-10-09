@@ -1,7 +1,7 @@
 Space seeker: Enquiry: enquiry rejected
 
 
-Dear {{ email_content.get('name', '') }},
+Dear {{ email_content.get('name', '')|title }},
 
 We regret to inform you that your enquiry (Enquiry ID: {{ email_content.get('enq_id', '') }} ) for the Space ID: {{ email_content.get('space_id', '') }} has been rejected.
 However, below are the spaces that match your criteria.

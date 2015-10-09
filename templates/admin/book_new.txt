@@ -1,6 +1,6 @@
 Admin: booking: new Booking
 
-Dear {{ email_content.get('name','') }},
+Dear {{ email_content.get('name','') |title}},
 
 A new booking request has been generated with booking ID:  {{ email_content.get('book_id','') }}
 

@@ -1,6 +1,6 @@
 Space_provider: feedback: feedback about space seeker
 
-Dear {{ email_content.get('name','') }},
+Dear {{ email_content.get('name','')|title }},
 
 The user ID: {{ email_content.get('uid','') }} used the (conference room / cabinspace) in your space ID: {{ email_content.get('space_id','') }}.
 

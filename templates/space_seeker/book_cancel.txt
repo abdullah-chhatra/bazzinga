@@ -1,6 +1,6 @@
 ss: cancel Booking: cancel booking request
 
-Dear {{ email_content.get('name', '') }},
+Dear {{ email_content.get('name', '')|title }},
 
 We have received your request to cancel the booking ID: {{ email_content.get('book_id', '') }}
 

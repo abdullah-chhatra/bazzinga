@@ -1,6 +1,6 @@
 SS: Requirement: New requirement created
 
-Dear {{ email_content.get('name', '') }},
+Dear {{ email_content.get('name', '')|title }},
 
 Your requirement is generated on MyCuteOffice.com
 Your Requirement ID is {{ email_content.get('req_id', '') }}

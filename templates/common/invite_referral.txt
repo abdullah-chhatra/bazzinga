@@ -1,6 +1,6 @@
 Invite: New User: Invite Referral
 
-Dear {{ email_content.get('name','') }},
+Dear {{ email_content.get('name','')|title }},
 
 Earn Rs. 300 in MCO credits by inviting a friend to use MCO to get a space.
 
