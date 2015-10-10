@@ -1,8 +1,8 @@
 ADmin: booking: accept reject status
 
-Dear {{ template_data['name'] }},
+Dear {{ email_content.get('name','') |title }},
 
-The booking ID:  {{ template_data['book_id'] }} has been accepted by the space provider.
+The booking ID:  {{ email_content.get('book_id','') }} has been accepted by the space provider.
 
 THANK YOU!
 

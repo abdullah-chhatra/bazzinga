@@ -1,7 +1,6 @@
 __author__ = 'leena'
 
 import json
-
 import redis
 from config.publisher_config import get_msg
 from config import library as settings
@@ -15,3 +14,5 @@ recipient = settings.RECIPIENT
 
 msg = get_msg(sender, recipient)
 queue.publish(settings.EMAIL_Q, json.dumps(msg))
+
+

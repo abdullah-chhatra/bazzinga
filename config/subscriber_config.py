@@ -23,7 +23,7 @@ def get_template_name(category):
             "book_cancel_approve": "book_cancel_approve",
             "book_cancel_disapp": "book_cancel_disapp",
             "book_cancel_request" :"book_cancel_req",
-            "book_incomp_reminder": "book_incomp_rem",
+            "book_incomplete_reminder": "book_incomp_rem",
             "book_receipt": "book_receipt",
             "book_invite": "book_invite",
             "book_meet_cancel": "book_meet_cancel",
@@ -44,6 +44,7 @@ def get_template_name(category):
             "new_booking": "new_booking",
             "signup": "signup",
             "space_add":"space_add",
-            "transaction_progress" :"transact_progress"
+            "transaction_progress" :"transact_progress",
+            "proposal":"proposal"
     }[category]
 

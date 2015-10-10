@@ -3,9 +3,9 @@
   <table width="100%" style="height: 100%;" cellpadding="15" cellspacing="0" border="0">
 		<tr>
             <td>
-                <p style="font-weight: 600">Dear {{ name['name'] }},</p>
+                <p style="font-weight: 600">Dear {{ email_content.get('name', '')|title }},</p>
 				<p style="line-height: 1.8; font-size: 15px; font-family: Verdana;">
-				   We regret to inform you that your enquiry (Enquiry ID:&nbsp;<span style="font-weight: 600;">  {{ space_seeker['enq_id'] }} </span>  ) for the Space ID: &nbsp;<span style="font-weight: 600;">{{ space_seeker['space_id'] }}</span> has been rejected.
+				   We regret to inform you that your enquiry (Enquiry ID:&nbsp;{{ email_content.get('enq_id', '') }} ) for the Space ID: &nbsp;{{ email_content.get('space_id', '') }}&nbsp;has been rejected.
                     However, below are the spaces that match your criteria.
 				</p>
             </td>

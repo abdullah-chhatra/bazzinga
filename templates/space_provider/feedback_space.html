@@ -3,9 +3,9 @@
   <table width="100%" style="height: 100%;" cellpadding="15" cellspacing="0" border="0">
 		<tr>
             <td>
-                <p style="font-weight: 600">Dear {{ space_provider['name'] }},</p>
+                <p style="font-weight: 600">Dear {{ email_content.get('name','')|title }},</p>
 				<p style="line-height: 1.8; font-size: 15px; font-family: Verdana;">
-                   The user ID:<b> {{ space_provider['uid'] }}</b> used the (conference room / cabinspace) in your space ID:<b> {{ space_provider['space_id'] }} </b>.
+                   The user ID:&nbsp;<b> {{ email_content.get('uid','') }}</b>&nbsp; used the (conference room / cabinspace) in your space ID:<b> {{ email_content.get('space_id','') }} </b>.
 				</p>
                 <p style="line-height: 1.8; font-size: 15px; font-family: Verdana;">
                  <b>Rate the user based on the following.</b><br /><br />

@@ -3,7 +3,7 @@
   <table width="100%" style="height: 100%;" cellpadding="15" cellspacing="0" border="0">
 		<tr>
             <td>
-                <p style="font-weight: 600">Dear {{ email_content.get('name' , '') }},</p>
+                <p style="font-weight: 600">Dear {{ email_content.get('name' , '')|title }},</p>
 				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
 				    There is a booking request for your space (Space ID: {{ email_content.get('space_id' , '') }}) from a user.<br /><br />
                     <b><u>The details of the booking</u></b>:<br />
@@ -16,7 +16,7 @@
                     <b>Facility required:</b> {{email_content.get('facility' , '') }}<br /><br />
                     Please ensure the space is available as per the details mentioned above.<br />
                     Please confirm the booking.<br />
-                    <a href="{{ email_content.get('link' , '') }}" target="_blank"><b>Click here</b></a> if you require to chat with the user.
+                    <a href="{{ email_content.get('link' , '') }}" target="_blank">Click here</a> if you require to chat with the user.
 				</p>
             </td>
         </tr>
