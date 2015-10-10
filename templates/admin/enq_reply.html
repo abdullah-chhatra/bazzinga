@@ -3,9 +3,24 @@
   <table width="100%" style="height: 100%;" cellpadding="15" cellspacing="0" border="0">
 		<tr>
             <td>
-                <p style="font-weight: 600">Dear {{ template_data['name'] }},</p>
-				<p style="line-height: 1.8; font-size: 15px; font-family: Verdana;">
-                    The user of Booking ID:&nbsp;<span style="font-weight: 600;">  {{ admin['book_id'] }} </span>&nbsp;has requested to cancel the booking for the Space ID:&nbsp;<span style="font-weight: 600;">  {{ admin['book_id'] }} </span>
+                <p style="font-weight: 600">Hi {{ email_content.get('name', '')|title }}</p>
+				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
+				    A reply to  <a href="{{email_content.get('link_space', '')}}" target="_blank">Cute Space</a> enquiry has been posted as follows:
+                    <table width="100%" cellpadding="15" cellspacing="0" border="0">
+                        <tr>
+                            <td width="80px">
+                                <img width="40px" height="40px" src="{{ email_content.get('msg', '') }}" />
+                            </td>
+                            <td width="80px">
+                                 <span style="font-family: verdana; font-size:15px; line-height: 1.5;">{{ email_content.get('name', '') }}</span>
+                            </td>
+                            <td width="300px">
+                                <span style="font-family: verdana; font-size:15px; line-height: 1.5;">{{ email_content.get('msg', '') }}</span>
+                            </td>
+                        </tr>
+                    </table>
+                    <br />
+                    <a href="{{email_content.get('link_reply', '')}}" target="_blank" style="display: inline-block; background-color: black; color: white; text-decoration: none; padding: 5px 25px; border: 2px solid gray;">Reply</a>
 				</p>
             </td>
         </tr>

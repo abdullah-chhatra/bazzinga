@@ -1,19 +1,19 @@
 Admin: booking: new Booking
 
-Dear {{ admin['name'] }},
+Dear {{ email_content.get('name','') |title}},
 
-A new booking request has been generated with booking ID:  {{ admin['book_id'] }}
+A new booking request has been generated with booking ID:  {{ email_content.get('book_id','') }}
 
-Booking request details Name:  {{ details['name'] }}
-Contact:  {{ details['contact'] }}
-Email Address:  {{ details['email'] }}
-User Industry:  {{ details['user_industry'] }}
-Space ID: {{ admin['space_id'] }}
-From Date:  {{ details['from_date'] }}
-To Date:  {{ details['to_date'] }}
-From Time:   {{ details['from_time'] }}
-To Time:  {{ details['to_time'] }}
-Facilities included: {{ details['facility'] }}
+Booking request details Name:  {{ email_content.get('name','') }}
+Contact:  {{ email_content.get('contact','') }}
+Email Address:  {{ email_content.get('email','') }}
+User Industry:  {{ email_content.get('user_industry','') }}
+Space ID: {{ email_content.get('space_id','') }}
+From Date:  {{ email_content.get('from_content','') }}
+To Date:  {{ email_content.get('to_date','') }}
+From Time:   {{ email_content.get('from_time','') }}
+To Time:  {{ email_content.get('to_time','') }}
+Facilities included: {{ email_content.get('facility','') }}
 
 THANK YOU!
 

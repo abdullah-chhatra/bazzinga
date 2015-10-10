@@ -1,1 +1,15 @@
 Admin : Requirement: new requirement
+
+Dear {{ email_content.get('name' , '') }},
+
+We have received requirement for work space at {{ email_content.get('land_mark' , '') }} landmark.
+
+Name:   {{ email_content.get('user_name' , '') }}
+
+Email:   {{ email_content.get('email' , '') }}
+
+Mobile:   {{ email_content.get('mobile' , '') }}
+
+THANK YOU!
+
+Team MyCuteOffice.com

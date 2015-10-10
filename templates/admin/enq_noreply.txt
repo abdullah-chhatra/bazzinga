@@ -1,8 +1,8 @@
 Admin: Enquiry : No reply by owner for 48 hours
 
-Dear {{ admin['name'] }},
+Dear {{ email_content.get('name','')|title }},
 
-The Space ID: {{ admin['space_id'] }}   has not reverted to the enquiry ID: {{ admin['enq_id'] }}  for over 48 hours.
+The Space ID: {{ email_content.get('space_id','') }} has not reverted to the enquiry ID: {{ email_content.get('enq_id','') }}  for over 48 hours.
 Kindly follow up.
 
 THANK YOU!

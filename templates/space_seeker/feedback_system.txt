@@ -1,6 +1,6 @@
 Space Seeker: feedback : Feedback about system
 
-Dear {{ name['name'] }},
+Dear {{email_content.get('name', '')|title }},
 
 Thanks you for using MyCuteOffice.com.
 

@@ -4,13 +4,13 @@
 		<tr>
             <td>
 
-                <p style="font-weight: 600">Hi {{ email_content.get('name', '') }},</p>
+                <p style="font-weight: 600">Hi {{ email_content.get('name', '')|title }},</p>
 
 				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-				    <b>{{ space_provider['ss_name'] }}</b> has liked your space and requested for a visit.<br /><br />
-                    <b>{{ space_provider['ss_name'] }}'s message:</b><br />
-                    {{ space_provider['msg'] }}<br /><br />
-                    <a style="display: inline_block; padding: 10px 30px; background-color: #000; color: #FFF; border: 1px solid gray; text-decoration: none; letter-spacing: 1px;" href="{{ space_provider['link'] }}" target="_blank"><b>Reply</b></a><br /><br />
+				    <b>{{ email_content.get('ss_name', '') }}</b> has liked your space and requested for a visit.<br /><br />
+                    <b>{{ email_content.get('ss_name', '') }}'s message:</b><br />
+                    {{ email_content.get('msg', '') }}<br /><br />
+                    <a style="display: inline_block; padding: 10px 30px; background-color: #000; color: #FFF; border: 2px solid gray; text-decoration: none; letter-spacing: 1px;" href="{{ email_content.get('link', '') }}" target="_blank"><b>Reply</b></a><br /><br />
                     My Cute Office has shared your contact details and address with the enquirer.<br />
                     If you have any queries, please feel free to contact us on 7738888577 / hello@mycuteoffice.com
 				</p>

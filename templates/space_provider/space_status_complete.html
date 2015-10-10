@@ -3,9 +3,9 @@
   <table width="100%" style="height: 100%;" cellpadding="15" cellspacing="0" border="0">
 		<tr>
             <td>
-                <p style="font-weight: 600">Hi {{ email_content.get('name', '') }},</p>
+                <p style="font-weight: 600">Hi {{ email_content.get('name', '')|title }},</p>
 				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-				    Thank you for listing your space with us! Your Space ID is: {{ space_provider['space_id'] }} <br /> Your listing in now 100% complete.<br /><br />
+				    Thank you for listing your space with us! Your Space ID is: {{ email_content.get('space_id', '') }}<br /> Your listing in now 100% complete.<br /><br />
                     <b><u>Acceptance of terms & conditions:</u></b><br /><br />
                     For your space to be published to the thousands of space seekers who visit us daily, please go through  and accept our terms & conditions by following the steps below.<br /><br />
                     Step 1:  Review your page listing by clicking this link.<br /><br />

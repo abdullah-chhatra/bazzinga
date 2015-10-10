@@ -3,9 +3,9 @@
   <table width="100%" style="height: 100%;" cellpadding="15" cellspacing="0" border="0">
 		<tr>
             <td>
-                <p style="font-weight: 600">Dear {{ common['name'] }},</p>
+                <p style="font-weight: 600">Dear {{ email_content.get('name','')|title }},</p>
 				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-                 You recently changed your password for your MCO account (<b>{{ common['user_name'] }}</b>). If you did not change the password and believe your MCO account has been compromised, please contact MCO support on  <a href="{{ space_seeker['link'] }}" target="_blank"><b>hello@mycuteoffice.com</b></a>
+                 You recently changed your password for your MCO account (<b>{{ email_content.get('user_name', '') }}</b>). If you did not change the password and believe your MCO account has been compromised, please contact MCO support on  <a href="{{ email_content.get('link', '') }}" target="_blank"><b>hello@mycuteoffice.com</b></a>
 				</p>
             </td>
         </tr>

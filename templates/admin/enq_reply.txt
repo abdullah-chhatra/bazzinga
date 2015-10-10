@@ -1,1 +1,15 @@
 Admin: Enquiry:	Reply to enquiry by space owner or space seeker
+
+Hi {{ email_content.get('name', '')|title }}
+
+A reply to Cute Space enquiry has been posted as follows:
+
+{{ email_content.get('img', '') }}	{{ email_content.get('name', '') }}	{{ email_content.get('msg', '') }}
+
+Reply
+
+
+THANK YOU!
+
+Team MyCuteOffice.com
+

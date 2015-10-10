@@ -23,4 +23,4 @@ PUSH_Q = "push"
 
 # Email config
 SENDER = "hello@mycuteoffice.com"
-RECIPIENT = ["leenakhote23@gmail.com", "khoteleena5@gmail.com"]
+RECIPIENT = ["dhongre.zeba@gmail.com", "khoteleena5@gmail.com"]

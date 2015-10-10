@@ -3,7 +3,7 @@
   <table width="100%" style="height: 100%;" cellpadding="15" cellspacing="0" border="0">
 		<tr>
             <td>
-                <p style="font-weight: 600">Dear {{ common['name'] }},</p>
+                <p style="font-weight: 600">Dear {{ email_content.get('name','')|title }},</p>
 				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
                     Earn Rs. 300 in MCO credits by inviting a friend to use MCO to get a space.<br />
                     Everyone loves credits, so keep the generosity going.<br />
@@ -27,21 +27,21 @@
                 </tr>
                 <tr>
                     <td>
-                       <a href="{{ common['link1'] }}" target="_blank"> (FB)</a>
+                       <a href="{{ email_content.get('link1','') }}" target="_blank"> (FB)</a>
                     </td>
                     <td>
-                       <a href="{{ common['link2'] }}" target="_blank"> (Linkedin)</a>
+                       <a href="{{ email_content.get('link2','') }}" target="_blank"> (Linkedin)</a>
                     </td>
                     <td>
-                        <a href="{{ common['link3'] }}" target="_blank"> (Twitter)</a>
+                        <a href="{{ email_content.get('link3','') }}" target="_blank"> (Twitter)</a>
                     </td>
                     <td>
-                        <a href="{{ common['link4'] }}" target="_blank"> (Mail)</a>
+                        <a href="{{ email_content.get('link4','') }}" target="_blank"> (Mail)</a>
                     </td>
                 </tr>
                 </table>
                 <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-                    Your Referral code is <b>{{ common['ref_code'] }}</b>
+                    Your Referral code is <b>{{ email_content.get('ref_code','') }}</b>
 				</p>
             </td>
         </tr>
