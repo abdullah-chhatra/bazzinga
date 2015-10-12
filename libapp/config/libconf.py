@@ -2,9 +2,12 @@ import os
 
 
 HOST = "localhost"
-PORT = 5000
+PORT = 9001
+DEBUG = True
+THREADED = True
 
-TEMPLATE_DIR = os.path.join(os.getcwd(), "templates")
+TEMPLATE_DIR = os.path.join(os.getcwd(), "libapp", "templates")
+STATIC_PATH = os.path.join(os.getcwd(), "libapp", "static")
 
 # Redis configuration
 REDIS_HOST = "localhost"
@@ -23,4 +26,4 @@ PUSH_Q = "push"
 
 # Email config
 SENDER = "hello@mycuteoffice.com"
-RECIPIENT = ["dhongre.zeba@gmail.com", "khoteleena5@gmail.com"]
+RECIPIENT = ["leenakhote23@gmail.com", "khoteleena5@gmail.com", "srahul07@gmail.com"]

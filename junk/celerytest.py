@@ -1,11 +1,8 @@
 __author__ = 'leena'
 
-
 from celery import Celery
-#from config import celerytest as settings
-from emails import email_notifier
 
-celery = Celery(include=['trials.email_task'])
+celery = Celery(include=['junk.email_task'])
 
 celery.config_from_object('config.library')
 
