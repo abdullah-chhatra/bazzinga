@@ -1,3 +1,10 @@
 #!/usr/bin/env bash
-source ./venv/bin/activate
-celery -A junk.email_task.celery worker --loglevel=info --concurrency=1
+
+BASEDIR=$(dirname $0)
+VENV=/venv/bin/activate
+
+LIBAPP=libapp
+CELERY=email_task.celeryd
+
+source $BASEDIR$VENV
+celery -A $LIBAPP.$CELERY worker --loglevel=info --concurrency=1

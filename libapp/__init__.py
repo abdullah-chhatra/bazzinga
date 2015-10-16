@@ -21,9 +21,11 @@ def init_app(app):
     """
     Initializes app with needed configurations for add-on entities
     """
-    from libapp.init import celeryd
-    from libapp.init import redisd
+    from init import loggerd
+    from init import celeryd
+    from init import redisd
 
+    loggerd.init_app(app)
     celeryd = celeryd.init_app(app)
     redisd, pubsubd = redisd.init_app(app)
 

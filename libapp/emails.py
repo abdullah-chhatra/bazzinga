@@ -1,11 +1,10 @@
 __author__ = 'leena'
 
 import os
-
-from flask import render_template
-
 import sendgrid
 from sendgrid.exceptions import (SendGridClientError)
+from flask import render_template
+from libapp import app
 from config.subscriber_config import get_template_name
 from config import libconf as settings
 
@@ -33,8 +32,11 @@ def generate_message(recipients, subject, html_body, text_body, sender, category
 def send_email(message):
     try:
         msg = sg.send(message)
+        app.logger.info("Successfully sent message: {msg}".format(msg=msg))
         return msg
     except SendGridClientError as sgce:
+        app.logger.error("Error while sending email: {msg}".format(msg=msg))
+        app.logger.error("Email: {message}".format(message=message))
         raise SendGridClientError(sgce.code, sgce.read())
 
 

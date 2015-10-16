@@ -3,9 +3,10 @@ __author__ = 'rahul'
 
 from flask import render_template
 from .. import app
-from ..subscriber import subscribe_data
 from ..publisher import publish_msg
-from junk.email_task import send_email
+from ..email_task import send_email
+from libapp.subscriber import subscribe_data
+
 
 @app.route("/")
 def index():

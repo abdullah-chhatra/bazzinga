@@ -13,6 +13,7 @@ channel = queue.pubsub()
 sender = settings.SENDER
 recipient = settings.RECIPIENT
 
+
 def publish_msg():
     msg = get_msg(sender, recipient)
     queue.publish(settings.EMAIL_Q, json.dumps(msg))
