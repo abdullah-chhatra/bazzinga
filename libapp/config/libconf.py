@@ -9,6 +9,14 @@ THREADED = True
 TEMPLATE_DIR = os.path.join(os.getcwd(), "libapp", "templates")
 STATIC_PATH = os.path.join(os.getcwd(), "libapp", "static")
 
+# Log vonfigurations
+LOG_FILE_NAME = "{log}.log"
+LOG_FILE_PATH = os.path.join("logs")
+LOG_ROTATION_WHEN = "midnight"
+LOG_BACKUP_COUNT = 7
+LOG_UTC_STATUS = True
+LOG_FORMATTER = "%(asctime)s | %(pathname)s:%(lineno)d | %(funcName)s | %(levelname)s | %(message)s"
+
 # Redis configuration
 REDIS_HOST = "localhost"
 REDIS_PORT = 6379
