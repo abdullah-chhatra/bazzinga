@@ -5,11 +5,12 @@ from flask import render_template
 from .. import app
 from ..publisher import publish_msg
 from ..subscriber import subscribe_data
+from ..config import libconf
 
 
 @app.route("/")
 def index():
-    subscribe_data.delay()
+    subscribe_data.apply_async(queue=libconf.EMAIL_Q)
     return render_template("index.html")
 
 
