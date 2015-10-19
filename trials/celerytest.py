@@ -3,7 +3,7 @@ __author__ = 'leena'
 
 from celery import Celery
 #from config import celerytest as settings
-from emails import email_notifier
+from emailer import email_notifier
 
 celery = Celery(include=['trials.email_task'])
 
