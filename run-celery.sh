@@ -3,6 +3,8 @@
 BASEDIR=$(dirname $0)
 VENV=/venv/bin/activate
 
+LOGS=/logs/
+
 LIBCONFIG=/libapp/config/libconf.py
 CELCONFIG=/libapp/config/celconf.py
 
@@ -28,6 +30,7 @@ done < $BASEDIR$LIBCONFIG
 # Get Celery configurations
 LOGLEVEL=info
 CONCURRENCY=1
+LOGFILE=celery.log
 while IFS='' read -r line || [[ -n "$line" ]]; do
     IFS='=' read -a array <<< "$line"
     CONFIG_VAL="$(echo -e "${array[0]}" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
@@ -44,9 +47,15 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
         # Remove leading and trailing double quotes
         CONCURRENCY="$(echo -e "${CONCURRENCY}" | sed -e 's/^[[\"]]*//' -e 's/[[\"]]*$//')"
     fi
+    # Get log file
+    if [ "${CONFIG_VAL}" == "CELERY_LOG_FILE" ]; then
+        LOGFILE="$(echo -e "${array[1]}" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
+        # Remove leading and trailing double quotes
+        LOGFILE="$(echo -e "${LOGFILE}" | sed -e 's/^[[\"]]*//' -e 's/[[\"]]*$//')"
+    fi
 done < $BASEDIR$CELCONFIG
 
 # Activate virtual environment
 source $BASEDIR$VENV
 # Run celery
-celery -A $LIBAPP.$CELERY worker -Q $QUEUE --loglevel=$LOGLEVEL --concurrency=$CONCURRENCY
+celery -A $LIBAPP.$CELERY worker -Q $QUEUE --beat --concurrency=$CONCURRENCY --loglevel=$LOGLEVEL --logfile=$BASEDIR$LOGS$LOGFILE
