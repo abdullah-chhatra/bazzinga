@@ -3,23 +3,50 @@
 BASEDIR=$(dirname $0)
 VENV=/venv/bin/activate
 
+LIBCONFIG=/libapp/config/libconf.py
+CELCONFIG=/libapp/config/celconf.py
+
 LIBAPP=libapp
 CELERY=subscriber.celeryd
 
-CONFIG=/libapp/config/libconf.py
-
+# Get Queue
 QUEUE=celery
+# Read each line from config file located at $BASEDIR$LIBCONFIG
+while IFS='' read -r line || [[ -n "$line" ]]; do
+    # Read current line and split string into
+    IFS='=' read -a array <<< "$line"
+    # Trim queue identifier
+    Q_TYPE="$(echo -e "${array[0]}" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
+    if [ "${Q_TYPE}" == "EMAIL_Q" ]; then
+        QUEUE="$(echo -e "${array[1]}" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
+        # Remove leading and trailing double quotes
+        QUEUE="$(echo -e "${QUEUE}" | sed -e 's/^[[\"]]*//' -e 's/[[\"]]*$//')"
+    fi
+done < $BASEDIR$LIBCONFIG
+
+
+# Get Celery configurations
+LOGLEVEL=info
+CONCURRENCY=1
 while IFS='' read -r line || [[ -n "$line" ]]; do
     IFS='=' read -a array <<< "$line"
-    echo ${array[0]}
-    Q_TYPE="$(echo -e "${array[0]}" | sed -e 's/^[[:space:]]*//')"
-    if [ "${Q_TYPE}" == "EMAIL_Q" ]; then
-        QUEUE=${array[1]}
+    CONFIG_VAL="$(echo -e "${array[0]}" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
 
-        QUEUE="${QUEUE%\"}"
-        QUEUE="${QUEUE#\"}"
+    # Get log level
+    if [ "${CONFIG_VAL}" == "CELERY_LOG_LEVEL" ]; then
+        LOGLEVEL="$(echo -e "${array[1]}" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
+        # Remove leading and trailing double quotes
+        LOGLEVEL="$(echo -e "${LOGLEVEL}" | sed -e 's/^[[\"]]*//' -e 's/[[\"]]*$//')"
     fi
-done < $BASEDIR$CONFIG
+    # Get concurrency
+    if [ "${CONFIG_VAL}" == "CELERY_CONCURRENCY" ]; then
+        CONCURRENCY="$(echo -e "${array[1]}" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
+        # Remove leading and trailing double quotes
+        CONCURRENCY="$(echo -e "${CONCURRENCY}" | sed -e 's/^[[\"]]*//' -e 's/[[\"]]*$//')"
+    fi
+done < $BASEDIR$CELCONFIG
 
+# Activate virtual environment
 source $BASEDIR$VENV
-celery -A $LIBAPP.$CELERY worker -Q $QUEUE --loglevel=info --concurrency=1
+# Run celery
+celery -A $LIBAPP.$CELERY worker -Q $QUEUE --loglevel=$LOGLEVEL --concurrency=$CONCURRENCY

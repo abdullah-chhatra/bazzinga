@@ -10,7 +10,7 @@ from ..config import libconf
 
 @app.route("/")
 def index():
-    subscribe_data.apply_async(queue=libconf.EMAIL_Q)
+    subscribe_data.apply_async(queue=libconf.EMAIL_Q, serializer='json')
     return render_template("index.html")
 
 

@@ -4,11 +4,17 @@ __author__ = 'leena'
 from libapp.config import libconf
 
 # Celery configuration
+# Custom
+CELERY_LOG_LEVEL = "WARNING"
+CELERY_CONCURRENCY = 1
+
+# Original
 CELERY_TIMEZONE = "Asia/Kolkata"
 
 # Optimization configurations
 CELERY_ACKS_LATE = True
-CELERYD_PREFETCH_MULTIPLIER = 1
+CELERY_PREFETCH_MULTIPLIER = 1
+CELERY_ACCEPT_CONTENT = ['json']
 
 #Broker configurations
 BROKER_TRANSPORT = "redis"
