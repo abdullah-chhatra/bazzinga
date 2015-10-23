@@ -2,11 +2,27 @@ __author__ = 'leena'
 
 
 import json
-from libapp import app
+import redis
 
+from libapp import app
 from libapp import pubsubd
 from libapp import celeryd
 from emails import email_notifier
+from config import libconf
+
+
+@celeryd.task()
+def publish_msg():
+    queue = redis.StrictRedis(host=libconf.REDIS_HOST, port=libconf.REDIS_PORT, db=libconf.DB_INDEX)
+    q_length = queue.llen(libconf.EMAIL_Q + '-pub')
+    for x in range(q_length):
+        mail_data = queue.lpop(libconf.EMAIL_Q + '-pub')
+        queue.publish(libconf.EMAIL_Q, mail_data)
+    # d = json.loads(data)
+    # sender = d.get("sender", settings.SENDER)
+    # recipient = d.get("recipient", settings.RECIPIENT)
+    # msg = get_msg(sender, recipient)
+    # queue.publish(libconf.EMAIL_Q, data)
 
 
 @celeryd.task()
@@ -26,3 +42,4 @@ def subscribe_data():
 
             # Call email notifier
             email_notifier(category, author, sender, recipient, subject, email_content=email_content)
+

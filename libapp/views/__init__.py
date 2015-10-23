@@ -3,7 +3,7 @@ __author__ = 'rahul'
 
 from flask import render_template
 from .. import app
-from ..publisher import publish_msg
+from ..publisher import publish_msg, test
 from ..subscriber import subscribe_data
 from ..config import libconf
 
@@ -14,7 +14,7 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/publisher")
+@app.route("/publisher", methods=["GET", "POST"])
 def publisher():
     publish_msg()
     return render_template("publisher.html")
