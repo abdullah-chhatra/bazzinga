@@ -1,30 +1,40 @@
 __author__ = 'leena'
 
+import redis
 import json
 
-import redis
-from config.publisher_config import get_msg
-from libapp import celeryd, pubsubd
-from config import libconf as settings
+from libapp import app
+from libapp import pubsubd
+from config import libconf
+from emails import email_notifier
 
 
-queue = redis.StrictRedis(host=settings.REDIS_HOST, port=settings.REDIS_PORT, db=settings.DB_INDEX)
-# channel = queue.pubsub()
-
-# sender = settings.SENDER
-# recipient = settings.RECIPIENT
+queue = redis.StrictRedis(host=libconf.REDIS_HOST, port=libconf.REDIS_PORT, db=libconf.DB_INDEX)
 
 
-def test():
-    msg = get_msg(settings.SENDER, settings.RECIPIENT)
-    queue.publish(settings.EMAIL_Q, json.dumps(msg))
-
-
-@celeryd.task()
 def publish_msg():
-    data = queue.lpop(settings.EMAIL_Q + '-pub')
-    # d = json.loads(data)
-    # sender = d.get("sender", settings.SENDER)
-    # recipient = d.get("recipient", settings.RECIPIENT)
-    # msg = get_msg(sender, recipient)
-    queue.publish(settings.EMAIL_Q, data)
+    q_length = queue.llen(libconf.PUB_EMAIL_Q)
+    app.logger.info("Publisher q length: {data}".format(data=q_length))
+    if q_length > 0:
+        for x in range(q_length):
+            mail_data = queue.rpop(libconf.PUB_EMAIL_Q)
+            queue.publish(libconf.EMAIL_Q, mail_data)
+
+
+def subscribe_msg():
+    message = pubsubd.get_message()
+    if message:
+        data = message.get('data')
+        app.logger.info("Subscriber read: {data}".format(data=data))
+        if data and type(data) is not long:
+            mail_dict = json.loads(data)
+            category = mail_dict.get("category", "")
+            author = mail_dict.get("author", "")
+            sender = mail_dict.get("sender", "")
+            subject = mail_dict.get("subject", "")
+            recipient = mail_dict.get("recipient", "")
+            email_content = mail_dict.get("email_content", "")
+
+            # Call email notifier
+            email_notifier(category, author, sender, recipient, subject, email_content=email_content)
+

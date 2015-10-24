@@ -20,9 +20,19 @@ CELERY_ACCEPT_CONTENT = ["json"]
 
 # Scheduler
 CELERYBEAT_SCHEDULE = {
-    "add-every-10-seconds": {
-        "task": "libapp.subscriber.subscribe_data",
-        "schedule": timedelta(seconds=10),
+    "add-every-5-seconds": {
+        "task": "libapp.tasks.transform_data",
+        "schedule": timedelta(seconds=5),
+        #"args": (16, 16)
+        "options": {
+            "queue" : libconf.EMAIL_Q,
+            "serializer" : "json"
+        }
+    },
+
+    "add-every-2-seconds": {
+        "task": "libapp.tasks.subscribe_data",
+        "schedule": timedelta(seconds=2),
         #"args": (16, 16)
         "options": {
             "queue" : libconf.EMAIL_Q,
