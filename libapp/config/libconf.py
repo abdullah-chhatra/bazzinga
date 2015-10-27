@@ -29,6 +29,7 @@ SG_USER = "hello@mycuteoffice.com"
 SG_PASS = "mycuteofficeemail"
 
 # Queue list
+PUB_EMAIL_Q = "email-pub"
 EMAIL_Q = "email"
 SMS_Q = "sms"
 PUSH_Q = "push"

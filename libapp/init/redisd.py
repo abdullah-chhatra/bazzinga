@@ -1,12 +1,12 @@
 __author__ = 'rahul'
 
 import redis
-from ..config import libconf as settings
+from ..config import libconf
 
 
 def init_app(app):
-    redisd = redis.StrictRedis(host=settings.REDIS_HOST, port=settings.REDIS_PORT, db=settings.DB_INDEX)
+    redisd = redis.StrictRedis(host=libconf.REDIS_HOST, port=libconf.REDIS_PORT, db=libconf.DB_INDEX)
     pubsubd = redisd.pubsub()
-    pubsubd.subscribe(settings.EMAIL_Q)
+    pubsubd.subscribe(libconf.EMAIL_Q)
 
     return redisd, pubsubd

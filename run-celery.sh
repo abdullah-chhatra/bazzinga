@@ -9,7 +9,7 @@ LIBCONFIG=/libapp/config/libconf.py
 CELCONFIG=/libapp/config/celconf.py
 
 LIBAPP=libapp
-CELERY=subscriber.celeryd
+CELERY=tasks.celeryd
 
 # Get Queue
 QUEUE=celery
