@@ -1,9 +1,0 @@
-ADmin: booking: accept reject status
-
-Dear {{ template_data['name'] }},
-
-The booking ID:  {{ template_data['book_id'] }} has been accepted by the space provider.
-
-THANK YOU!
-
-Team MyCuteOffice.com

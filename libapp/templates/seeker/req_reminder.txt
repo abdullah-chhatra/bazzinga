@@ -1,0 +1,9 @@
+SS: Requirement : Reminder for more suggestions
+
+Dear {{ email_content.get('name', '')|title }},
+
+The below spaces that match your requirement have been added recently.
+
+THANK YOU!
+
+Team MyCuteOffice.com

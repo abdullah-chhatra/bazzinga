@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block content %}
+  <table width="100%" style="height: 100%;" cellpadding="15" cellspacing="0" border="0">
+		<tr>
+            <td>
+                <p style="font-weight: 600">Dear {{ email_content.get('name' , '')|title }},</p>
+				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
+				    The conference room / cabin space usage for your space ID <b>{{ email_content.get('space_id' , '') }}</b> is due on <b>{{ email_content.get('due_date' , '') }}</b> for the Booking ID: <b>{{ email_content.get('book_id' , '') }}</b><br /><br />
+                    <b><u>The details of the booking</u></b>:<br />
+                    <b>User Name:</b> {{ email_content.get('user_name' , '') }}<br />
+                    <b>User Industry:</b> {{ email_content.get('user_industry' , '') }}<br />
+                    <b>Type Of Space Required:</b> {{ email_content.get('space_type' , '') }}<br />
+                    <b>From:</b> {{ email_content.get('from_date' , '') }} <br />
+                    <b>To:</b> {{ email_content.get('to_date' , '') }} <br />
+                    <b>Timings of use:</b> {{ email_content.get('from_time' , '') }} to {{ email_content.get('to_time' , '') }}<br />
+                    <b>Facility required:</b> {{ email_content.get('facility' , '') }}<br /><br />
+                    Please ensure the space is available as per the details mentioned above.
+				</p>
+            </td>
+        </tr>
+  </table>
+{% endblock content %}

@@ -1,0 +1,10 @@
+SS: Requirement:Suggestions based on requirement
+
+Dear {{ email_content.get('name', '')|title }},
+
+Below are the spaces that match your requirement.
+
+THANK YOU!
+
+Team MyCuteOffice.com
+

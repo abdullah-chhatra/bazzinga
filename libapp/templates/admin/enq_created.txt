@@ -1,0 +1,18 @@
+Admin:enquiry:   New enquiry created
+
+Dear {{ email_content.get('name' , '')|title }},
+
+A new enquiry has been created as follows:
+
+Space ID:  {{ email_content.get('space_id' , '') }}
+Name:  {{ email_content.get('name' , '') }}
+Mobile:  {{ email_content.get('mobile' , '') }}
+Email:  {{ email_content.get('email' , '') }}
+Message:  {{ email_content.get('msg' , '') }}
+Contact Person: {{ email_content.get('contact_person' , '') }}
+Contact Email:  {{ email_content.get('contact_email' , '') }}
+Contact Phone:  {{ email_content.get('contact_phone' , '') }}
+
+THANK YOU!
+
+Team MyCuteOffice.com

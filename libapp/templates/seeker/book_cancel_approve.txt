@@ -1,0 +1,11 @@
+SS: Booking: Cancel booking approval / disapproval by the admin
+
+Dear {{ email_content.get('name', '')|title }},
+
+The cancellation for your booking ID: {{ email_content.get('book_id', '') }} has been approved by the space provider.
+
+You will receive the refund amount within 5 working days.
+
+THANK YOU!
+
+Team MyCuteOffice.com

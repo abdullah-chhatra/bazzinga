@@ -1,0 +1,9 @@
+Common: Password Recovery:	Forgot Password
+
+Dear {{ email_content.get('name','')|title }},
+
+You recently changed your password for your MCO account ({{ email_content.get('user_name', '') }}). If you did not change the password and believe your MCO account has been compromised, please contact MCO support on hello@mycuteoffice.com
+
+THANK YOU!
+
+Team MyCuteOffice.com

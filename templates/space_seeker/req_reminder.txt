@@ -1,9 +1,0 @@
-SS: Requirement : Reminder for more suggestions
-
-Dear {{ name['name'] }},
-
-The below spaces that match your requirement have been added recently.
-
-THANK YOU!
-
-Team MyCuteOffice.com

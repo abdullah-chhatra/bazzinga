@@ -1,0 +1,28 @@
+Space_provider:booking: Reminder of Visit
+
+
+Dear {{ email_content.get('name' , '')|title }},
+
+The conference room / cabin space usage for your space ID {{ email_content.get('space_id' , '') }} is due on 10 Sep 2015 for the Booking ID: {{ email_content.get('book_id' , '') }}
+
+The details of the booking:
+
+User Name: {{ email_content.get('user_name' , '') }}
+
+User Industry: {{ email_content.get('user_industry' , '') }}
+
+Type Of Space Required: {{ email_content.get('space_type' , '') }}
+
+From: {{ email_content.get('from_date' , '') }}
+
+To: {{ email_content.get('to_date' , '') }}
+
+Timings of use: {{ email_content.get('from_time' , '') }} to {{ email_content.get('to_time' , '') }}
+
+Facility required: {{ email_content.get('facility' , '') }}
+
+Please ensure the space is available as per the details mentioned above.
+
+THANK YOU!
+
+Team MyCuteOffice.com

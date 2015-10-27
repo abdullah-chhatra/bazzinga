@@ -1,0 +1,13 @@
+Space seeker: Enquiry: enquiry accepted
+
+
+Dear {{ email_content.get('name', '')|title }},
+
+Congratulations! Your enquiry (Enquiry ID: {{ email_content.get('enq_id', '') }} ) for the Space ID: {{ email_content.get('space_id', '') }} has been accepted.
+
+Please find below the details of the space.
+
+
+THANK YOU!
+
+Team MyCuteOffice.com

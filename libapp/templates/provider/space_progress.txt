@@ -1,0 +1,17 @@
+SP: status progress email
+
+Dear {{ email_content.get('name', '')|title }},
+
+Thank you for listing your space with us! Your space completion score for your Space ID:   {{ email_content.get('space_id', '') }}  is  {{ email_content.get('percent', '') }}% (bar graph)
+
+The spaces with 100% completion score get 10 times more visibility in our search results.
+
+Click on the link below to complete your space listing.
+
+(Link)
+
+Complete your listing and get your space appear in search results.
+
+THANK YOU!
+
+Team MyCuteOffice.com

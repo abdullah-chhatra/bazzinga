@@ -1,0 +1,11 @@
+SS: Booking:Booking incmplete reminder
+
+Dear {{ email_content.get('name', '')|title }},
+
+Your booking (Booking ID:{{ email_content.get('name', '') }} ) is Incomplete. Click below to complete your booking.
+
+Complete Your Booking!
+
+THANK YOU!
+
+Team MyCuteOffice.com

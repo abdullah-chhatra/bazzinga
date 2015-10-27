@@ -1,9 +1,0 @@
-admin : cancel booking: Request to cancel booking by seeker
-
-Dear {{ admin['name'] }},
-
-The user of Booking ID:  {{ admin['book_id'] }}  has requested to cancel the booking for the Space ID:  {{ admin['space_id'] }}
-
-THANK YOU!
-
-Team MyCuteOffice.com

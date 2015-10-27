@@ -1,5 +1,0 @@
-
-
-Dear {{ space_provider['name'] }},
-
-Congratulations! Your space with Space ID: {{ space_provider['space_id'] }} is now Published and will appear in the search results.

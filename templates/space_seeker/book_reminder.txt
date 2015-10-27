@@ -1,9 +1,0 @@
-ss: booking: Reminder to visit
-
-Dear {{ name['name'] }},
-
-Your booking (Booking ID: {{ space_seeker['book_id'] }} ) for the Space ID: {{ space_seeker['space_id'] }} is due on  10 Sep 2015
-
-THANK YOU!
-
-Team MyCuteOffice.com

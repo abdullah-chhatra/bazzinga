@@ -1,9 +1,0 @@
-Common: Password Recovery:	Forgot Password
-
-Dear {{ common['name'] }},
-
-You recently changed your password for your MCO account ({{ common['user_name'] }}). If you did not change the password and believe your MCO account has been compromised, please contact MCO support on hello@mycuteoffice.com
-
-THANK YOU!
-
-Team MyCuteOffice.com

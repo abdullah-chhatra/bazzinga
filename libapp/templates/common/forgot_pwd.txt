@@ -1,0 +1,9 @@
+common: Password Recovery: Change password
+
+Dear {{ email_content.get('name','')|title }},
+
+We received a request to reset your password on MyCuteOffice.com, you can confirm it by clicking here. If you didn’t request to reset the password, you can disregard this email.
+
+THANK YOU!
+
+Team MyCuteOffice.com

@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block content %}
+  <table width="100%" style="height: 100%;" cellpadding="15" cellspacing="0" border="0">
+		<tr>
+            <td>
+
+                <p style="font-weight: 600">Hi {{ email_content.get('name', '')|title }},</p>
+				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
+				   The Booking ID: <b>{{ email_content.get('book_id' , '') }}</b> has requested to cancel the booking for your space ID: <b>{{email_content.get('space_id' , '') }}</b><br /><br />
+                    <b><u>The details of the booking</u></b>:<br />
+                    <b>User Name:</b> {{ email_content.get('user_name' , '') }}<br />
+                    <b>User Industry:</b> {{ email_content.get('user_industry' , '') }}<br />
+                    <b>Type Of Space Required:</b> {{ email_content.get('space_type' , '') }}<br />
+                    <b>From:</b> {{email_content.get('from_date' , '') }} <br />
+                    <b>To:</b> {{ email_content.get('to_date' , '') }} <br />
+                    <b>Timings of use:</b> {{ email_content.get('from_time' , '') }} to {{ email_content.get('to_time' , '') }}<br />
+                    <b>Facility required:</b> {{ email_content.get('facility' , '') }}<br /><br />
+                    As per the cancellation policy of MyCuteOffice.com, (25% / 50% / 75%) of the transaction value will be remitted to you. The remaining will be returned back to the user.
+				</p>
+            </td>
+        </tr>
+  </table>
+{% endblock content %}

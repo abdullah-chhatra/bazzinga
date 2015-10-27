@@ -1,9 +1,0 @@
-admin: enquiry: Enquiry accept / reject by space owner
-
-Dear {{ admin['name'] }},
-
-The Space ID: {{ admin['space_id'] }}  has Accepted the Enquiry ID: {{ admin['enq_id'] }}
-
-THANK YOU!
-
-Team MyCuteOffice.com

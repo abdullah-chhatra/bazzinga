@@ -1,0 +1,13 @@
+ss: cancel Booking: cancel booking request
+
+Dear {{ email_content.get('name', '')|title }},
+
+We have received your request to cancel the booking ID: {{ email_content.get('book_id', '') }}
+
+The request has been received by the Space ID: {{ email_content.get('space_id', '') }}
+
+You will receive a notification when the request is approved or disapproved.
+
+THANK YOU!
+
+Team MyCuteOffice.com

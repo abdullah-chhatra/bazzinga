@@ -1,9 +1,0 @@
-ADmin: booking: accept reject status
-
-Dear {{ admin['name'] }},
-
-The booking ID:  {{ admin['book_id'] }} has been rejected by the space provider.
-
-THANK YOU!
-
-Team MyCuteOffice.com
