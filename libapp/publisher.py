@@ -2,6 +2,7 @@ __author__ = 'leena'
 
 import redis
 import json
+import ast
 
 from libapp import app
 from libapp import pubsubd
@@ -34,6 +35,9 @@ def subscribe_msg():
             subject = mail_dict.get("subject", "")
             recipient = mail_dict.get("recipient", "")
             email_content = mail_dict.get("email_content", "")
+            if isinstance(email_content, unicode):
+                app.logger.warning("Data: {data}".format(data=email_content))
+                email_content = ast.literal_eval(email_content)
 
             # Call email notifier
             email_notifier(category, author, sender, recipient, subject, email_content=email_content)
