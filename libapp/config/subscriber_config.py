@@ -4,6 +4,7 @@ __author__ = 'leena'
 def get_template_name(category):
     return {"space_progress": "space_progress",
             "space_status_change": "space_status_change",
+            "space_status_publish": "space_status_publish",
             "space_status_complete": "space_status_complete",
             "space_cityadd": "space_cityadd",
             "space_new" : 'space_new',
