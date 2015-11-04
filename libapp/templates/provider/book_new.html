@@ -4,19 +4,23 @@
 		<tr>
             <td>
                 <p style="font-weight: 600">Dear {{ email_content.get('name' , '')|title }},</p>
+
 				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-				    There is a booking request for your space (Space ID: {{ email_content.get('space_id' , '') }}) from a user.<br /><br />
-                    <b><u>The details of the booking</u></b>:<br />
-                    <b>User Name:</b> {{ email_content.get('user_name' , '') }}<br />
-                    <b>User Industry:</b> {{ email_content.get('user_industry' , '') }}<br />
-                    <b>Type Of Space Required:</b> {{ email_content.get('space_type' , '') }}<br />
-                    <b>From:</b> {{ email_content.get('from_date' , '') }} <br />
-                    <b>To:</b> {{ email_content.get('to_date' , '') }} <br />
-                    <b>Timings of use:</b> {{ email_content.get('from_time' , '') }} to {{ email_content.get('to_time' , '') }}<br />
-                    <b>Facility required:</b> {{email_content.get('facility' , '') }}<br /><br />
-                    Please ensure the space is available as per the details mentioned above.<br />
-                    Please confirm the booking.<br />
-                    <a href="{{ email_content.get('link' , '') }}" target="_blank">Click here</a> if you require to chat with the user.
+				    We have received the payment for booking for your space in ({{ email_content.get('location', '') }})<br /><br />
+                    <b>Booking Details</b>:<br />
+                    <b>Capacity:</b> {{ email_content.get('capacity' , '') }}<br />
+                    <b>Address:</b> {{ email_content.get('address' , '') }}<br />
+                    <b>Date:</b> {{ email_content.get('from_date' , '') }} to {{ email_content.get('to_date' , '') }} <br />
+                    <b>Timings:</b> {{ email_content.get('from_time' , '') }} to {{ email_content.get('to_time' , '') }}<br />
+                    <b>Ameneties:</b> {{email_content.get('ameneties' , '') }}
+                </p>
+
+                <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
+                    Please confirm the booking by clicking <a href="{{ email_content.get('booking_confirm_link' , '') }}" target="_blank">here</a>. We will process the payment within 7 working days of the check-in date.
+                </p>
+
+                <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
+                   Click<a href="{{ email_content.get('link' , '') }}" target="_blank"> here</a>to communicate with the user. .
 				</p>
             </td>
         </tr>

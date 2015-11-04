@@ -1,27 +1,24 @@
 Space_provider:booking: Reminder of Visit
 
 
-Dear {{ email_content.get('name' , '')|title }},
+Hi {{ email_content.get('name', '')|title }},
 
-The conference room / cabin space usage for your space ID {{ email_content.get('space_id' , '') }} is due on 10 Sep 2015 for the Booking ID: {{ email_content.get('book_id' , '') }}
+{{ email_content.get('ss_name', '') }} (Booking ID: {{ email_content.get('book_id', '') }}) has cancelled the booking in your space due on {{ email_content.get('due_date', '') }}
 
-The details of the booking:
+Booking Details:
 
-User Name: {{ email_content.get('user_name' , '') }}
+Capacity: {{ email_content.get('capacity' , '') }}
 
-User Industry: {{ email_content.get('user_industry' , '') }}
+Address: {{ email_content.get('address' , '') }}
 
-Type Of Space Required: {{ email_content.get('space_type' , '') }}
+Date: {{ email_content.get('from_date' , '') }} to {{ email_content.get('to_date' , '') }}
 
-From: {{ email_content.get('from_date' , '') }}
+Timings: {{ email_content.get('from_time' , '') }} to {{ email_content.get('to_time' , '') }}
 
-To: {{ email_content.get('to_date' , '') }}
+Ameneties: {{email_content.get('ameneties' , '') }}
 
-Timings of use: {{ email_content.get('from_time' , '') }} to {{ email_content.get('to_time' , '') }}
+You can reach us on +91-8286088707 or write to us on hello@mycuteoffice.com if you face any issues or need any clarifications.
 
-Facility required: {{ email_content.get('facility' , '') }}
-
-Please ensure the space is available as per the details mentioned above.
 
 THANK YOU!
 

@@ -3,25 +3,13 @@ Space_provider:booking: Seeker’s request to cancel the booking
 
 Dear {{ email_content.get('name' , '')|title }},
 
-The Booking ID: {{ email_content.get('book_id' , '') }} has requested to cancel the booking for your space ID: {{email_content.get('space_id' , '') }}
+This is just a gentle reminder for {{ email_content.get('ss_name' , '')|title }} booking on {{ email_content.get('date' , '')|title }}. Please be available during the check-in, verify identity of the visitor and ensure that all the facilities and amenities as mentioned in the booking summary are made available.
 
-The details of the booking:
+Kindly find attached the booking summary for your reference.
 
-User Name: {{ email_content.get('user_name' , '') }}
+In case of any cancellation, we will inform you atleast 24 hours prior to the check-in date.
 
-User Industry: {{ email_content.get('user_industry' , '') }}
-
-Type Of Space Required: {{ email_content.get('space_type' , '') }}
-
-From: {{ email_content.get('from_date' , '') }}
-
-To: {{ email_content.get('to_date' , '') }}
-
-Timings of use: {{ email_content.get('from_time' , '') }} to {{ email_content.get('to_time' , '') }}
-
-Facility required: {{ email_content.get('facility' , '') }}
-
-As per the cancellation policy of MyCuteOffice.com, (25% / 50% / 75%) of the transaction value will be remitted to you. The remaining will be returned back to the user.
+You can reach us on +91-8286088707 or write to us on hello@mycuteoffice.com if you face any issues or need any clarifications.
 
 THANK YOU!
 
