@@ -3,11 +3,25 @@
   <table width="100%" style="height: 100%;" cellpadding="15" cellspacing="0" border="0">
 		<tr>
             <td>
-                <p style="font-weight: 600">Hi {{ email_content.get('name', '')|title }},</p>
+                <p style="font-weight: 600">Hi {{ email_content.get('name', '') }},</p>
 
-				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-				    Congratulations! Your space with Space ID: &nbsp;<b>{{ email_content.get('space_id', '') }}</b>&nbsp; is now Published and will appear in the search results.
-				</p>
+                <p style="font-weight: 600">The status of your space has been changed from Published to {{ email_content.get('space_status', '')}}</p>
+
+                <p style="font-weight: 600">If you wish to publish the space again in the future,.</p>
+
+                <p style="font-weight: 600">
+                    <ol>
+                         <li>Review your listing by clicking <a href="{{ email_content.get('space_link','')}}" target="_blank">here</a></li>
+                         <li>Click ‘Edit’</li>
+                         <li>Enter the required details</li>
+                         <li>Accept our Terms and Pricing</li>
+                         <li>Click Publish.</li>
+                    </ol>
+                </p>
+
+                <p style="font-weight: 600">
+                    You can reach us on +91-8286088707 or write to us on hello@mycuteoffice.com if you face any issues or need any clarifications
+                </p>
             </td>
         </tr>
   </table>
