@@ -1,18 +1,19 @@
 Space_provider: Enquiry: Enquiry added by space seekers
 
-Dear {{ email_content.get('name', '')|title }},
+Hi {{ email_content.get('name', '')|title }},
 
-{{ email_content.get('ss_name', '') }} has liked your space and requested for a visit.
+   {{ email_content.get('ss_name', '') }} has enquired for your office in ({{ email_content.get('location', '') }}).
 
-{{ email_content.get('ss_name', '') }}'s message:
+   {{ email_content.get('ss_name', '') }}'s message:
 
-{{ email_content.get('msg', '') }}
+   {{ email_content.get('ss_msg', '') }}
 
-Reply
+  Click here to respond to {{ email_content.get('ss_name', '') }}
 
-My Cute Office has shared your contact details and address with the enquirer.
+  We have shared your contact details and address with {{ email_content.get('ss_name', '') }}. He should call you soon.
 
-If you have any queries, please feel free to contact us on 7738888577 / hello@mycuteoffice.com
+  You can reach us on +91-8286088707 or write to us on hello@mycuteoffice.com if you face any issues or need any clarifications.
+
 
 THANK YOU!
 

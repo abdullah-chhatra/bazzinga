@@ -1,0 +1,17 @@
+SP: Reminder Mail for completing listing (% completed mail)
+
+Hi {{ email_content.get('name', '')|title }},
+
+I noticed you have not been able to complete your space listing on My Cute Office. Just checking if you want to have a call to discuss any issues you may be facing? I am available on call on +91-8286088707.
+
+Alternatively, you can complete the listing by following these 3 easy steps:
+
+Edit your listing by clicking here
+
+Enter the required details including the images
+
+Accept our term and pricing.
+
+Waiting eagerly to share your space details with thousands of space seekers on My Cute Office.
+
+
