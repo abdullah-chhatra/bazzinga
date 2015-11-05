@@ -4,10 +4,11 @@
 		<tr>
             <td>
                 <p style="font-weight: 600">Dear {{ email_content.get('name', '')|title }},</p>
-				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-				    You have generated enquiry for the Space ID: &nbsp;<span style="font-weight: 600;"> {{ email_content.get('space_id', '') }} </span><br>
-                    Your Enquiry ID is: &nbsp;&nbsp;<b>{{email_content.get('enq_id', '') }}</b><br>
-                    You will receive the details of the space within 24 hours.
+                <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
+				   You have generated enquiry for the Space in <b>({{ email_content.get('location', '') }})</b>
+				</p>
+                 <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
+                    Our executive will shortly get in touch and share the details of the space with you.
 				</p>
             </td>
         </tr>
