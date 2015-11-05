@@ -4,7 +4,9 @@ Dear {{ email_content.get('name','') |title}},
 
 A new booking request has been generated with booking ID:  {{ email_content.get('book_id','') }}
 
-Booking request details Name:  {{ email_content.get('name','') }}
+Booking request details,
+
+Name:  {{ email_content.get('name','') }}
 Contact:  {{ email_content.get('contact','') }}
 Email Address:  {{ email_content.get('email','') }}
 User Industry:  {{ email_content.get('user_industry','') }}
