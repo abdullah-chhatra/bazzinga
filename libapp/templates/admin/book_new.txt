@@ -17,4 +17,7 @@ Facilities included: {{ email_content.get('facility','') }}
 
 THANK YOU!
 
-Team MyCuteOffice.com
+Neelay Jain
+Co-Founder, My Cute Office
+
+[tagline]

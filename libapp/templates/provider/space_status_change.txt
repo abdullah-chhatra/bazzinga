@@ -3,3 +3,9 @@
 Dear {{ email_content.get('name', '')|title }},
 
 Congratulations! Your space with Space ID: {{ email_content.get('space_id', '') }} is now Published and will appear in the search results.
+
+THANK YOU!
+
+Neelay Jain
+Co-Founder, My Cute Office
+[tagline]

@@ -7,3 +7,7 @@ The status of your space with the Space ID: {{ email_content.get('space_id','') 
 If you wish to publish the space again in the future, click on the link below,
 
 --> Go to Change status -->Select Request to Publish
+
+Neelay Jain
+Co-Founder, My Cute Office
+[tagline]
