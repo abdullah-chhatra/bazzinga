@@ -28,7 +28,6 @@ def generate_message(recipients, subject, html_body, text_body, sender, category
     message.add_category(category)
     return message
 
-
 def send_message(message):
     try:
         msg = sg.send(message)
