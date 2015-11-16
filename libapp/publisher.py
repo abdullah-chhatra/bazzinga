@@ -6,7 +6,7 @@ import json
 from libapp import app
 from libapp import pubsubd
 from config import libconf
-from emails import email_notifier
+from emails import message_notifier
 
 
 queue = redis.StrictRedis(host=libconf.REDIS_HOST, port=libconf.REDIS_PORT, db=libconf.DB_INDEX)
@@ -36,5 +36,5 @@ def subscribe_msg():
             email_content = mail_dict.get("email_content", "")
 
             # Call email notifier
-            email_notifier(category, author, sender, recipient, subject, email_content=email_content)
+            message_notifier(category, author, sender, recipient, subject, email_content=email_content)
 
