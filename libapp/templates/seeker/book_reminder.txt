@@ -6,4 +6,6 @@ Your booking (Booking ID: {{ email_content.get('book_id', '') }} ) for the Space
 
 THANK YOU!
 
-Team MyCuteOffice.com
+Neelay Jain
+Co-Founder, My Cute Office
+[tagline]

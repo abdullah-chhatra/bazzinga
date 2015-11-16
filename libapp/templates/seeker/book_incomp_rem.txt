@@ -2,10 +2,23 @@ SS: Booking:Booking incmplete reminder
 
 Dear {{ email_content.get('name', '')|title }},
 
-Your booking (Booking ID:{{ email_content.get('name', '') }} ) is Incomplete. Click below to complete your booking.
+We saw you were interested in booking the space but could not go ahead.
 
-Complete Your Booking!
+If you are facing any issues with your booking, you can call us on +91 7738888577
+
+
+You can revisit ({{ email_content.get('space_id', '') }}) by clicking here
+
+You can resume your booking by clicking here
+
+
+You will get the (offer) for booking within the next 24 hours by using coupon code ({{ email_content.get('code', '') }}).
+
+You can reach us on +91-8286088707 or write to us on hello@mycuteoffice.com if you face any issues or need any clarifications.
+
 
 THANK YOU!
 
-Team MyCuteOffice.com
+Neelay Jain
+Co-Founder, My Cute Office
+[tagline]

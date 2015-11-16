@@ -6,4 +6,7 @@ The user of Booking ID:  {{ email_content.get('book_id','') }}  has requested to
 
 THANK YOU!
 
-Team MyCuteOffice.com
+Neelay Jain
+Co-Founder, My Cute Office
+
+[tagline]

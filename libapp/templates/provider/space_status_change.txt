@@ -1,9 +1,9 @@
-Hi {{ email_content.get('name', '')}},
-The status of your space has been changed from Published to {{ email_content.get('space_status', '')}}
-If you wish to publish the space again in the future,
-1. Review your listing by clicking {{ email_content.get('space_link','')}} here
-2. Click ‘Edit’
-3. Enter the required details
-4. Accept our Terms and Pricing
-5. Click Publish
-You can reach us on +91-8286088707 or write to us on hello@mycuteoffice.com if you face any issues or need any clarifications.
+Dear {{ email_content.get('name', '')|title }},
+
+Congratulations! Your space with Space ID: {{ email_content.get('space_id', '') }} is now Published and will appear in the search results.
+
+THANK YOU!
+
+Neelay Jain
+Co-Founder, My Cute Office
+[tagline]

@@ -6,4 +6,6 @@ The Space ID: {{ email_content.get('space_id','') }}  has Accepted the Enquiry I
 
 THANK YOU!
 
-Team MyCuteOffice.com
+Neelay Jain
+Co-Founder, My Cute Office
+[tagline]

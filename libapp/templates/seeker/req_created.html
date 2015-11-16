@@ -5,13 +5,12 @@
             <td>
                 <p style="font-weight: 600">Dear {{ email_content.get('name', '')|title }},</p>
 				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
+                    We have received your requirement on My Cute Office with the following message.<br />
 
-                     Your requirement is generated on MyCuteOffice.com<br />
-
-                     Your Requirement ID is &nbsp;<span style="font-weight: 600;  font-style: italic;"> {{ email_content.get('req_id', '') }} </span><br />
-
-                     Your message received:<br />
-                     “<span style="font-weight: 600; font-style: italic;"> {{ email_content.get('msg', '') }} </span> “
+                    {{ email_content.get('msg', '') }}
+                </p>
+                <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
+                    You can reach us on +91-8286088707 or write to us on hello@mycuteoffice.comif you face any issues or need any clarifications.
                 </p>
             </td>
         </tr>

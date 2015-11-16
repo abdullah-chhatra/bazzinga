@@ -2,12 +2,13 @@ Space seeker: Enquiry: New enquiry created
 
 Dear {{ email_content.get('name', '')|title }},
 
-You have generated enquiry for the Space ID: {{ email_content.get('space_id', '') }}
+You have generated enquiry for the Space in ({{ email_content.get('location', '') }})
 
-Your Enquiry ID is: {{ email_content.get('ennq_id', '') }}
+Our executive will shortly get in touch and share the details of the space with you.
 
-You will receive the details of the space within 24 hours.
 
 Thank You,
 
-Team MyCuteOffice
+Neelay Jain
+Co-Founder, My Cute Office
+[tagline]

@@ -16,4 +16,6 @@ Your Referral code is {{ email_content.get('ref_code','') }}
 
 THANK YOU!
 
-Team MyCuteOffice.com
+Neelay Jain
+Co-Founder, My Cute Office
+[tagline]

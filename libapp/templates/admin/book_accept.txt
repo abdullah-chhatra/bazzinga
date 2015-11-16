@@ -6,4 +6,7 @@ The booking ID:  {{ email_content.get('book_id','') }} has been accepted by the 
 
 THANK YOU!
 
-Team MyCuteOffice.com
+Neelay Jain
+Co-Founder, My Cute Office
+
+[tagline]

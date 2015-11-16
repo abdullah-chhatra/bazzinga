@@ -6,11 +6,13 @@ You booked and used the (conference room / cabin space) in space ID: {{email_con
 
 Please select a rating based on the following.
 
-5. The quality of space
-6. The facilities available as per the requirement
-7. The location of the space
-8. Check-in process in the space
+    1. The quality of space
+    2. The facilities available as per the requirement
+    3. The location of the space
+    4. Check-in process in the space
 
 THANK YOU!
 
-Team MyCuteOffice.com
+Neelay Jain
+Co-Founder, My Cute Office
+[tagline]
