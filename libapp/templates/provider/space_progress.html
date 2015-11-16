@@ -4,17 +4,22 @@
 		<tr>
             <td>
                 <p style="font-weight: 600">Dear {{ email_content.get('name', '')|title }},</p>
-				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-				    Thank you for listing your space with us! Your space completion score for your Space ID: &nbsp;<b> {{ email_content.get('space_id', '') }}</b>&nbsp; is &nbsp;<b>{{ email_content.get('percent', '') }}%</b> (bar graph)
+                <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
+				    Thank you for listing your space with us!<br />You are just 3 steps away from earning rent from your space.
 				</p>
                 <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-				   The spaces with 100% completion score get 10 times more visibility in our search results.
+				    Just follow these steps to make your space available to thousands of space seekers:
+                    <ol>
+                    <li>Edit your listing by clicking <a href="{{ email_content.get('edit_listing_link', '') }}" target="_blank" style="text-decoration: none;">here</a></li>
+                    <li>Enter the required details including the images</li>
+                    <li>Accept our <a href="{{ email_content.get('term_link', '') }}" target="_blank" style="text-decoration: none;">term</a> and <a href="{{ email_content.get('pricing_link', '') }}" target="_blank" style="text-decoration: none;">pricing</a></li></li>
+                   </ol>
 				</p>
                 <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-				    Click on the link below to complete your space listing. <br />
-                    <a href="{{ email_content.get('link', '') }}" target="_blank" style="display: inline-block; padding: 5px 25px; background-color: black; color: white; border: 1px solid gray; text-decoration: none;">(Link)</a><br />
-                    Complete your listing and get your space appear in search results.  <br />
-
+				    Once your listing is complete, our team will review and publish your space after verifying the details.
+				</p>
+                <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
+				    You can reach us on +91-8286088707 or write to us on hello@mycuteoffice.com if you face any issues or need any clarifications.
 				</p>
             </td>
         </tr>
