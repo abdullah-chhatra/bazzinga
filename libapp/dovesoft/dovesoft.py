@@ -18,19 +18,19 @@ from .exceptions import DoveSoftClientError, DoveSoftServerError
 class DoveSoftClient(object):
     """ DoveSoft API """
 
-    def __init__(self, username, password_or_key=None, **opts):
+    def __init__(self, username, password_or_key=None, **kwargs):
         """
         Construct DoveSoft API object
         """
         self.useragent = 'dovesoft/' + __version__ + ';python'
         self.username = username
         self.password = password_or_key
-        self.host = opts.get('host', "http://mobicomm.dove-sms.com")
-        self.endpoint = opts.get('endpoint', "/submitsms.jsp")
+        self.host = kwargs.get('host', "http://mobicomm.dove-sms.com")
+        self.endpoint = kwargs.get('endpoint', "/submitsms.jsp")
         self.sms_url = self.host + self.endpoint
-        self._raise_errors = opts.get('raise_errors', False)
+        self._raise_errors = kwargs.get('raise_errors', False)
         # urllib cannot connect to SSL servers using proxies
-        self.proxies = opts.get('proxies', None)
+        self.proxies = kwargs.get('proxies', None)
 
     def _build_body(self, message):
         if sys.version_info < (3, 0):
@@ -68,9 +68,9 @@ class DoveSoftClient(object):
             urllib_request.install_opener(opener)
         data = urlencode(self._build_body(message), True).encode('utf-8')
         req = urllib_request.Request("{url}?{data}".format(url=self.sms_url, data=data))  # self.sms_url + '?' + data
-
         response = urllib_request.urlopen(req, timeout=10)
         body = response.read()
+
         return response.getcode(), body
 
     def send(self, message):

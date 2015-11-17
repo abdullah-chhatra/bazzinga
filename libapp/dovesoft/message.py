@@ -1,10 +1,9 @@
 
-
 class Sms(object):
     """
     Dove soft message
     """
-    def __init__(self, **opts):
+    def __init__(self, **kwargs):
         """
         Constructs Dove Soft Message object.
 
@@ -13,20 +12,20 @@ class Sms(object):
             message: SMS body
             time: Set date and time
         """
-        self.mobile = opts.get("mobile", "")
-        self.message = opts.get("message", "")
-        self.senderid = opts.get("senderid", "")
-        self.accusage = opts.get("accusage", "")
-        self.unicode_status = opts.get("unicode_status", "")
-        self.smstype = opts.get("smstype", "")
-        self.time = opts.get("time", "")
-        self.idno = opts.get("idno", "")
+        self.mobile = kwargs.get("mobile", "")
+        self.message = kwargs.get("message", "")
+        self.senderid = kwargs.get("senderid", "")
+        self.accusage = kwargs.get("accusage", "")
+        self.unicode_status = kwargs.get("unicode_status", "")
+        self.smstype = kwargs.get("smstype", "")
+        self.time = kwargs.get("time", "")
+        self.idno = kwargs.get("idno", "")
 
-    def set_to(self, to):
-        self.mobile = to
+    def set_mobile(self, mobile):
+        self.mobile = mobile
 
-    def set_message(self, text):
-        self.message = text
+    def set_message(self, message):
+        self.message = message
 
     def set_senderid(self, senderid):
         self.senderid = senderid
@@ -34,7 +33,7 @@ class Sms(object):
     def set_accusage(self, accusage):
         self.accusage = accusage
 
-    def set_unicode(self, unicode_status):
+    def set_unicode_status(self, unicode_status):
         self.unicode_status = unicode_status
 
     def set_smstype(self, smstype):
