@@ -7,8 +7,8 @@ from publisher import publish_msg, subscribe_msg
 
 
 @celeryd.task(priority=0)
-def transform_data():
-    publish_msg()
+def transform_data(source_q, dest_q):
+    publish_msg(source_q, dest_q)
 
 
 @celeryd.task(priority=1)

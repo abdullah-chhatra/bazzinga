@@ -28,8 +28,11 @@ DB_INDEX = 0
 SG_USER = "hello@mycuteoffice.com"
 SG_PASS = "mycuteofficeemail"
 
-# Queue list
+# Publisher Queue list
 PUB_EMAIL_Q = "email-pub"
+PUB_SMS_Q = "sms-pub"
+PUB_PUSH_Q = "push-pub"
+# Celery Queue list
 EMAIL_Q = "email"
 SMS_Q = "sms"
 PUSH_Q = "push"

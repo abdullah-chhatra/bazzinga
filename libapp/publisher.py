@@ -14,13 +14,13 @@ from sms import message_notifier as sms_notifier
 queue = redis.StrictRedis(host=libconf.REDIS_HOST, port=libconf.REDIS_PORT, db=libconf.DB_INDEX)
 
 
-def publish_msg():
-    q_length = queue.llen(libconf.PUB_EMAIL_Q)
-    app.logger.info("Publisher q length: {data}".format(data=q_length))
+def publish_msg(source_q=libconf.PUB_EMAIL_Q, dest_q=libconf.EMAIL_Q):
+    q_length = queue.llen(source_q)
+    app.logger.info("Publisher {queue} length: {data}".format(queue=source_q, data=q_length))
     if q_length > 0:
         for x in range(q_length):
-            mail_data = queue.rpop(libconf.PUB_EMAIL_Q)
-            queue.publish(libconf.EMAIL_Q, mail_data)
+            mail_data = queue.rpop(source_q)
+            queue.publish(dest_q, mail_data)
 
 
 def subscribe_msg():
@@ -47,4 +47,3 @@ def subscribe_msg():
 def send_sms():
     sms_notifier(mobile=9821804409, senderid=smsconf.SENDERID.OFFICE.name, accusage=smsconf.ACCUSAGE.trans.value,
                  category="enq_created", author="seeker", type="sms")
-

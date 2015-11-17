@@ -23,7 +23,7 @@ CELERYBEAT_SCHEDULE = {
     "add-every-5-seconds": {
         "task": "libapp.tasks.transform_data",
         "schedule": timedelta(seconds=5),
-        #"args": (16, 16)
+        "args": (libconf.PUB_EMAIL_Q, libconf.EMAIL_Q),
         "options": {
             "queue" : libconf.EMAIL_Q,
             "serializer" : "json"
