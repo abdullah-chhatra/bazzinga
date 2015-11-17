@@ -2,7 +2,7 @@ __author__ = 'leena'
 
 import os
 import sendgrid
-from sendgrid.exceptions import (SendGridClientError)
+from sendgrid.exceptions import SendGridClientError
 from flask import render_template
 from libapp import app
 from config.subscriber_config import get_template_name
@@ -28,7 +28,7 @@ def generate_message(recipients, subject, html_body, text_body, sender, category
     message.add_category(category)
     return message
 
-def send_email(message):
+def send_message(message):
     try:
         msg = sg.send(message)
         app.logger.info("Successfully sent message: {msg}".format(msg=msg))
@@ -39,10 +39,10 @@ def send_email(message):
         raise SendGridClientError(sgce.code, sgce.read())
 
 
-def email_notifier(category, author, sender, recipient, subject, **kwargs):
+def message_notifier(category, author, sender, recipient, subject, **kwargs):
     template_name = os.path.join(author, get_template_name(category))
     html, text = generate_template(template_name=template_name, **kwargs)
     message = generate_message(recipients=recipient, subject=subject,
                                html_body=html, text_body=text,
                                sender=sender, category=category)
-    send_email(message)
+    send_message(message)
