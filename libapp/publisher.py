@@ -41,7 +41,7 @@ def subscribe_msg():
                 email_content = ast.literal_eval(email_content)
 
             # Call email notifier
-            message_notifier(category, author, sender, recipient, subject, email_content=email_content)
+            message_notifier("email", category, author, sender, recipient, subject, email_content=email_content)
 
 
 def send_sms():

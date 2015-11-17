@@ -39,8 +39,8 @@ def send_message(message):
         raise SendGridClientError(sgce.code, sgce.read())
 
 
-def message_notifier(category, author, sender, recipient, subject, **kwargs):
-    template_name = os.path.join(author, get_template_name(category))
+def message_notifier(type, category, author, sender, recipient, subject, **kwargs):
+    template_name = os.path.join(type, author, get_template_name(category))
     html, text = generate_template(template_name=template_name, **kwargs)
     message = generate_message(recipients=recipient, subject=subject,
                                html_body=html, text_body=text,
