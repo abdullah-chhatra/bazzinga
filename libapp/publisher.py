@@ -6,8 +6,9 @@ import ast
 
 from libapp import app
 from libapp import pubsubd
-from config import libconf
+from config import libconf, smsconf
 from emails import message_notifier
+from sms import message_notifier as sms_notifier
 
 
 queue = redis.StrictRedis(host=libconf.REDIS_HOST, port=libconf.REDIS_PORT, db=libconf.DB_INDEX)
@@ -41,4 +42,9 @@ def subscribe_msg():
 
             # Call email notifier
             message_notifier(category, author, sender, recipient, subject, email_content=email_content)
+
+
+def send_sms():
+    sms_notifier(mobile=9821804409, senderid=smsconf.SENDERID.OFFICE.name, accusage=smsconf.ACCUSAGE.trans.value,
+                 category="enq_created", author="seeker", type="sms")
 
