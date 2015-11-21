@@ -1,0 +1,8 @@
+Dear {{ message_content.get('name' , '') }},
+
+We have received requirement for work space at {{ message_content.get('land_mark' , '') }} landmark.
+
+THANK YOU!
+
+Neelay Jain
+Co-Founder, My Cute Office

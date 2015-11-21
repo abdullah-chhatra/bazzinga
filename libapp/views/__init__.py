@@ -3,7 +3,8 @@ __author__ = 'rahul'
 
 from flask import render_template
 from .. import app
-from ..publisher import publish_msg, send_sms
+from ..publisher import publish_msg, send_sms, subscribe_msg
+#from ..sender import publish_msg, subscribe_msg, send_sms
 from ..tasks import subscribe_data
 from ..config import libconf
 
@@ -16,7 +17,7 @@ def index():
 
 @app.route("/publisher", methods=["GET", "POST"])
 def publisher():
-    publish_msg() #.apply_async(serializer='json')
+    publish_msg(source_q=libconf.PUB_EMAIL_Q, dest_q=libconf.EMAIL_Q) #.apply_async(serializer='json')
     return render_template("publisher.html")
 
 

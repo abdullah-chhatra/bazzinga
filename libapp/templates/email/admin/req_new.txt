@@ -1,14 +1,12 @@
-Admin : Requirement: new requirement
+Dear {{ message_content.get('name' , '') }},
 
-Dear {{ email_content.get('name' , '') }},
+We have received requirement for work space at {{ message_content.get('land_mark' , '') }} landmark.
 
-We have received requirement for work space at {{ email_content.get('land_mark' , '') }} landmark.
+Name:   {{ message_content.get('user_name' , '') }}
 
-Name:   {{ email_content.get('user_name' , '') }}
+Email:   {{ message_content.get('email' , '') }}
 
-Email:   {{ email_content.get('email' , '') }}
-
-Mobile:   {{ email_content.get('mobile' , '') }}
+Mobile:   {{ message_content.get('mobile' , '') }}
 
 THANK YOU!
 

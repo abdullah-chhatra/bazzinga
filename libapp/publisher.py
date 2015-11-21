@@ -10,7 +10,6 @@ from config import libconf, smsconf
 from emails import message_notifier
 from sms import message_notifier as sms_notifier
 
-
 queue = redis.StrictRedis(host=libconf.REDIS_HOST, port=libconf.REDIS_PORT, db=libconf.DB_INDEX)
 
 
@@ -30,18 +29,20 @@ def subscribe_msg():
         app.logger.info("Subscriber read: {data}".format(data=data))
         if data and type(data) is not long:
             mail_dict = json.loads(data)
+            msg_type = mail_dict.get("msg_type", "")
             category = mail_dict.get("category", "")
             author = mail_dict.get("author", "")
-            sender = mail_dict.get("sender", "")
+            from_email = mail_dict.get("from_email", "")
             subject = mail_dict.get("subject", "")
             recipient = mail_dict.get("recipient", "")
-            email_content = mail_dict.get("email_content", "")
-            if isinstance(email_content, unicode):
-                app.logger.warning("Data: {data}".format(data=email_content))
-                email_content = ast.literal_eval(email_content)
+            message_content = mail_dict.get("message_content", "")
+            if isinstance(message_content, unicode):
+                app.logger.info("Data: {data}".format(data=message_content))
+                message_content = ast.literal_eval(message_content)
 
             # Call email notifier
-            message_notifier("email", category, author, sender, recipient, subject, email_content=email_content)
+            message_notifier(msg_type=msg_type, category=category, author=author, from_email=from_email, recipient=recipient,
+                             subject=subject, message_content=message_content)
 
 
 def send_sms():
