@@ -61,8 +61,10 @@ class Email(Notification):
         """
         Message notifier helper to send message
         """
-        template_name = os.path.join(kwargs.get("msg_type", ""), kwargs.get("author", ""), get_template_name(kwargs.get("category", "")))
+        template_name = os.path.join(kwargs.get("msg_type", ""), kwargs.get("author", ""),
+                                     get_template_name(kwargs.get("category", "")))
         kwargs = self.del_keys(["msg_type", "author"], **kwargs)
         html, text = self.get_templates(template_name=template_name, **kwargs)
         message = self.get_message(html=html, text=text, **kwargs)
-        self.send_message(message)
+        resp = self.send_message(message)
+        app.logger.info("{error} with {response}".format(error=resp[0], response=resp[1]))

@@ -23,7 +23,7 @@ CELERYBEAT_SCHEDULE = {
     "add-email-every-5-seconds": {
         "task": "libapp.tasks.transform_data",
         "schedule": timedelta(seconds=5),
-        "args": (libconf.PUB_EMAIL_Q, libconf.EMAIL_Q),
+        "args": ([libconf.PUB_EMAIL_Q, libconf.PUB_SMS_Q, libconf.PUB_PUSH_Q], [libconf.EMAIL_Q, libconf.SMS_Q, libconf.PUSH_Q]),
         "options": {
             "queue" : libconf.EMAIL_Q,
             "serializer" : "json"
@@ -36,26 +36,6 @@ CELERYBEAT_SCHEDULE = {
         #"args": (16, 16)
         "options": {
             "queue" : libconf.EMAIL_Q,
-            "serializer" : "json"
-        }
-    },
-
-    "add-sms-every-7-seconds": {
-        "task": "libapp.tasks.transform_data",
-        "schedule": timedelta(seconds=7),
-        "args": (libconf.PUB_SMS_Q, libconf.SMS_Q),
-        "options": {
-            "queue" : libconf.SMS_Q,
-            "serializer" : "json"
-        }
-    },
-
-    "add-sms-every-3-seconds": {
-        "task": "libapp.tasks.subscribe_data",
-        "schedule": timedelta(seconds=3),
-        #"args": (16, 16)
-        "options": {
-            "queue" : libconf.SMS_Q,
             "serializer" : "json"
         }
     },

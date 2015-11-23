@@ -53,8 +53,10 @@ class Sms(Notification):
         """
         Message notifier helper to send message
         """
-        template_name = os.path.join(kwargs.get("msg_type", ""), kwargs.get("author", ""), get_template_name(kwargs.get("category", "")))
+        template_name = os.path.join(kwargs.get("msg_type", ""), kwargs.get("author", ""),
+                                     get_template_name(kwargs.get("category", "")))
         kwargs = self.del_keys(["msg_type", "author", "category"], **kwargs)
         text = self.get_templates(template_name=template_name, **kwargs)
         message = self.get_message(message=text, **kwargs)
-        self.send_message(message)
+        resp = self.send_message(message)
+        app.logger.info("{error} with {res}".format(error=resp[0], res=str(resp[1]).strip("\r\n").rstrip("\n\n")))
