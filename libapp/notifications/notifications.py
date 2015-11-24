@@ -36,6 +36,8 @@ class Notification(object):
         """
         Function to delete unneeded keys
         """
+        if not isinstance(keys, list):
+            keys = str(keys).split(",")
         for key in keys:
-            del kwargs[key]
+            del kwargs[str(key).strip()]
         return kwargs

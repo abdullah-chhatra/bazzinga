@@ -24,19 +24,12 @@ REDIS_PORT = 6379
 # DB List
 DB_INDEX = 0
 
-# Send grid configuration
-SG_USER = "hello@mycuteoffice.com"
-SG_PASS = "mycuteofficeemail"
-
 # Publisher Queue list
 PUB_EMAIL_Q = "email-pub"
 PUB_SMS_Q = "sms-pub"
 PUB_PUSH_Q = "push-pub"
+
 # Celery Queue list
 EMAIL_Q = "email"
 SMS_Q = "sms"
 PUSH_Q = "push"
-
-# Email config
-SENDER = "hello@mycuteoffice.com"
-RECIPIENT = ["leenakhote23@gmail.com", "khoteleena5@gmail.com", "srahul07@gmail.com"]

@@ -5,10 +5,10 @@ from sendgrid.exceptions import SendGridClientError
 
 from notifications import Notification
 from .. import app
-from ..config import libconf
+from ..config import emailconf
 from ..config.subscriber_config import get_template_name
 
-sg = sendgrid.SendGridClient(libconf.SG_USER, libconf.SG_PASS)
+sg = sendgrid.SendGridClient(emailconf.SG_USER, emailconf.SG_PASS)
 
 
 class Email(Notification):
@@ -31,11 +31,13 @@ class Email(Notification):
         message = sendgrid.Mail()
 
         for key in kwargs.keys():
-            if key not in ["message_content"]:
+            if key not in kwargs.get("ignore", emailconf.IGNORE_KEYS):
                 func = None
                 if key not in ["to", "to_name", "cc", "bcc", "content_id", "category"]:
-                    if key is not "from_email":
+                    if key not in ["from_email", "reply_to"]:
                         func = getattr(message, "set_{key}".format(key=key))
+                    elif key == "reply_to":
+                        func = getattr(message, "set_replyto")
                     else:
                         func = getattr(message, "set_from")
                 else:
@@ -63,7 +65,7 @@ class Email(Notification):
         """
         template_name = os.path.join(kwargs.get("msg_type", ""), kwargs.get("author", ""),
                                      get_template_name(kwargs.get("category", "")))
-        kwargs = self.del_keys(["msg_type", "author"], **kwargs)
+        kwargs = self.del_keys(kwargs.get("delete", emailconf.DELETE_KEYS), **kwargs)
         html, text = self.get_templates(template_name=template_name, **kwargs)
         message = self.get_message(html=html, text=text, **kwargs)
         resp = self.send_message(message)

@@ -30,7 +30,7 @@ class Sms(Notification):
         message = dovesoft.Sms()
 
         for key in kwargs.keys():
-            if key not in ["message_content"]:
+            if key not in kwargs.get("ignore", smsconf.IGNORE_KEYS):
                 fun = getattr(message, "set_{key}".format(key=key))
                 fun(kwargs.get(key, ""))
 
@@ -55,7 +55,7 @@ class Sms(Notification):
         """
         template_name = os.path.join(kwargs.get("msg_type", ""), kwargs.get("author", ""),
                                      get_template_name(kwargs.get("category", "")))
-        kwargs = self.del_keys(["msg_type", "author", "category"], **kwargs)
+        kwargs = self.del_keys(kwargs.get("delete", smsconf.DELETE_KEYS), **kwargs)
         text = self.get_templates(template_name=template_name, **kwargs)
         message = self.get_message(message=text, **kwargs)
         resp = self.send_message(message)
