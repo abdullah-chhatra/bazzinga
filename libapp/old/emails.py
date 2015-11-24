@@ -5,8 +5,8 @@ import sendgrid
 from sendgrid.exceptions import SendGridClientError
 from flask import render_template
 from libapp import app
-from config.subscriber_config import get_template_name
-from config import libconf as settings
+from libapp.config.subscriber_config import get_template_name
+from libapp.config import libconf as settings
 
 
 sg = sendgrid.SendGridClient(settings.SG_USER, settings.SG_PASS)

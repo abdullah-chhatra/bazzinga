@@ -1,14 +1,14 @@
 
 import os
-import dovesoft
-from dovesoft.exceptions import DoveSoftClientError
+import libapp.dovesoft
+from libapp.dovesoft.exceptions import DoveSoftClientError
 from flask import render_template
-from config.subscriber_config import get_template_name
+from libapp.config.subscriber_config import get_template_name
 from libapp import app
-import config.smsconf as settings
+import libapp.config.smsconf as settings
 
 
-ds = dovesoft.DoveSoftClient(settings.USERNAME, settings.KEY)
+ds = libapp.dovesoft.DoveSoftClient(settings.USERNAME, settings.KEY)
 
 
 def generate_template(template_name, **kwargs):
@@ -17,7 +17,7 @@ def generate_template(template_name, **kwargs):
 
 
 def generate_message(**kwrgs):
-    message = dovesoft.Sms()
+    message = libapp.dovesoft.Sms()
 
     for key in kwrgs.keys():
         fun = getattr(message, "set_{key}".format(key=key))

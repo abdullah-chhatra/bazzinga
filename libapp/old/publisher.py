@@ -6,7 +6,7 @@ import ast
 
 from libapp import app
 from libapp import pubsubd
-from config import libconf, smsconf
+from libapp.config import libconf, smsconf
 from emails import message_notifier
 from sms import message_notifier as sms_notifier
 

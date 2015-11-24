@@ -1,9 +1,8 @@
 __author__ = 'rahul'
 
-
 from flask import render_template
+from libapp.old.publisher import publish_msg, send_sms
 from .. import app
-from ..publisher import publish_msg, send_sms, subscribe_msg
 #from ..sender import publish_msg, subscribe_msg, send_sms
 from ..tasks import subscribe_data
 from ..config import libconf
