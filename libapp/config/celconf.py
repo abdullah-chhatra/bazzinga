@@ -18,12 +18,16 @@ CELERY_ACKS_LATE = True
 CELERY_PREFETCH_MULTIPLIER = 1
 CELERY_ACCEPT_CONTENT = ["json"]
 
+# Scheduler celery config
+PUBLISHER_QS = [libconf.PUB_EMAIL_Q, libconf.PUB_SMS_Q, libconf.PUB_PUSH_Q]
+SUBSCRIBER_QS = [libconf.EMAIL_Q, libconf.SMS_Q, libconf.PUSH_Q]
+
 # Scheduler
 CELERYBEAT_SCHEDULE = {
     "add-email-every-5-seconds": {
         "task": "libapp.tasks.transform_data",
         "schedule": timedelta(seconds=5),
-        "args": ([libconf.PUB_EMAIL_Q, libconf.PUB_SMS_Q, libconf.PUB_PUSH_Q], [libconf.EMAIL_Q, libconf.SMS_Q, libconf.PUSH_Q]),
+        "args": (PUBLISHER_QS, SUBSCRIBER_QS),
         "options": {
             "queue" : libconf.EMAIL_Q,
             "serializer" : "json"
