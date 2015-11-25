@@ -2,11 +2,10 @@
 import ast
 import json
 import redis
-from notifications.email import Email
-from notifications.sms import Sms
-from config import libconf, smsconf
-from libapp import app
-from libapp import pubsubd
+from .notifications.email import Email
+from .notifications.sms import Sms
+from .config import libconf, smsconf
+from . import app, pubsubd
 
 
 queue = redis.StrictRedis(host=libconf.REDIS_HOST, port=libconf.REDIS_PORT, db=libconf.DB_INDEX)
@@ -55,6 +54,9 @@ def subscribe_msg():
                 sms_obj = Sms()
                 sms_obj.message_notifier(msg_type=msg_type, senderid=senderid, mobile=to,category=category, author=author,
                                          accusage=accusage, message_content=message_content)
+            elif msg_type == "push":
+                # It is Push notification
+                pass
             else:
-                # Its a push notification
+                # Its a web notification
                 pass

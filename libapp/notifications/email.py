@@ -3,7 +3,7 @@ from flask import render_template
 import sendgrid
 from sendgrid.exceptions import SendGridClientError
 
-from notifications import Notification
+from .notifications import Notification
 from .. import app
 from ..config import emailconf
 from ..config.subscriber_config import get_template_name

@@ -1,7 +1,7 @@
 __author__ = 'leena'
 
 from datetime import timedelta
-from libapp.config import libconf
+from . import libconf
 
 # Celery configuration
 # Custom

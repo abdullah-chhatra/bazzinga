@@ -3,9 +3,9 @@ from flask import render_template
 
 from .. import dovesoft
 from ..dovesoft.exceptions import DoveSoftClientError
-from notifications import Notification
 from .. import app
 from ..config import smsconf
+from .notifications import Notification
 from ..config.subscriber_config import get_template_name
 
 ds = dovesoft.DoveSoftClient(smsconf.USERNAME, smsconf.KEY)

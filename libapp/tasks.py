@@ -1,9 +1,8 @@
 __author__ = 'leena'
 
-from . import celeryd
-from libapp import app
-# from publisher import publish_msg, subscribe_msg
+from . import app, celeryd
 from .sender import publish_msg, subscribe_msg
+
 
 @celeryd.task(priority=0)
 def transform_data(source_q, dest_q):
