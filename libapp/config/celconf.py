@@ -45,13 +45,17 @@ CELERYBEAT_SCHEDULE = {
     },
 }
 
+# Broker dbs
+BROKER_DB = 0
+BACKEND_DB = 1
+
 #Broker configurations
 BROKER_TRANSPORT = "redis"
 BROKER_URL = "{transport}://{rserver}:{rport}/{rdb}".format(transport=BROKER_TRANSPORT, rserver=libconf.REDIS_HOST,
-                                                            rport=libconf.REDIS_PORT, rdb=libconf.DB_INDEX)
+                                                            rport=libconf.REDIS_PORT, rdb=BROKER_DB)
 CELERY_RESULT_BACKEND = "{transport}://{rserver}:{rport}/{rdb}".format(transport=BROKER_TRANSPORT,
                                                                        rserver=libconf.REDIS_HOST,
-                                                                       rport=libconf.REDIS_PORT, rdb=libconf.DB_INDEX)
+                                                                       rport=libconf.REDIS_PORT, rdb=BACKEND_DB)
 
 CELERY_BROKER_HOST = "{transport}://{rserver}:{rport}".format(transport=BROKER_TRANSPORT, rserver=libconf.REDIS_HOST,
                                                               rport=libconf.REDIS_PORT)
