@@ -27,7 +27,7 @@ class DoveSoftClient(object):
         self.password = password_or_key
         self.host = kwargs.get('host', "http://mobicomm.dove-sms.com")
         self.endpoint = kwargs.get('endpoint', "/submitsms.jsp")
-        self.sms_url = self.host + self.endpoint
+        self.sms_url = "{host}{endpoint}".format(host=self.host, endpoint=self.endpoint)
         self._raise_errors = kwargs.get('raise_errors', False)
         # urllib cannot connect to SSL servers using proxies
         self.proxies = kwargs.get('proxies', None)

@@ -8,9 +8,14 @@ class Sms(object):
         Constructs Dove Soft Message object.
 
         Args:
-            to: Recipient mobile number
+            mobile: Recipient mobile number
             message: SMS body
-            time: Set date and time
+            senderid: Sender id [merchant id]
+            accusage: Account usage type
+            unicode_status: Unicode enabled or not [Optional]
+            smstype: type of sms [Optional]
+            time: Set date and time [Optional]
+            idno: id no [Optional]
         """
         self.mobile = kwargs.get("mobile", "")
         self.message = kwargs.get("message", "")

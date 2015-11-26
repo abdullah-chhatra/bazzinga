@@ -3,7 +3,7 @@ from flask import render_template
 import sendgrid
 from sendgrid.exceptions import SendGridClientError
 
-from notifications import Notification
+from .notifications import Notification
 from .. import app
 from ..config import emailconf
 from ..config.subscriber_config import get_template_name
@@ -63,10 +63,13 @@ class Email(Notification):
         """
         Message notifier helper to send message
         """
-        template_name = os.path.join(kwargs.get("msg_type", ""), kwargs.get("author", ""),
-                                     get_template_name(kwargs.get("category", "")))
-        kwargs = self.del_keys(kwargs.get("delete", emailconf.DELETE_KEYS), **kwargs)
-        html, text = self.get_templates(template_name=template_name, **kwargs)
-        message = self.get_message(html=html, text=text, **kwargs)
-        resp = self.send_message(message)
-        app.logger.info("{error} with {response}".format(error=resp[0], response=resp[1]))
+        if all(key in kwargs for key in ["msg_type", "author", "category"]):
+            template_name = os.path.join(kwargs.get("msg_type", ""), kwargs.get("author", ""),
+                                         get_template_name(kwargs.get("category", "")))
+            kwargs = self.del_keys(kwargs.get("delete", emailconf.DELETE_KEYS), **kwargs)
+            html, text = self.get_templates(template_name=template_name, **kwargs)
+            message = self.get_message(html=html, text=text, **kwargs)
+            resp = self.send_message(message)
+            app.logger.info("{error} with {response}".format(error=resp[0], response=resp[1]))
+        else:
+            app.logger.error("No template data available: {data}".format(data=kwargs.keys()))
