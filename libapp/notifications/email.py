@@ -65,7 +65,7 @@ class Email(Notification):
         """
         if all(key in kwargs for key in ["msg_type", "author", "category"]):
             template_name = os.path.join(kwargs.get("msg_type", ""), kwargs.get("author", ""),
-                                         get_template_name(kwargs.get("category", "")))
+                                         kwargs.get("category", ""), kwargs.get("template", ""))
             kwargs = self.del_keys(kwargs.get("delete", emailconf.DELETE_KEYS), **kwargs)
             html, text = self.get_templates(template_name=template_name, **kwargs)
             message = self.get_message(html=html, text=text, **kwargs)

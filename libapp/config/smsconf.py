@@ -18,7 +18,7 @@ SMSTYPE                  = Enum("smstype", "normal, flash")
 
 # ignore key list and delete key list
 IGNORE_KEYS = ["message_content"]
-DELETE_KEYS = ["msg_type", "author", "category"]
+DELETE_KEYS = ["msg_type", "author", "category", "template"]
 
 
 """
