@@ -67,7 +67,7 @@ class DoveSoftClient(object):
             opener = urllib_request.build_opener(proxy_support)
             urllib_request.install_opener(opener)
         data = urlencode(self._build_body(message), True).encode('utf-8')
-        req = urllib_request.Request("{url}?{data}".format(url=self.sms_url, data=data))  # self.sms_url + '?' + data
+        req = urllib_request.Request("{url}?{data}".format(url=self.sms_url, data=data))
         response = urllib_request.urlopen(req, timeout=10)
         body = response.read()
 
