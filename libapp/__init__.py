@@ -21,16 +21,17 @@ def init_app(app):
     """
     Initializes app with needed configurations for add-on entities
     """
-    from .init import loggerd, celeryd, redisd
+    from .init import loggerd, celeryd, redisd, shortnerd
 
     loggerd.init_app(app)
     celeryd = celeryd.init_app(app)
     redisd, pubsubd = redisd.init_app(app)
+    shortnerd = shortnerd.init_app(app)
 
-    return celeryd, redisd, pubsubd
+    return celeryd, redisd, pubsubd, shortnerd
 
 
 app = create_app()
-celeryd, redisd, pubsubd = init_app(app)
+celeryd, redisd, pubsubd, shortnerd = init_app(app)
 
 from views import *
