@@ -1,12 +1,10 @@
 import os
-from flask import render_template
 import sendgrid
 from sendgrid.exceptions import SendGridClientError
-
+from flask import render_template
 from .notifications import Notification
 from .. import app
 from ..config import emailconf
-from ..config.subscriber_config import get_template_name
 
 sg = sendgrid.SendGridClient(emailconf.SG_USER, emailconf.SG_PASS)
 

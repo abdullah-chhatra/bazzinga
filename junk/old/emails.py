@@ -2,12 +2,11 @@ __author__ = 'leena'
 
 import os
 import sendgrid
-from sendgrid.exceptions import SendGridClientError
 from flask import render_template
+from junk.subscriber_config import get_template_name
 from libapp import app
-from libapp.config.subscriber_config import get_template_name
 from libapp.config import emailconf
-
+from sendgrid.exceptions import SendGridClientError
 
 sg = sendgrid.SendGridClient(emailconf.SG_USER, emailconf.SG_PASS)
 
