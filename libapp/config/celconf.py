@@ -24,9 +24,9 @@ SUBSCRIBER_QS = [libconf.EMAIL_Q, libconf.SMS_Q, libconf.PUSH_Q]
 
 # Scheduler
 CELERYBEAT_SCHEDULE = {
-    "add-email-every-5-seconds": {
+    "transform-notification-every-3-seconds": {
         "task": "libapp.tasks.transform_data",
-        "schedule": timedelta(seconds=5),
+        "schedule": timedelta(seconds=3),
         "args": (PUBLISHER_QS, SUBSCRIBER_QS),
         "options": {
             "queue" : libconf.EMAIL_Q,
@@ -34,9 +34,9 @@ CELERYBEAT_SCHEDULE = {
         }
     },
 
-    "add-email-every-2-seconds": {
+    "send-notification-every-5-seconds": {
         "task": "libapp.tasks.subscribe_data",
-        "schedule": timedelta(seconds=2),
+        "schedule": timedelta(seconds=5),
         #"args": (16, 16)
         "options": {
             "queue" : libconf.EMAIL_Q,

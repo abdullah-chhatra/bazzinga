@@ -22,7 +22,7 @@ def publish_msg(source_q=libconf.PUB_EMAIL_Q, dest_q=libconf.EMAIL_Q):
 
 def subscribe_msg():
     message = pubsubd.get_message()
-    if message:
+    while message is not None:
         data = message.get('data')
         app.logger.info("Subscriber read: {data}".format(data=data))
         if data and type(data) is not long:
@@ -38,7 +38,7 @@ def subscribe_msg():
                 message_content = ast.literal_eval(message_content)
 
             if msg_type == "email":
-                # It is email
+                # It is email notification
                 from_email = mail_dict.get("from_email", "")
                 subject = mail_dict.get("subject", "")
 
@@ -48,7 +48,7 @@ def subscribe_msg():
                                            author=author, template=template, subject=subject,
                                            message_content=message_content)
             elif msg_type == "sms":
-                # It is sms
+                # It is sms notification
                 senderid = mail_dict.get("senderid", smsconf.SENDERID.OFFICE.name)
                 accusage = mail_dict.get("accusage", smsconf.ACCUSAGE.trans.value)
 
@@ -62,3 +62,5 @@ def subscribe_msg():
             else:
                 # Its a web notification
                 pass
+
+        message = pubsubd.get_message()
