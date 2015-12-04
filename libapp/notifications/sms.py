@@ -1,12 +1,10 @@
 import os
 from flask import render_template
-
-from .. import dovesoft
-from ..dovesoft.exceptions import DoveSoftClientError
-from .. import app
-from ..config import smsconf
 from .notifications import Notification
-from ..config.subscriber_config import get_template_name
+from .. import app
+from .. import dovesoft
+from ..config import smsconf
+from ..dovesoft.exceptions import DoveSoftClientError
 
 ds = dovesoft.DoveSoftClient(smsconf.USERNAME, smsconf.KEY)
 

@@ -8,7 +8,7 @@ from libapp import app
 from libapp import pubsubd
 from libapp.config import libconf, smsconf
 from emails import message_notifier
-from sms import message_notifier as sms_notifier
+from smss import message_notifier as sms_notifier
 
 queue = redis.StrictRedis(host=libconf.REDIS_HOST, port=libconf.REDIS_PORT, db=libconf.DB_INDEX)
 

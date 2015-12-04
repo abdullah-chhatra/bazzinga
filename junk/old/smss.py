@@ -1,12 +1,10 @@
-
-import os
-import libapp.dovesoft
-from libapp.dovesoft.exceptions import DoveSoftClientError
-from flask import render_template
-from libapp.config.subscriber_config import get_template_name
-from libapp import app
 import libapp.config.smsconf as settings
-
+import libapp.dovesoft
+import os
+from flask import render_template
+from junk.subscriber_config import get_template_name
+from libapp import app
+from libapp.dovesoft.exceptions import DoveSoftClientError
 
 ds = libapp.dovesoft.DoveSoftClient(settings.USERNAME, settings.KEY)
 
