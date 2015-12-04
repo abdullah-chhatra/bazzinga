@@ -4,19 +4,19 @@
 		<tr>
             <td>
 
-                <p style="font-weight: 600">Hi {{ email_content.get('name', '')|title }},</p>
+                <p style="font-weight: 600">Hi {{ message_content.get('name', '')|title }},</p>
 
 				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-				    <b>{{ email_content.get('ss_name', '') }}</b>  has enquired for your office in ({{ email_content.get('location', '') }}).<br /><br />
-                    <b>{{ email_content.get('ss_name', '') }}'s message:</b><br />
-                    {{ email_content.get('ss_msg', '') }}
+				    <b>{{ message_content.get('ss_name', '') }}</b>  has enquired for your office in ({{ message_content.get('location', '') }}).<br /><br />
+                    <b>{{ message_content.get('ss_name', '') }}'s message:</b><br />
+                    {{ message_content.get('ss_msg', '') }}
                 </p>
                 <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-                    <a style="text-decoration: none; letter-spacing: 1px;" href="{{ email_content.get('reply_link', '') }}" target="_blank">Click here</a> to respond to {{ email_content.get('ss_name', '') }}
+                    <a style="text-decoration: none; letter-spacing: 1px;" href="{{ message_content.get('reply_link', '') }}" target="_blank">Click here</a> to respond to {{ message_content.get('ss_name', '') }}
                 </p>
 
                 <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-                  We have shared your contact details and address with <b>{{ email_content.get('ss_name', '') }}</b>. He should call you soon.
+                  We have shared your contact details and address with <b>{{ message_content.get('ss_name', '') }}</b>. He should call you soon.
                 </p>
 
                 <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">

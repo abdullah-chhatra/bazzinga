@@ -1,8 +1,8 @@
 admin: Add Space: Space waiting for approval
 
-Dear {{ email_content.get('name','')|title }},
+Dear {{ message_content.get('name','')|title }},
 
-The approval of the Space ID: {{ email_content.get('space_id','') }} is Pending.
+The approval of the Space ID: {{ message_content.get('space_id','') }} is Pending.
 
 THANK YOU!
 
