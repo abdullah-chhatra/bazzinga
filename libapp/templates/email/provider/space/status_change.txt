@@ -1,8 +1,8 @@
 
-Hi {{ email_content.get('name', '')}},
-The status of your space has been changed from Published to {{ email_content.get('space_status', '')}}
+Hi {{ message_content.get('name', '')}},
+The status of your space has been changed from Published to {{ message_content.get('space_status', '')}}
 If you wish to publish the space again in the future,
-1. Review your listing by clicking {{ email_content.get('space_link','')}} here
+1. Review your listing by clicking {{ message_content.get('space_link','')}} here
 2. Click ‘Edit’
 3. Enter the required details
 4. Accept our Terms and Pricing

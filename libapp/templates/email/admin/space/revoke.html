@@ -3,13 +3,13 @@
   <table width="100%" style="height: 100%;" cellpadding="15" cellspacing="0" border="0">
 		<tr>
             <td>
-                <p style="font-weight: 600">Dear {{ email_content.get('name','')|title }},</p>
+                <p style="font-weight: 600">Dear {{ message_content.get('name','')|title }},</p>
 				<p style="line-height: 1.8; font-size: 15px; font-family: Verdana;">
-                    The Space ID:&nbsp;<b>{{ email_content.get('space_id','') }}</b>&nbsp;</span> has been revoked.
+                    The Space ID:&nbsp;<b>{{ message_content.get('space_id','') }}</b>&nbsp;</span> has been revoked.
 				</p>
                 <p style="line-height: 1.8; font-size: 15px; font-family: Verdana;">
                    <span style="font-weight: 600;"><u>Reason for Revoking:</u></span><br />
-                    {{ email_content.get('msg','') }}
+                    {{ message_content.get('msg','') }}
 				</p>
             </td>
         </tr>

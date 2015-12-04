@@ -31,6 +31,7 @@ def subscribe_msg():
             to = mail_dict.get("to", "")
             category = mail_dict.get("category", "")
             author = mail_dict.get("author", "")
+            template = mail_dict.get("template", "")
             message_content = mail_dict.get("message_content", "")
             if isinstance(message_content, unicode):
                 app.logger.info("Data: {data}".format(data=message_content))
@@ -44,7 +45,8 @@ def subscribe_msg():
                 # Call email notifier
                 email_obj = Email()
                 email_obj.message_notifier(msg_type=msg_type, from_email=from_email, to=to, category=category,
-                                           author=author, subject=subject, message_content=message_content)
+                                           author=author, template=template, subject=subject,
+                                           message_content=message_content)
             elif msg_type == "sms":
                 # It is sms
                 senderid = mail_dict.get("senderid", smsconf.SENDERID.OFFICE.name)
@@ -53,7 +55,7 @@ def subscribe_msg():
                 # Call sms notifier
                 sms_obj = Sms()
                 sms_obj.message_notifier(msg_type=msg_type, senderid=senderid, mobile=to,category=category, author=author,
-                                         accusage=accusage, message_content=message_content)
+                                         template=template, accusage=accusage, message_content=message_content)
             elif msg_type == "push":
                 # It is Push notification
                 pass

@@ -3,18 +3,18 @@
   <table width="100%" style="height: 100%;" cellpadding="15" cellspacing="0" border="0">
 		<tr>
             <td>
-                <p style="font-weight: 600">Hi {{ email_content.get('name', '')|title }},</p>
+                <p style="font-weight: 600">Hi {{ message_content.get('name', '')|title }},</p>
 
                 <p style="font-weight: 600">We have great news for you!</p>
 
                 <p style="font-weight: 600">Your space is now live and visible to thousands of space seekers.</p>
 
                 <p style="font-weight: 600">
-                    To view your listing you can click <a href="{{ email_content.get('space_link', '') }}">here.</a>
+                    To view your listing you can click <a href="{{ message_content.get('space_link', '') }}">here.</a>
                 </p>
 
                 <p style="font-weight: 600">
-                    You can view and reply to the enquiries as well as see current bookings from your dashboard by clicking <a href="{{ email_content.get('dashboard_link', '') }}">here</a>.
+                    You can view and reply to the enquiries as well as see current bookings from your dashboard by clicking <a href="{{ message_content.get('dashboard_link', '') }}">here</a>.
                 </p>
             </td>
         </tr>

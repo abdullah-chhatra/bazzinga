@@ -1,8 +1,8 @@
 Space seeker: Enquiry: New enquiry created
 
-Dear {{ email_content.get('name', '')|title }},
+Dear {{ message_content.get('name', '')|title }},
 
-You have generated enquiry for the Space in ({{ email_content.get('location', '') }})
+You have generated enquiry for the Space in ({{ message_content.get('location', '') }})
 
 Our executive will shortly get in touch and share the details of the space with you.
 
