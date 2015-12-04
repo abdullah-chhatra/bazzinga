@@ -1,12 +1,12 @@
 SS: Booking: Book Receipt
 
-Dear {{ email_content.get('name', '')|title }},
+Dear {{ message_content.get('name', '')|title }},
 
-Congratulations! Your booking (Booking ID: {{ email_content.get('book_id', '') }} ) has been confirmed.
+Congratulations! Your booking (Booking ID: {{ message_content.get('book_id', '') }} ) has been confirmed.
 Your booking details are:
-Your Booking Id is: {{ email_content.get('book_id', '') }}
-Your Space ID is: {{ email_content.get('space_id', '') }}
-Your Enquiry Id is: {{ email_content.get('enq_id', '') }}
+Your Booking Id is: {{ message_content.get('book_id', '') }}
+Your Space ID is: {{ message_content.get('space_id', '') }}
+Your Enquiry Id is: {{ message_content.get('enq_id', '') }}
 Please find attached the payment voucher for the booking.
 
 THANK YOU!

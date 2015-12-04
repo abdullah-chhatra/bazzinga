@@ -3,15 +3,15 @@
   <table width="100%" style="height: 100%;" cellpadding="15" cellspacing="0" border="0">
 		<tr>
             <td>
-                <p style="font-weight: 600">Dear {{ email_content.get('name', '')|title }},</p>
+                <p style="font-weight: 600">Dear {{ message_content.get('name', '')|title }},</p>
 				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-                    Congratulations! Your booking (Booking ID:&nbsp;<span style="font-weight: 600;">  {{ email_content.get('book_id', '') }} </span>) has been confirmed.<br />
+                    Congratulations! Your booking (Booking ID:&nbsp;<span style="font-weight: 600;">  {{ message_content.get('book_id', '') }} </span>) has been confirmed.<br />
 				</p>
                 <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
                     Your booking details are:<br />
-                    Your Booking Id is:&nbsp;<span style="font-weight: 600;">  {{ email_content.get('book_id', '') }} </span><br />
-                    Your Space ID is:&nbsp;<span style="font-weight: 600;">  {{ email_content.get('space_id', '') }} </span><br />
-                    Your Enquiry Id is:&nbsp;<span style="font-weight: 600;">  {{ email_content.get('enq_id', '') }} </span><br />
+                    Your Booking Id is:&nbsp;<span style="font-weight: 600;">  {{ message_content.get('book_id', '') }} </span><br />
+                    Your Space ID is:&nbsp;<span style="font-weight: 600;">  {{ message_content.get('space_id', '') }} </span><br />
+                    Your Enquiry Id is:&nbsp;<span style="font-weight: 600;">  {{ message_content.get('enq_id', '') }} </span><br />
 				</p>
                 <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
                     Please find attached the payment voucher for the booking.

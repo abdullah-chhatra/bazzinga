@@ -64,6 +64,7 @@ class Email(Notification):
         Message notifier helper to send message
         """
         if all(key in kwargs for key in ["msg_type", "author", "category"]):
+            print(kwargs)
             template_name = os.path.join(kwargs.get("msg_type", ""), kwargs.get("author", ""),
                                          kwargs.get("category", ""), kwargs.get("template", ""))
             kwargs = self.del_keys(kwargs.get("delete", emailconf.DELETE_KEYS), **kwargs)
