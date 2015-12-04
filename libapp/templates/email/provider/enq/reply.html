@@ -5,11 +5,11 @@
             <td>
                 <p style="font-weight: 600">Hi {{ message_content.get('name', '')|title }}</p>
 				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-				    A reply to  <a href="{{email_content.get('link_space', '')}}" target="_blank">Cute Space</a> enquiry has been posted as follows:
+				    A reply to  <a href="{{message_content.get('link_space', '')}}" target="_blank">Cute Space</a> enquiry has been posted as follows:
                     <table width="100%" cellpadding="15" cellspacing="0" border="0">
                         <tr>
                             <td width="80px">
-                                <img width="40px" height="40px" src="{{ email_content.get('msg', '') }}" />
+                                <img width="40px" height="40px" src="{{ message_content.get('msg', '') }}" />
                             </td>
                             <td width="80px">
                                  <span style="font-family: verdana; font-size:15px; line-height: 1.5;">{{ message_content.get('name', '') }}</span>
