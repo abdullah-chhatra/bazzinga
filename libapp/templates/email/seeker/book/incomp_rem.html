@@ -3,7 +3,7 @@
   <table width="100%" style="height: 100%;" cellpadding="15" cellspacing="0" border="0">
 		<tr>
             <td>
-                <p style="font-weight: 600">Dear {{ email_content.get('name', '')|title }},</p>
+                <p style="font-weight: 600">Dear {{ message_content.get('name', '')|title }},</p>
 
 				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
                  We saw you were interested in booking the space but could not go ahead.<br />
@@ -11,12 +11,12 @@
 				</p>
 
                 <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-                 You can revisit ({{ email_content.get('space_id', '') }}) by clicking <a href="{{ email_content.get('revisit_space_link', '') }}" target="_blank">here</a>
-                    You can resume your booking by clicking <a href="{{ email_content.get('resume_booking_link', '') }}" target="_blank">here</a>
+                 You can revisit ({{ message_content.get('space_id', '') }}) by clicking <a href="{{ message_content.get('revisit_space_link', '') }}" target="_blank">here</a>
+                    You can resume your booking by clicking <a href="{{ message_content.get('resume_booking_link', '') }}" target="_blank">here</a>
 				</p>
 
                 <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-                 You will get the (offer) for booking within the next 24 hours by using coupon code ({{ email_content.get('code', '') }}).
+                 You will get the (offer) for booking within the next 24 hours by using coupon code ({{ message_content.get('code', '') }}).
 				</p>
 
                 <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">

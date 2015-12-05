@@ -5,7 +5,8 @@
             <td>
                 <p style="font-weight: 600">Dear {{ message_content.get('name','')|title }},</p>
 				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-                 You recently changed your password for your MCO account (<b>{{ message_content.get('user_name', '') }}</b>). If you did not change the password and believe your MCO account has been compromised, please contact MCO support on  <a href="{{ message_content.get('link', '') }}" target="_blank"><b>hello@mycuteoffice.com</b></a>
+                 You recently changed your password for your MCO account (<b>{{ message_content.get('user_name', '') }}</b>). If you did not change the password and believe your MCO account has been compromised, please contact MCO support on
+                    <a href="mailto:{{ message_content.get('contact_email', '')}} "target="_blank><b>{{ message_content.get('contact_email', '') }}</b></a>
 				</p>
             </td>
         </tr>

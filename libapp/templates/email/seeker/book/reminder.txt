@@ -1,8 +1,8 @@
 ss: booking: Reminder to visit
 
-Dear {{ email_content.get('name', '')|title }},
+Dear {{ message_content.get('name', '')|title }},
 
-Your booking (Booking ID: {{ email_content.get('book_id', '') }} ) for the Space ID: {{ email_content.get('space_id', '') }} is due on  {{ email_content.get('due_date', '') }}
+Your booking (Booking ID: {{ message_content.get('book_id', '') }} ) for the Space ID: {{ message_content.get('space_id', '') }} is due on  {{ message_content.get('due_date', '') }}
 
 THANK YOU!
 

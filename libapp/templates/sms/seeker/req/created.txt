@@ -1,0 +1,16 @@
+SS: Requirement: New requirement created
+
+Dear {{ email_content.get('name', '')|title }},
+
+We have received your requirement on My Cute Office with the following message.
+
+{{ email_content.get('msg', '') }}
+
+You can reach us on +91-8286088707 or write to us on hello@mycuteoffice.comif you face any issues or need any clarifications.
+
+
+THANK YOU!
+
+Neelay Jain
+Co-Founder, My Cute Office
+[tagline]
