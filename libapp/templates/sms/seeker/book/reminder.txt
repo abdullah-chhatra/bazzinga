@@ -1,0 +1,11 @@
+ss: booking: Reminder to visit
+
+Dear {{ message_content.get('name', '')|title }},
+
+Your booking (Booking ID: {{ message_content.get('book_id', '') }} ) for the Space ID: {{ message_content.get('space_id', '') }} is due on  {{ message_content.get('due_date', '') }}
+
+THANK YOU!
+
+Neelay Jain
+Co-Founder, My Cute Office
+[tagline]
