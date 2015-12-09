@@ -1,8 +1,8 @@
 ss: Booking: booking accpt /reject status
 
-Dear {{ email_content.get('name', '')|title }},
+Dear {{ message_content.get('name', '')|title }},
 
-We regret to inform you that your booking (Booking ID: {{ email_content.get('book_id', '') }} ) for the Space ID: {{ email_content.get('space_id', '') }} has been rejected. The amount will be credited back to your account within next 5 working days.
+We regret to inform you that your booking (Booking ID: {{ message_content.get('book_id', '') }} ) for the Space ID: {{ message_content.get('space_id', '') }} has been rejected. The amount will be credited back to your account within next 5 working days.
 
 However, below are the spaces that match your criteria.
 

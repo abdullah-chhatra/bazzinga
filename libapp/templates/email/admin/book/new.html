@@ -3,22 +3,22 @@
   <table width="100%" style="height: 100%;" cellpadding="15" cellspacing="0" border="0">
 		<tr>
             <td>
-                <p style="font-weight: 600">Dear {{ email_content.get('name','') |title }},</p>
+                <p style="font-weight: 600">Dear {{ message_content.get('name','') |title }},</p>
 				<p style="line-height: 1.8; font-size: 15px; font-family: Verdana;">
-                     A new booking request has been generated with booking ID:&nbsp;<b>{{ email_content.get('book_id','') }}</b>
+                     A new booking request has been generated with booking ID:&nbsp;<b>{{ message_content.get('book_id','') }}</b>
 				</p>
                 <p style="line-height: 1.8; font-size: 15px; font-family: Verdana;">
                     Booking request details
-                    Name:&nbsp;&nbsp;<b>{{ email_content.get('name','') }}</b> <br />
-                    Contact:&nbsp;&nbsp;<b>{{ email_content.get('contact','') }}</b> <br />
-                    Email Address:&nbsp;&nbsp;<b>{{ email_content.get('email','') }}</b><br />
-                    User Industry:&nbsp;&nbsp;<b>{{ email_content.get('user_industry','') }}</b><br />
-                    Space ID:&nbsp;&nbsp;<b>{{ email_content.get('space_id','') }}</b> <br />
-                    From Date:&nbsp;&nbsp;<b>{{ email_content.get('from_date','') }}</b><br />
-                    To Date:&nbsp;&nbsp;<b>{{ email_content.get('to_date','') }}</b><br />
-                    From Time: &nbsp;&nbsp;<b>{{ email_content.get('from_time','') }}</b><br />
-                    To Time:&nbsp;&nbsp;<b>{{ email_content.get('to_time','') }}</b><br />
-                    Facilities included:&nbsp;&nbsp;<b>{{ email_content.get('facility','') }}</b>
+                    Name:&nbsp;&nbsp;<b>{{ message_content.get('name','') }}</b> <br />
+                    Contact:&nbsp;&nbsp;<b>{{ message_content.get('contact','') }}</b> <br />
+                    Email Address:&nbsp;&nbsp;<b>{{ message_content.get('email','') }}</b><br />
+                    User Industry:&nbsp;&nbsp;<b>{{ message_content.get('user_industry','') }}</b><br />
+                    Space ID:&nbsp;&nbsp;<b>{{ message_content.get('space_id','') }}</b> <br />
+                    From Date:&nbsp;&nbsp;<b>{{ message_content.get('from_date','') }}</b><br />
+                    To Date:&nbsp;&nbsp;<b>{{ message_content.get('to_date','') }}</b><br />
+                    From Time: &nbsp;&nbsp;<b>{{ message_content.get('from_time','') }}</b><br />
+                    To Time:&nbsp;&nbsp;<b>{{ message_content.get('to_time','') }}</b><br />
+                    Facilities included:&nbsp;&nbsp;<b>{{ message_content.get('facility','') }}</b>
                 </p>
             </td>
         </tr>

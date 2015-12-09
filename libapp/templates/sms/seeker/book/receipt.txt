@@ -1,0 +1,16 @@
+SS: Booking: Book Receipt
+
+Dear {{ message_content.get('name', '')|title }},
+
+Congratulations! Your booking (Booking ID: {{ message_content.get('book_id', '') }} ) has been confirmed.
+Your booking details are:
+Your Booking Id is: {{ message_content.get('book_id', '') }}
+Your Space ID is: {{ message_content.get('space_id', '') }}
+Your Enquiry Id is: {{ message_content.get('enq_id', '') }}
+Please find attached the payment voucher for the booking.
+
+THANK YOU!
+
+Neelay Jain
+Co-Founder, My Cute Office
+[tagline]
