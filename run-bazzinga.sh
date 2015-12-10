@@ -2,8 +2,9 @@
 #TEST=True
 #export TEST
 
-BASEDIR=$(dirname $0)
+#BASEDIR=$(dirname $0)
+BASEDIR=$(dirname $(readlink -f $0))
 VENV=/venv/bin/activate
 
 source $BASEDIR$VENV
-python manage.py runserver
+python $BASEDIR/manage.py runserver

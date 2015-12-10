@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 BASEDIR=$(dirname $0)
+#BASEDIR=$(dirname $(readlink -f $0))
 VENV=/venv/bin/activate
 
 LOGS=/logs/
