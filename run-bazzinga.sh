@@ -3,7 +3,8 @@
 #export TEST
 
 BASEDIR=$(dirname $(readlink -f $0))
-VENV=/venv/bin/activate
+VENV=venv/bin/activate
 
-source $BASEDIR$VENV
-python $BASEDIR/manage.py runserver
+cd $BASEDIR
+source $VENV
+python manage.py runserver
