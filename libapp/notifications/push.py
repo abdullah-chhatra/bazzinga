@@ -4,6 +4,7 @@ from .notifications import Notification
 from .. import app
 from ..config import pushconf
 
+
 class Push(Notification):
 
     def __init__(self, **kwargs):
@@ -21,7 +22,7 @@ class Push(Notification):
         """
         Get message object for email
         """
-        message = sendgrid.Mail()
+        message = "" #sendgrid.Mail()
 
         for key in kwargs.keys():
             if key not in kwargs.get("ignore", pushconf.IGNORE_KEYS):
@@ -38,7 +39,7 @@ class Push(Notification):
                 func(kwargs.get(key, ""))
 
         return message
-
+    '''
     def send_message(self, message):
         """
         Send message to receiver via gateway
@@ -51,7 +52,7 @@ class Push(Notification):
             app.logger.error("Error while sending email: {msg}".format(msg=msg))
             app.logger.error("Email: {message}".format(message=message))
             raise SendGridClientError(sgce.code, sgce.read())
-
+    '''
     def message_notifier(self, **kwargs):
         """
         Message notifier helper to send message
@@ -66,4 +67,4 @@ class Push(Notification):
             resp = self.send_message(message)
             app.logger.info("{error} with {response}".format(error=resp[0], response=resp[1]))
         else:
-            app.logger.error("No template data available: {data}".format(data=kwargs.keys()))s
+            app.logger.error("No template data available: {data}".format(data=kwargs.keys()))
