@@ -26,21 +26,21 @@ def subscribe_msg():
         data = message.get('data')
         app.logger.info("Subscriber read: {data}".format(data=data))
         if data and type(data) is not long:
-            mail_dict = json.loads(data)
-            msg_type = mail_dict.get("msg_type", "")
-            to = mail_dict.get("to", "")
-            category = mail_dict.get("category", "")
-            author = mail_dict.get("author", "")
-            template = mail_dict.get("template", "")
-            message_content = mail_dict.get("message_content", "")
+            msg_dict = json.loads(data)
+            msg_type = msg_dict.get("msg_type", "")
+            to = msg_dict.get("to", "")
+            category = msg_dict.get("category", "")
+            author = msg_dict.get("author", "")
+            template = msg_dict.get("template", "")
+            message_content = msg_dict.get("message_content", "")
             if isinstance(message_content, unicode):
                 app.logger.info("Data: {data}".format(data=message_content))
                 message_content = ast.literal_eval(message_content)
 
             if msg_type == "email":
                 # It is email notification
-                from_email = mail_dict.get("from_email", "")
-                subject = mail_dict.get("subject", "")
+                from_email = msg_dict.get("from_email", "")
+                subject = msg_dict.get("subject", "")
 
                 # Call email notifier
                 email_obj = Email()
@@ -49,8 +49,8 @@ def subscribe_msg():
                                            message_content=message_content)
             elif msg_type == "sms":
                 # It is sms notification
-                senderid = mail_dict.get("senderid", smsconf.SENDERID.OFFICE.name)
-                accusage = mail_dict.get("accusage", smsconf.ACCUSAGE.trans.value)
+                senderid = msg_dict.get("senderid", smsconf.SENDERID.OFFICE.name)
+                accusage = msg_dict.get("accusage", smsconf.ACCUSAGE.trans.value)
 
                 # Call sms notifier
                 sms_obj = Sms()
