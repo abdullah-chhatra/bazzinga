@@ -14,6 +14,7 @@ def init_app(app):
     app.config["CELERY_BROKER_URL"] = celconf.BROKER_URL
     app.config["CELERY_RESULT_BACKEND"] = celconf.CELERY_RESULT_BACKEND
     app.config['CELERYBEAT_SCHEDULE'] = celconf.CELERYBEAT_SCHEDULE
+    app.config['CELERY_TASK_RESULT_EXPIRES'] = celconf.CELERY_TASK_RESULT_EXPIRES
 
     celeryd = Celery(app.import_name, broker=celconf.BROKER_URL)
     celeryd.conf.update(app.config)

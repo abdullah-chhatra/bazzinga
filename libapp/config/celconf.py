@@ -50,6 +50,7 @@ BROKER_DB = 0
 BACKEND_DB = 1
 
 #Broker configurations
+CELERY_TASK_RESULT_EXPIRES = timedelta(hours=8)
 BROKER_TRANSPORT = "redis"
 BROKER_URL = "{transport}://{rserver}:{rport}/{rdb}".format(transport=BROKER_TRANSPORT, rserver=libconf.REDIS_HOST,
                                                             rport=libconf.REDIS_PORT, rdb=BROKER_DB)
