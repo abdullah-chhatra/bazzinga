@@ -1,8 +1,11 @@
 import os
+import gcm
 from flask import render_template
 from .notifications import Notification
 from .. import app
 from ..config import pushconf
+
+gs = gcm.GCM(pushconf.API_KEY, debug=pushconf.DEBUG)
 
 
 class Push(Notification):
@@ -12,17 +15,16 @@ class Push(Notification):
 
     def get_templates(self, template_name, **kwargs):
         """
-        Get html and text templates for emails
+        Get text templates for push
         """
-        html = render_template("%s.html" % template_name, **kwargs)
-        text = render_template("%s.txt" % template_name, **kwargs)
-        return html, text
+        text = render_template("{template}.txt".format(template=template_name), **kwargs)
+        return text
 
     def get_message(self, **kwargs):
         """
         Get message object for email
         """
-        message = "" #sendgrid.Mail()
+        message = {}
 
         for key in kwargs.keys():
             if key not in kwargs.get("ignore", pushconf.IGNORE_KEYS):
@@ -39,31 +41,24 @@ class Push(Notification):
                 func(kwargs.get(key, ""))
 
         return message
-    '''
+
     def send_message(self, message):
         """
         Send message to receiver via gateway
         """
-        try:
-            msg = sg.send(message)
-            app.logger.info("Successfully sent message: {msg}".format(msg=msg))
-            return msg
-        except SendGridClientError as sgce:
-            app.logger.error("Error while sending email: {msg}".format(msg=msg))
-            app.logger.error("Email: {message}".format(message=message))
-            raise SendGridClientError(sgce.code, sgce.read())
-    '''
+        gcm.send()
+        pass
+
     def message_notifier(self, **kwargs):
         """
         Message notifier helper to send message
         """
         if all(key in kwargs for key in ["msg_type", "author", "category"]):
-            print(kwargs)
             template_name = os.path.join(kwargs.get("msg_type", ""), kwargs.get("author", ""),
                                          kwargs.get("category", ""), kwargs.get("template", ""))
             kwargs = self.del_keys(kwargs.get("delete", pushconf.DELETE_KEYS), **kwargs)
-            html, text = self.get_templates(template_name=template_name, **kwargs)
-            message = self.get_message(html=html, text=text, **kwargs)
+            text = self.get_templates(template_name=template_name, **kwargs)
+            message = self.get_message(text=text, **kwargs)
             resp = self.send_message(message)
             app.logger.info("{error} with {response}".format(error=resp[0], response=resp[1]))
         else:

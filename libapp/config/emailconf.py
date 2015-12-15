@@ -6,8 +6,3 @@ SG_PASS = "mycuteofficeemail"
 IGNORE_KEYS = ["message_content"]
 # delete key list
 DELETE_KEYS = ["msg_type", "author", "template"]
-
-
-# Email config
-SENDER = "hello@mycuteoffice.com"
-RECIPIENT = ["leenakhote23@gmail.com", "khoteleena5@gmail.com", "srahul07@gmail.com"]
