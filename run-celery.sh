@@ -1,8 +1,7 @@
 #!/bin/bash
 
-BASEDIR=$(dirname $0)
-#BASEDIR=$(dirname $(readlink -f $0))
-VENV=/venv/bin/activate
+BASEDIR=$(dirname $(readlink -f $0))
+VENV=venv/bin/activate
 
 LOGS=/logs/
 
@@ -57,6 +56,7 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
 done < $BASEDIR$CELCONFIG
 
 # Activate virtual environment
-source $BASEDIR$VENV
+cd $BASEDIR
+source $VENV
 # Run celery
 celery -A $LIBAPP.$CELERY worker -Q $QUEUE --beat --concurrency=$CONCURRENCY --loglevel=$LOGLEVEL --logfile=$BASEDIR$LOGS$LOGFILE

@@ -18,7 +18,7 @@ class Sms(Notification):
         """
         Get text templates for sms
         """
-        text = render_template("%s.txt" % template_name, **kwargs)
+        text = render_template("{template}.txt".format(template=template_name), **kwargs)
         return text
 
     def get_message(self, **kwargs):

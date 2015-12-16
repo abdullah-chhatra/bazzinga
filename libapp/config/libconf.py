@@ -7,11 +7,11 @@ DEBUG = True
 THREADED = True
 
 # flask template and static file configurations
-WORKING_DIR = os.path.dirname(os.path.realpath(sys.argv[0]))
-TEMPLATE_DIR = os.path.join(WORKING_DIR, "libapp", "templates")
-STATIC_PATH = os.path.join(WORKING_DIR, "libapp", "static")
-#TEMPLATE_DIR = os.path.join(os.getcwd(), "libapp", "templates")
-#STATIC_PATH = os.path.join(os.getcwd(), "libapp", "static")
+#WORKING_DIR = os.path.dirname(os.path.realpath(sys.argv[0]))
+#TEMPLATE_DIR = os.path.join(WORKING_DIR, "libapp", "templates")
+#STATIC_PATH = os.path.join(WORKING_DIR, "libapp", "static")
+TEMPLATE_DIR = os.path.join(os.getcwd(), "libapp", "templates")
+STATIC_PATH = os.path.join(os.getcwd(), "libapp", "static")
 
 # Log configurations
 LOG_FILE_NAME = "{log}.log"
