@@ -4,7 +4,8 @@ import json
 import redis
 from .notifications.email import Email
 from .notifications.sms import Sms
-from .config import libconf, smsconf
+from .notifications.push import Push
+from .config import libconf, smsconf, pushconf
 from . import app, pubsubd
 
 
@@ -44,8 +45,8 @@ def subscribe_msg():
 
                 # Call email notifier
                 email_obj = Email()
-                email_obj.message_notifier(msg_type=msg_type, from_email=from_email, to=to, category=category,
-                                           author=author, template=template, subject=subject,
+                email_obj.message_notifier(msg_type=msg_type, author=author, category=category, template=template,
+                                           from_email=from_email, to=to, subject=subject,
                                            message_content=message_content)
             elif msg_type == "sms":
                 # It is sms notification
@@ -54,11 +55,37 @@ def subscribe_msg():
 
                 # Call sms notifier
                 sms_obj = Sms()
-                sms_obj.message_notifier(msg_type=msg_type, senderid=senderid, mobile=to,category=category, author=author,
-                                         template=template, accusage=accusage, message_content=message_content)
+                sms_obj.message_notifier(msg_type=msg_type, author=author, category=category, template=template,
+                                         senderid=senderid, mobile=to, accusage=accusage,
+                                         message_content=message_content)
             elif msg_type == "push":
                 # It is Push notification
-                pass
+                is_json = msg_dict.get("is_json", False)
+                retries = msg_dict.get("retries", pushconf.RETRIES)
+
+                registration_id = None
+                registration_ids = None
+                if to and len(to) == 1:
+                    registration_id = to[0]
+                    is_json = False
+                elif to and len(to) > 1:
+                    registration_ids = to
+                else:
+                    pass
+                """
+                registration_id = msg_dict.get("registration_id", None)
+                if "registration_ids" in msg_dict and len(msg_dict.get("registration_ids")) == 1:
+                    registration_id = msg_dict.get("registration_ids")[0]
+                    del msg_dict["registration_ids"]
+                    is_json = False
+
+                registration_ids = msg_dict.get("registration_ids", None)
+                """
+                # Call push notifier
+                push_obj = Push()
+                push_obj.message_notifier(msg_type=msg_type, author=author, category=category, template=template,
+                                          is_json=is_json, retries=retries, registration_ids=registration_ids,
+                                          registration_id=registration_id, message_content=message_content)
             else:
                 # Its a web notification
                 pass
