@@ -6,9 +6,4 @@ You have generated enquiry for the Space in ({{ message_content.get('location', 
 
 Our executive will shortly get in touch and share the details of the space with you.
 
-
-Thank You,
-
-Neelay Jain
-Co-Founder, My Cute Office
-Creating values from innovative workspaces
+{% include "footer.html" ignore missing %}

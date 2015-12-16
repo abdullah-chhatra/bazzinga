@@ -6,8 +6,4 @@ The booking ID: {{ message_content.get('book_id' , '') }} for your space ID: {{ 
 
 The amount, as per the cancellation policy of MyCuteOffice.com, will be remitted within 5 working days.
 
-THANK YOU!
-
-Neelay Jain
-Co-Founder, My Cute Office
-Creating values from innovative workspaces
+{% include "footer.html" ignore missing %}

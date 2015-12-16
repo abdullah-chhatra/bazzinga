@@ -9,10 +9,5 @@ A reply to {{ message_content.get('title', '')}} enquiry has been posted as foll
 
 Reply
 
-
-THANK YOU!
-
-Neelay Jain
-Co-Founder, My Cute Office
-Creating values from innovative workspaces
+{% include "footer.html" ignore missing %}
 

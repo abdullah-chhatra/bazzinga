@@ -4,8 +4,4 @@ Dear {{ message_content.get('name','') |title }},
 
 The Space ID: {{ message_content.get('space_id','') }}  has Accepted the Enquiry ID: {{ message_content.get('enq_id','') }}
 
-THANK YOU!
-
-Neelay Jain
-Co-Founder, My Cute Office
-Creating values from innovative workspaces
+{% include "footer.html" ignore missing %}

@@ -8,8 +8,4 @@ Click here to resume the booking.
 
 For any queries pertaining to the space, contact us on 773888857 or mail us on hello@mycuteoffice.com
 
-THANK YOU!
-
-Neelay Jain
-Co-Founder, My Cute Office
-Creating values from innovative workspaces
+{% include "footer.html" ignore missing %}

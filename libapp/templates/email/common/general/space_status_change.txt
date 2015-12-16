@@ -8,6 +8,4 @@ If you wish to publish the space again in the future, click on the link below,
 
 --> Go to Change status -->Select Request to Publish
 
-Neelay Jain
-Co-Founder, My Cute Office
-Creating values from innovative workspaces
+{% include "footer.html" ignore missing %}

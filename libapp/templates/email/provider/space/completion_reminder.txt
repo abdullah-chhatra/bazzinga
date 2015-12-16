@@ -14,10 +14,6 @@ Alternatively, you can complete the listing by following these 3 easy steps:
 
 Waiting eagerly to share your space details with thousands of space seekers on My Cute Office.
 
-THANK YOU!
-
-Neelay Jain
-Co-Founder, My Cute Office
-Creating values from innovative workspaces
+{% include "footer.html" ignore missing %}
 
 

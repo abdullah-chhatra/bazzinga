@@ -4,8 +4,4 @@ Dear {{ message_content.get('name','')|title }},
 
 You recently changed your password for your MCO account ({{ message_content.get('user_name', '') }}). If you did not change the password and believe your MCO account has been compromised, please contact MCO support on {{ message_content.get('contact_email', '')}}
 
-THANK YOU!
-
-Neelay Jain
-Co-Founder, My Cute Office
-Creating values from innovative workspaces
+{% include "footer.html" ignore missing %}

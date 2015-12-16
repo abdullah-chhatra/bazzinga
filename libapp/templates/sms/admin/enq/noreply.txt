@@ -5,8 +5,4 @@ Dear {{ message_content.get('name','')|title }},
 The Space ID: {{ message_content.get('space_id','') }} has not reverted to the enquiry ID: {{ message_content.get('enq_id','') }}  for over 48 hours.
 Kindly follow up.
 
-THANK YOU!
-
-Neelay Jain
-Co-Founder, My Cute Office
-Creating values from innovative workspaces
+{% include "footer.html" ignore missing %}

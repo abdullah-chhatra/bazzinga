@@ -22,8 +22,4 @@ Please confirm the booking by clicking here. We will process the payment within 
 Click here to communicate with the user.
 
 
-THANK YOU!
-
-Neelay Jain
-Co-Founder, My Cute Office
-Creating values from innovative workspaces
+{% include "footer.html" ignore missing %}

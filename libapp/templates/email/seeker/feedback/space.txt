@@ -11,8 +11,4 @@ Please select a rating based on the following.
     3. The location of the space
     4. Check-in process in the space
 
-THANK YOU!
-
-Neelay Jain
-Co-Founder, My Cute Office
-Creating values from innovative workspaces
+{% include "footer.html" ignore missing %}

@@ -6,8 +6,4 @@ We regret to inform you that your booking (Booking ID: {{ message_content.get('b
 
 However, below are the spaces that match your criteria.
 
-THANK YOU!
-
-TNeelay Jain
-Co-Founder, My Cute Office
-Creating values from innovative workspaces
+{% include "footer.html" ignore missing %}

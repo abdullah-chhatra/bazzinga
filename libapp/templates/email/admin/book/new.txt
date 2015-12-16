@@ -17,8 +17,4 @@ From Time:   {{ message_content.get('from_time','') }}
 To Time:  {{ message_content.get('to_time','') }}
 Facilities included: {{ message_content.get('facility','') }}
 
-THANK YOU!
-
-Neelay Jain
-Co-Founder, My Cute Office
-Creating values from innovative workspaces
+{% include "footer.html" ignore missing %}

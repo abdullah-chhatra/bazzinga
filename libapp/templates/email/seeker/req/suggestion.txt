@@ -4,9 +4,5 @@ Dear {{ email_content.get('name', '')|title }},
 
 Below are the spaces that match your requirement.
 
-THANK YOU!
-
-Neelay Jain
-Co-Founder, My Cute Office
-Creating values from innovative workspaces
+{% include "footer.html" ignore missing %}
 

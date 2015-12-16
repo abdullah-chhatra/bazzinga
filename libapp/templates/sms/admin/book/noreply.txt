@@ -5,8 +5,4 @@ Dear {{ message_content.get('name','') |title}},
 The booking confirmation for booking ID:  {{ message_content.get('book_id','') }} for the Space ID:  {{ message_content.get('space_id','') }} is overdue.
 Kindly contact the space provider.
 
-THANK YOU!
-
-Neelay Jain
-Co-Founder, My Cute Office
-Creating values from innovative workspaces
+{% include "footer.html" ignore missing %}

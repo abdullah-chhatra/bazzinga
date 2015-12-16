@@ -12,9 +12,5 @@ Review your experience based on the following.
 3. Communication with the space provider
 4. Payment system
 
-THANK YOU!
-
-Neelay Jain
-Co-Founder, My Cute Office
-Creating values from innovative workspaces
+{% include "footer.html" ignore missing %}
 

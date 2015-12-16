@@ -7,8 +7,4 @@ The Space ID: {{ message_content.get('space_id','') }} has been revoked.
 Reason for Revoking:
 {{ message_content.get('msg','') }}
 
-THANK YOU!
-
-Neelay Jain
-Co-Founder, My Cute Office
-Creating values from innovative workspaces
+{% include "footer.html" ignore missing %}

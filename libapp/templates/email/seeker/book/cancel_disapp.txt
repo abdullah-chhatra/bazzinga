@@ -6,8 +6,4 @@ The cancellation for your booking ID:  {{ message_content.get('book_id', '') }} 
 
 You will receive the refund amount within 5 working days.
 
-THANK YOU!
-
-Neelay Jain
-Co-Founder, My Cute Office
-Creating values from innovative workspaces
+{% include "footer.html" ignore missing %}

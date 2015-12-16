@@ -11,8 +11,4 @@ Rate the user based on the following.
 3. No. of people using the space higher than specified in the booking summary
 4. Check-out on the time as per the booking.
 
-THANK YOU!
-
-Neelay Jain
-Co-Founder, My Cute Office
-Creating values from innovative workspaces
+{% include "footer.html" ignore missing %}

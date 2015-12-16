@@ -9,8 +9,4 @@ Your Space ID is: {{ message_content.get('space_id', '') }}
 Your Enquiry Id is: {{ message_content.get('enq_id', '') }}
 Please find attached the payment voucher for the booking.
 
-THANK YOU!
-
-Neelay Jain
-Co-Founder, My Cute Office
-Creating values from innovative workspaces
+{% include "footer.html" ignore missing %}

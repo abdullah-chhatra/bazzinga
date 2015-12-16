@@ -4,8 +4,4 @@ Dear {{ message_content.get('name','') |title}},
 
 The user of Booking ID:  {{ message_content.get('book_id','') }}  has requested to cancel the booking for the Space ID:  {{ message_content.get('space_id','') }}
 
-THANK YOU!
-
-Neelay Jain
-Co-Founder, My Cute Office
-Creating values from innovative workspaces
+{% include "footer.html" ignore missing %}

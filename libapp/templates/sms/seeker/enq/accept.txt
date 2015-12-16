@@ -8,8 +8,4 @@ Congratulations! Your enquiry (Enquiry ID: {{ message_content.get('enq_id', '') 
 Please find below the details of the space.
 
 
-THANK YOU!
-
-Neelay Jain
-Co-Founder, My Cute Office
-Creating values from innovative workspaces
+{% include "footer.html" ignore missing %}

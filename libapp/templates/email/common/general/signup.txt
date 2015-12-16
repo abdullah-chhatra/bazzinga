@@ -8,8 +8,4 @@ Confirm account
 
 If you haven’t signed up with MCO, you can disregard this message.
 
-THANK YOU!
-
-Neelay Jain
-Co-Founder, My Cute Office
-Creating values from innovative workspaces
+{% include "footer.html" ignore missing %}

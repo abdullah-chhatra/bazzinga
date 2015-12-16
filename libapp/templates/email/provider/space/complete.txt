@@ -13,8 +13,4 @@ Step 2: Scroll to the end of the page after reviewing your listing.
 
 Step 3: Click on ‘I Accept’ at the end of the page after going through our Terms & Conditions.
 
-THANK YOU!
-
-Neelay Jain
-Co-Founder, My Cute Office
-Creating values from innovative workspaces
+{% include "footer.html" ignore missing %}

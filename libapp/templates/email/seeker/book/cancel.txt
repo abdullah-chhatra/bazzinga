@@ -8,8 +8,4 @@ The request has been received by the Space ID: {{ email_content.get('space_id', 
 
 You will receive a notification when the request is approved or disapproved.
 
-THANK YOU!
-
-Neelay Jain
-Co-Founder, My Cute Office
-Creating values from innovative workspaces
+{% include "footer.html" ignore missing %}

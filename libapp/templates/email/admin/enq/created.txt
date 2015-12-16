@@ -13,8 +13,4 @@ Contact Person: {{ email_content.get('contact_person' , '') }}
 Contact Email:  {{ email_content.get('contact_email' , '') }}
 Contact Phone:  {{ email_content.get('contact_phone' , '') }}
 
-THANK YOU!
-
-Neelay Jain
-Co-Founder, My Cute Office
-Creating values from innovative workspaces
+{% include "footer.html" ignore missing %}

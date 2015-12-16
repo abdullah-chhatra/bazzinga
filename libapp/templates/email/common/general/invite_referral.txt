@@ -14,8 +14,4 @@ Share	Share	    Tweet	    Email
 
 Your Referral code is {{ email_content.get('ref_code','') }}
 
-THANK YOU!
-
-Neelay Jain
-Co-Founder, My Cute Office
-Creating values from innovative workspaces
+{% include "footer.html" ignore missing %}

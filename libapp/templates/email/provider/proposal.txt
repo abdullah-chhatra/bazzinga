@@ -14,8 +14,4 @@ Benefits of MyCuteOffice.com
 
 To list your space on MyCuteOffice.com, please fill the form below.
 
-THANK YOU!
-
-Neelay Jain
-Co-Founder, My Cute Office
-[tagline]
+{% include "footer.html" ignore missing %}
