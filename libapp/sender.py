@@ -62,14 +62,25 @@ def subscribe_msg():
                 # It is Push notification
                 is_json = msg_dict.get("is_json", False)
                 retries = msg_dict.get("retries", pushconf.RETRIES)
+
+                registration_id = None
+                registration_ids = None
+                if to and len(to) == 1:
+                    registration_id = to[0]
+                    is_json = False
+                elif to and len(to) > 1:
+                    registration_ids = to
+                else:
+                    pass
+                """
+                registration_id = msg_dict.get("registration_id", None)
                 if "registration_ids" in msg_dict and len(msg_dict.get("registration_ids")) == 1:
                     registration_id = msg_dict.get("registration_ids")[0]
                     del msg_dict["registration_ids"]
                     is_json = False
 
                 registration_ids = msg_dict.get("registration_ids", None)
-                registration_id = msg_dict.get("registration_id", None)
-
+                """
                 # Call push notifier
                 push_obj = Push()
                 push_obj.message_notifier(msg_type=msg_type, author=author, category=category, template=template,

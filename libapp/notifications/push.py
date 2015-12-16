@@ -22,23 +22,24 @@ class Push(Notification):
 
     def get_message(self, **kwargs):
         """
-        Get message object for email
+        Get message object for push
         """
         message = {}
+        message['data'] = {}
 
         for key in kwargs.keys():
             if key not in kwargs.get("ignore", pushconf.IGNORE_KEYS):
-                func = None
-                if key not in ["to", "to_name", "cc", "bcc", "content_id", "category"]:
-                    if key not in ["from_email", "reply_to"]:
-                        func = getattr(message, "set_{key}".format(key=key))
-                    elif key == "reply_to":
-                        func = getattr(message, "set_replyto")
-                    else:
-                        func = getattr(message, "set_from")
+                if key == "registration_id" and kwargs.get(key, None) is not None:
+                    message[key] = kwargs.get(key, "")
+                elif key == "registration_ids" and kwargs.get(key, None) is not None:
+                    message[key] = kwargs.get(key, "")
+                elif key == "topic" and kwargs.get("topic", None) is not None:
+                    message[key] = kwargs.get(key, "")
+                elif kwargs.get(key, None) is not None:
+                    message['data'].update({key: kwargs.get(key, "")})
                 else:
-                    func = getattr(message, "add_{key}".format(key=key))
-                func(kwargs.get(key, ""))
+                    # Not sure what to do ;)
+                    pass
 
         return message
 
@@ -46,8 +47,13 @@ class Push(Notification):
         """
         Send message to receiver via gateway
         """
-        gcm.send()
-        pass
+        if "registration_id" in message:
+            resp = gs.plaintext_request(**message)
+        elif "registration_ids" in message:
+            resp = gs.send_downstream_message(**message)
+        else:
+            resp = gs.send_topic_message(**message)
+        return resp
 
     def message_notifier(self, **kwargs):
         """

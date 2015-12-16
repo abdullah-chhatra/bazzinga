@@ -39,11 +39,11 @@ class Sms(Notification):
         Send message to receiver via gateway
         """
         try:
-            msg = ds.send(message)
-            app.logger.info("Successfully sent message: {msg}".format(msg=msg))
-            return msg
+            resp = ds.send(message)
+            app.logger.info("Successfully sent message: {msg}".format(msg=resp))
+            return resp
         except DoveSoftClientError as sgce:
-            app.logger.error("Error while sending email: {msg}".format(msg=msg))
+            app.logger.error("Error while sending email: {msg}".format(msg=resp))
             app.logger.error("Email: {message}".format(message=message))
             raise DoveSoftClientError(sgce.code, sgce.read())
 
