@@ -37,19 +37,35 @@ def index():
 @app.route('/s', methods=['POST'])
 def shorten():
     payload = json.loads(request.data)
-    url = str(payload['url']).strip()
+    body = payload['body']
+    data = body['data']
+    url = str(data['url']).strip()
+    #url = str(payload['url']).strip()
 
     if not valid_url(url):
-        return jsonify({'error': str(url,)}, 400)
+        payload['body'] = {"status": "error", "message": "Not a valid URL: {}".format(str(url,))}
+        payload['header'] = {"message": "Invalid URL", "status": "error",
+                             "token": payload['header']['token']}
+        return jsonify(payload, 400)
+        #return jsonify({'error': str(url,)}, 400)
 
     try:
         key, token = shortnerd.insert(url)
         url = url_for('bounce', key=key, _external=True)
         revoke = url_for('revoke', token=token, _external=True)
 
-        return jsonify({'url': url, 'revoke': revoke})
+        payload['body'] = {"message": "Successfully created short url", "status": "success"}
+        payload['body']['results'] = {'key': key, 'url': url, 'token': token, 'revoke': revoke}
+        payload['header'] = {"message": "Successfully executed command", "status": "success",
+                             "token": payload['header']['token']}
+        return jsonify(payload)
+        #return jsonify({'key': key, 'url': url, 'token': token, 'revoke': revoke})
     except Exception as e:
-        return jsonify({'error': e}, 400)
+        payload['body'] = {"status": "error", "message": "{}".format(e)}
+        payload['header'] = {"message": "Execution error", "status": "error",
+                             "token": payload['header']['token']}
+        return jsonify(payload, 400)
+        #return jsonify({'error': e}, 400)
 
 
 @app.route('/s/<key>', methods=['GET'])
@@ -58,12 +74,20 @@ def bounce(key):
         uri = shortnerd[key]
         return redirect(iri_to_uri(uri))
     except KeyError as e:
-        return jsonify({'error': 'url not found'}, 400)
+        return redirect("https://mycuteoffice.com/not-found")
+        #return jsonify({'error': 'url not found'}, 400)
 
 
 @app.route('/r/<token>', methods=['POST'])
 def revoke(token):
+    payload = {}
     try:
         shortnerd.revoke(token)
-    except RevokeError as e:
-        return jsonify({'error': e}, 400)
+        payload['body'] = {"message": "Successfully removed short url", "status": "success"}
+        payload['header'] = {"message": "Successfully executed command", "status": "success"}
+        return jsonify(payload)
+    except Exception as e:
+        payload['body'] = {"status": "error", "message": "{}".format(e)}
+        payload['header'] = {"message": "Execution error", "status": "error"}
+        return jsonify(payload)
+        #return jsonify({'error': e}, 400)
