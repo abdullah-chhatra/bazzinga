@@ -25,7 +25,7 @@ def valid_url(url):
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    data = {'url': "https://mycuteoffice.com/spaces/Thane--Maharashtra--India?lat=19.2183307&lng=72.97808970000006&sort=distance&geolocation=Thane%2C%20Maharashtra%2C%20India"}
+    data = {'url': "https://mycuteoffice.com/spaces/Thane--Maharashtra--India"}
     res = requests.post("http://localhost:9001/s", data=json.dumps(data))
     if res.ok:
         payload = json.loads(res.content)
