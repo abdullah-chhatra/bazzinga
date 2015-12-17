@@ -72,15 +72,6 @@ def subscribe_msg():
                     registration_ids = to
                 else:
                     pass
-                """
-                registration_id = msg_dict.get("registration_id", None)
-                if "registration_ids" in msg_dict and len(msg_dict.get("registration_ids")) == 1:
-                    registration_id = msg_dict.get("registration_ids")[0]
-                    del msg_dict["registration_ids"]
-                    is_json = False
-
-                registration_ids = msg_dict.get("registration_ids", None)
-                """
                 # Call push notifier
                 push_obj = Push()
                 push_obj.message_notifier(msg_type=msg_type, author=author, category=category, template=template,

@@ -66,6 +66,6 @@ class Push(Notification):
             text = self.get_templates(template_name=template_name, **kwargs)
             message = self.get_message(text=text, **kwargs)
             resp = self.send_message(message)
-            app.logger.info("{error} with {response}".format(error=resp[0], response=resp[1]))
+            app.logger.info("response with {error}".format(error=resp))
         else:
             app.logger.error("No template data available: {data}".format(data=kwargs.keys()))
