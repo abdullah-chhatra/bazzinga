@@ -25,33 +25,35 @@ def valid_url(url):
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    data = {'url': "https://mycuteoffice.com/spaces/Thane--Maharashtra--India"}
-    res = requests.post("http://localhost:9001/s", data=json.dumps(data))
+    data = {}
+    data['header'] = {'token': ""}
+    data['body'] = {}
+    data['body']['data'] = {'url': "https://mycuteoffice.com", "type": "s"}
+    res = requests.post("http://localhost:9001/shorten", data=json.dumps(data))
     if res.ok:
         payload = json.loads(res.content)
     else:
-        payload = {"url": "NOT FOUND", "revoke":"FU"}
+        payload = {"url": "NOT FOUND", "revoke":"NOT POSSIBLE"}
     return render_template("index.html", payload=payload)
 
 
-@app.route('/s', methods=['POST'])
+@app.route('/shorten', methods=['POST'])
 def shorten():
     payload = json.loads(request.data)
     body = payload['body']
     data = body['data']
     url = str(data['url']).strip()
-    #url = str(payload['url']).strip()
+    id_type = str(data['type']).strip()
 
     if not valid_url(url):
         payload['body'] = {"status": "error", "message": "Not a valid URL: {}".format(str(url,))}
         payload['header'] = {"message": "Invalid URL", "status": "error",
                              "token": payload['header']['token']}
         return jsonify(payload, 400)
-        #return jsonify({'error': str(url,)}, 400)
 
     try:
         key, token = shortnerd.insert(url)
-        url = url_for('bounce', key=key, _external=True)
+        url = url_for('bounce', id_type=id_type, key=key, _external=True)
         revoke = url_for('revoke', token=token, _external=True)
 
         payload['body'] = {"message": "Successfully created short url", "status": "success"}
@@ -59,26 +61,23 @@ def shorten():
         payload['header'] = {"message": "Successfully executed command", "status": "success",
                              "token": payload['header']['token']}
         return jsonify(payload)
-        #return jsonify({'key': key, 'url': url, 'token': token, 'revoke': revoke})
     except Exception as e:
         payload['body'] = {"status": "error", "message": "{}".format(e)}
         payload['header'] = {"message": "Execution error", "status": "error",
                              "token": payload['header']['token']}
         return jsonify(payload, 400)
-        #return jsonify({'error': e}, 400)
 
 
-@app.route('/s/<key>', methods=['GET'])
-def bounce(key):
+@app.route('/<id_type>/<key>', methods=['GET'])
+def bounce(id_type, key):
     try:
         uri = shortnerd[key]
         return redirect(iri_to_uri(uri))
     except KeyError as e:
         return redirect("https://mycuteoffice.com/not-found")
-        #return jsonify({'error': 'url not found'}, 400)
 
 
-@app.route('/r/<token>', methods=['POST'])
+@app.route('/revoke/<token>', methods=['POST'])
 def revoke(token):
     payload = {}
     try:
@@ -90,4 +89,3 @@ def revoke(token):
         payload['body'] = {"status": "error", "message": "{}".format(e)}
         payload['header'] = {"message": "Execution error", "status": "error"}
         return jsonify(payload)
-        #return jsonify({'error': e}, 400)

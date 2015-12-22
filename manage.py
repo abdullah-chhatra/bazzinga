@@ -3,13 +3,13 @@ import os
 import sys
 from flask.ext.script import Manager, Server
 from libapp import app
-from libapp.config import libconf as settings
+from libapp.config import libconf
 
 
-host = str(os.environ.get("HOST", settings.HOST))
-port = int(os.environ.get("PORT", settings.PORT))
-debug = bool(os.environ.get("DEBUG", settings.DEBUG))
-threaded = bool(os.environ.get("THREADED", settings.THREADED))
+host = str(os.environ.get("HOST", libconf.HOST))
+port = int(os.environ.get("PORT", libconf.PORT))
+debug = bool(os.environ.get("DEBUG", libconf.DEBUG))
+threaded = bool(os.environ.get("THREADED", libconf.THREADED))
 
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 
