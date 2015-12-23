@@ -25,6 +25,7 @@ def valid_url(url):
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    '''
     data = {}
     data['header'] = {'token': ""}
     data['body'] = {}
@@ -34,7 +35,8 @@ def index():
         payload = json.loads(res.content)
     else:
         payload = {"url": "NOT FOUND", "revoke":"NOT POSSIBLE"}
-    return render_template("index.html", payload=payload)
+    '''
+    return render_template("index.html")  #, payload=payload)
 
 
 @app.route('/shorten', methods=['POST'])
