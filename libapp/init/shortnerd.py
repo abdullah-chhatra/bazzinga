@@ -1,6 +1,6 @@
 
 import redis
-from shorten import NamespacedFormatter, alphabets, make_store, TokenGenerator  #,UUIDTokenGenerator,
+from shorten import NamespacedFormatter, alphabets, make_store, UUIDTokenGenerator
 
 from ..config import shortconf
 
@@ -8,7 +8,7 @@ from ..config import shortconf
 def init_app(app):
     redis_client = redis.Redis(host=shortconf.SHORTNER_HOST, port=shortconf.SHORTNER_PORT, db=shortconf.SHORTNER_DB)
     formatter = NamespacedFormatter(shortconf.FORMATTER)
-    token_gen = TokenGenerator()  #UUIDTokenGenerator()
+    token_gen = UUIDTokenGenerator()
 
     store_params = {
         shortconf.SHORTNER_CLIENT: redis_client,
