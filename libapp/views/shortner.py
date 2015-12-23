@@ -70,9 +70,12 @@ def shorten():
 
 @app.route('/<id_type>/<key>', methods=['GET'])
 def bounce(id_type, key):
+    query_string = request.query_string
     try:
         uri = shortnerd[key]
-        return redirect(iri_to_uri(uri))
+        redirect_url = "{url}?{query}".format(url=iri_to_uri(uri), query=query_string)
+        return redirect(redirect_url)
+        #return redirect(iri_to_uri(uri))
     except KeyError as e:
         return redirect("https://mycuteoffice.com/not-found")
 
