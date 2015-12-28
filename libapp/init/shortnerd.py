@@ -1,6 +1,6 @@
 
 import redis
-from shorten import NamespacedFormatter, UUIDTokenGenerator, alphabets, make_store
+from shorten import NamespacedFormatter, alphabets, make_store, UUIDTokenGenerator
 
 from ..config import shortconf
 
