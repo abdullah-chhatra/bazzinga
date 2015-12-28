@@ -1,4 +1,3 @@
 Dear {{ message_content.get('name','') }},
 You request for cancellation of your booking no.{ message_content.get('book_id','') }} has been approved due to .....
 Thank You for using My Cute Office."​
-{% include "footer.html" ignore missing %}

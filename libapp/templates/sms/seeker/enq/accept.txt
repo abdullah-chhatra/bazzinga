@@ -1,11 +1,3 @@
-Space seeker: Enquiry: enquiry accepted
-
-
 Dear {{ message_content.get('name', '')|title }},
 
 Congratulations! Your enquiry (Enquiry ID: {{ message_content.get('enq_id', '') }} ) for the Space ID: {{ message_content.get('space_id', '') }} has been accepted.
-
-Please find below the details of the space.
-
-
-{% include "footer.html" ignore missing %}

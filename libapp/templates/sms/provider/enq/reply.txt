@@ -1,13 +1,5 @@
-Space Seeker: Enquiry: Reply posted to enquiry by space seeker or admin
-
-
 Hi {{ message_content.get('name', '')|title }}
 
-A reply to {{ message_content.get('title', '')}} enquiry has been posted as follows:
+A reply to {{ message_content.get('title', '')}} enquiry has been posted by {{ message_content.get('name', '') }} as follows:
 
-	{{ message_content.get('name', '') }}	{{ message_content.get('msg', '') }}
-
-Reply
-
-{% include "footer.html" ignore missing %}
-
+{{ message_content.get('msg', '') }}

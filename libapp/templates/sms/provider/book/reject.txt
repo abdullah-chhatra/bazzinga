@@ -1,7 +1,2 @@
-ADmin: booking: accept reject status
-
 Dear {{ message_content.get('name','') |title }},
-
-The booking ID:  {{ message_content.get('book_id','') }} has been rejected by the space provider.
-
-{% include "footer.html" ignore missing %}
+You have rejected booking for the booking ID:  {{ message_content.get('book_id','') }}.

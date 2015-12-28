@@ -7,5 +7,3 @@ Name:   {{ message_content.get('user_name' , '') }}
 Email:   {{ message_content.get('email' , '') }}
 
 Mobile:   {{ message_content.get('mobile' , '') }}
-
-{% include "footer.html" ignore missing %}
