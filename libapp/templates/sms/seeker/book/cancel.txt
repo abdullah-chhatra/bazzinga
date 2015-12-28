@@ -1,0 +1,4 @@
+Dear {{ message_content.get('name','') }},
+We have received your request to cancel your booking no.{ message_content.get('book_id','') }}
+We are processing the same.
+The amount shall be refunded to you within 3 working days.

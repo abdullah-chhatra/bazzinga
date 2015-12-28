@@ -1,6 +1,6 @@
 # Send grid configuration
-SG_USER = "hello@mycuteoffice.com"
-SG_PASS = "mycuteofficeemail"
+SG_USER = "mycuteoffice"
+SG_PASS = "mycut30ff1c3"
 
 # ignore key list
 IGNORE_KEYS = ["message_content"]

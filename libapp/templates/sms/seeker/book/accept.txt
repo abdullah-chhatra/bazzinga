@@ -1,8 +1,8 @@
-ADmin: booking: accept reject status
-
-Dear {{ message_content.get('name','') |title }},
-
-The booking ID: {{ message_content.get('book_id','') }} has been accepted by the space provider.
+Congratulations! { message_content.get('name','')}}
+Your Booking No. {{ message_content.get('book_id','') }}
+for {{ message_content.get('date','') }}has been confirmed.
+The address is: {{ message_content.get('address','') }}.
+In case you have any issues in locating the space you can call our helpline {{ message_content.get('contact_no','') }}
 
 {% include "footer.html" ignore missing %}
 

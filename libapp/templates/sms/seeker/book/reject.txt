@@ -1,7 +1,6 @@
-ADmin: booking: accept reject status
-
-Dear {{ message_content.get('name','') |title }},
-
-The booking ID:  {{ message_content.get('book_id','') }} has been rejected by the space provider.
+Dear {{ message_content.get('name','')}},
+We are really sorry! Unfortunately, your Booking No.{{ message_content.get('book_id','') }} has not been confirmed.
+We regret the inconvenience caused to you.
+The amount shall be refunded to you within 3 working days.
 
 {% include "footer.html" ignore missing %}
