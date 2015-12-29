@@ -3,3 +3,5 @@ Dear {{ message_content.get('name', '')|title }},
 We have received your requirement on My Cute Office with the following message.
 
 {{ message_content.get('msg', '') }}
+
+{% include "footer.html" ignore missing %}

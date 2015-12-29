@@ -1,4 +1,3 @@
-admin : cancel booking: Request to cancel booking by seeker
 
 Dear {{ message_content.get('name','') |title}},
 

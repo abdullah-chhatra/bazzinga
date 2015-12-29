@@ -1,4 +1,3 @@
-Admin:enquiry:   New enquiry created
 
 Dear {{ message_content.get('name' , '')|title }},
 

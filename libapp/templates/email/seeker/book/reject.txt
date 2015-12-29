@@ -1,4 +1,3 @@
-ss: Booking: booking accpt /reject status
 
 Dear {{ message_content.get('name', '')|title }},
 

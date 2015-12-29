@@ -1,4 +1,3 @@
-ADmin: booking: accept reject status
 
 Dear {{ message_content.get('name','') |title }},
 

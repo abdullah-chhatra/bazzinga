@@ -1,6 +1,9 @@
 Dear {{ message_content.get('name', '')|title }}
 
-{{ message_content.get('so_name', '') }} had replied to your inquiry:
+{{ message_content.get('so_name', '') }} had replied to your enquiry:
 
 {{ message_content.get('msg', '') }}
+
+{% include "footer.html" ignore missing %}
+
 

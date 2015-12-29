@@ -1,5 +1,3 @@
-Space_provider:booking: Seeker’s request to cancel the booking
-
 
 Dear {{ email_content.get('name' , '')|title }},
 

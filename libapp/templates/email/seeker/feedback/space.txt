@@ -1,4 +1,3 @@
-Space seeker: feedback: Feedback about Space owner
 
 Dear {{email_content.get('name', '')|title }},
 

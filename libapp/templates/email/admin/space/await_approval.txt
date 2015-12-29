@@ -1,4 +1,3 @@
-admin: Add Space: Space waiting for approval
 
 Dear {{ message_content.get('name','')|title }},
 

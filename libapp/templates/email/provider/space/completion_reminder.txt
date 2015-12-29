@@ -1,4 +1,3 @@
-SP: Reminder Mail for completing listing (% completed mail)
 
 Hi {{ email_content.get('name', '')|title }},
 

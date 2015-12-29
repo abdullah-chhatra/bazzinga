@@ -1,4 +1,3 @@
-Dear {{ message_content.get('name' , '') }},
 
 We have received requirement for work space at {{ message_content.get('land_mark' , '') }} landmark.
 
@@ -7,3 +6,5 @@ Name:   {{ message_content.get('user_name' , '') }}
 Email:   {{ message_content.get('email' , '') }}
 
 Mobile:   {{ message_content.get('mobile' , '') }}
+
+{% include "footer.html" ignore missing %}
