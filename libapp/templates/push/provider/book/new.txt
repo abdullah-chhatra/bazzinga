@@ -1,0 +1,3 @@
+Dear {{ message_content.get('name' , '')|title }},
+We have received the payment for booking for your space in ({{ message_content.get('location', '') }})
+Booking Details have been sent to your registered email.
