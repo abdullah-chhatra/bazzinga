@@ -3,6 +3,7 @@
   <table width="100%" style="height: 100%;" cellpadding="15" cellspacing="0" border="0">
 		<tr>
             <td>
+
                 <p>Dear {{ message_content.get('name', '')|title }},</p>
 				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
                    We regret to inform you that your booking (Booking ID: {{ message_content.get('book_id', '') }} ) for the Space ID: {{ message_content.get('space_id', '') }} has been rejected. The amount will be credited back to your account within next 5 working days.<br />
@@ -11,4 +12,5 @@
             </td>
         </tr>
   </table>
+
 {% endblock content %}
