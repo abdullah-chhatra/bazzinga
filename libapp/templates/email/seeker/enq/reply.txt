@@ -1,4 +1,3 @@
-Space Seeker: Enquiry: Reply to enquiry by space owner or admin
 
 Hi {{ message_content.get('name', '')|title }}
 

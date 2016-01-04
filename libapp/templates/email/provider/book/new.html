@@ -3,16 +3,16 @@
   <table width="100%" style="height: 100%;" cellpadding="15" cellspacing="0" border="0">
 		<tr>
             <td>
-                <p style="font-weight: 600">Dear {{ message_content.get('name' , '')|title }},</p>
+                <p>Dear {{ message_content.get('name' , '')|title }},</p>
 
 				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
 				    We have received the payment for booking for your space in ({{ message_content.get('location', '') }})<br /><br />
-                    <b>Booking Details</b>:<br />
-                    <b>Capacity:</b> {{ message_content.get('capacity' , '') }}<br />
-                    <b>Address:</b> {{ message_content.get('address' , '') }}<br />
-                    <b>Date:</b> {{ message_content.get('from_date' , '') }} to {{ message_content.get('to_date' , '') }} <br />
-                    <b>Timings:</b> {{ message_content.get('from_time' , '') }} to {{ message_content.get('to_time' , '') }}<br />
-                    <b>Ameneties:</b> {{message_content.get('ameneties' , '') }}
+                    Booking Details: <br />
+                    Capacity: {{ message_content.get('capacity' , '') }}<br />
+                    Address: {{ message_content.get('address' , '') }}<br />
+                    Date: {{ message_content.get('from_date' , '') }} to {{ message_content.get('to_date' , '') }} <br />
+                    Timings: {{ message_content.get('from_time' , '') }} to {{ message_content.get('to_time' , '') }}<br />
+                    Ameneties: {{message_content.get('ameneties' , '') }}
                 </p>
 
                 <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">

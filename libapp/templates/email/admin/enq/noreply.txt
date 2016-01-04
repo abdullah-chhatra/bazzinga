@@ -1,4 +1,3 @@
-Admin: Enquiry : No reply by owner for 48 hours
 
 Dear {{ message_content.get('name','')|title }},
 

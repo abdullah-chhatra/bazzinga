@@ -3,13 +3,13 @@
   <table width="100%" style="height: 100%;" cellpadding="15" cellspacing="0" border="0">
 		<tr>
             <td>
-                <p style="font-weight: 600">Hi {{ message_content.get('name', '') }},</p>
+                <p>Hi {{ message_content.get('name', '') }},</p>
                 
-                <p style="font-weight: 600">The status of your space has been changed from Published to {{ message_content.get('space_status', '')}}</p>
+                <p>The status of your space has been changed from Published to {{ message_content.get('space_status', '')}}</p>
 
-                <p style="font-weight: 600">If you wish to publish the space again in the future,.</p>
+                <p>If you wish to publish the space again in the future,.</p>
 
-                <p style="font-weight: 600">
+                <p>
                     <ol>
                          <li>Review your listing by clicking <a href="{{ message_content.get('link_space','')}}" target="_blank">here</a></li>
                          <li>Click ‘Edit’</li>
@@ -19,7 +19,7 @@
                     </ol>
                 </p>
 
-                <p style="font-weight: 600">
+                <p>
                     You can reach us on +91-8286088707 or write to us on hello@mycuteoffice.com if you face any issues or need any clarifications
                 </p>
             </td>

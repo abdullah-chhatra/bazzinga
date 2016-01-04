@@ -1,3 +1,7 @@
 Dear {{ message_content.get('name','') }},
-We are really excited to help you with your Booking No.{ message_content.get('book_id','') }} for tomorrow.
+
+We are really excited to help you with your Booking No.{{ message_content.get('book_id','') }} for tomorrow.
+
 Just wanted to remind you to reach 15 mins early and carry a valid government identity for getting unhindered services.
+
+{% include "footer.html" ignore missing %}

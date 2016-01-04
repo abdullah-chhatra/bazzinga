@@ -1,4 +1,3 @@
-common: New User: signup
 
 Dear {{ message_content.get('name','')|title }},
 

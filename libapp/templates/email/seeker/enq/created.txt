@@ -1,4 +1,3 @@
-Space seeker: Enquiry: New enquiry created
 
 Dear {{ message_content.get('name', '')|title }},
 

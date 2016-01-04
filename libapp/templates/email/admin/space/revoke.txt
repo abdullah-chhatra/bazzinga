@@ -1,4 +1,3 @@
-Admin add space: Admin Revoke Space
 
 Dear {{ message_content.get('name','')|title }},
 

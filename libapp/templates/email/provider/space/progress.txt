@@ -1,4 +1,3 @@
-SP: status progress email
 
 Dear {{ email_content.get('name', '')|title }},
 

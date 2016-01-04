@@ -1,4 +1,3 @@
-admin: enquiry: Enquiry accept / reject by space owner
 
 Dear {{ message_content.get('name','')|title }},
 

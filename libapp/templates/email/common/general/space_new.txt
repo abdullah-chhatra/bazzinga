@@ -1,4 +1,3 @@
-common: New spaces matching your requirement
 
 Dear {{ email_content.get('name','')|title }},
 

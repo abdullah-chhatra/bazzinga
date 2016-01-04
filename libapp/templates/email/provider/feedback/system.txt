@@ -1,6 +1,4 @@
 
-Space Provider: feedback; feedback about system
-
 Dear {{ email_content.get('name','')|title }},
 
 Thanks you for using MyCuteOffice.com.
