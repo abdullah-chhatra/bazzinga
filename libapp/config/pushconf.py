@@ -1,7 +1,7 @@
 #GCM Configuration
 API_KEY = "AIzaSyBOUrsenRnqXBuoC4uhqwS2vOxsZYUwYsI"
 PROXY = None
-TIMEOUT = 2
+TIMEOUT = 5
 DEBUG = True
 RETRIES = 4
 
