@@ -1,4 +1,3 @@
-common: Password Recovery: Change password
 
 Dear {{ message_content.get('name','')|title }},
 

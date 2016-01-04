@@ -1,4 +1,3 @@
-Space_provider: feedback: feedback about space seeker
 
 Dear {{ email_content.get('name','')|title }},
 

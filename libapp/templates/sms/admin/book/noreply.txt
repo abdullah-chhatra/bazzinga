@@ -1,4 +1,3 @@
-Admin: Booking: No reply by owner for approval for more than 12 hours
 
 Dear {{ message_content.get('name','') |title}},
 

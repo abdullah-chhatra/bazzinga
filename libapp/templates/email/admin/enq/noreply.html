@@ -3,9 +3,9 @@
   <table width="100%" style="height: 100%;" cellpadding="15" cellspacing="0" border="0">
 		<tr>
             <td>
-                <p style="font-weight: 600">Dear {{ message_content.get('name','')|title }},</p>
+                <p>Dear {{ message_content.get('name','')|title }},</p>
 				<p style="line-height: 1.8; font-size: 15px; font-family: Verdana;">
-                    The Space ID:&nbsp;<span style="font-weight: 600;">  {{ message_content.get('space_id','') }} </span>&nbsp; has not reverted to the enquiry ID:&nbsp;<span style="font-weight: 600;">  {{ message_content.get('enq_id','') }} </span>&nbsp; for over 48 hours.<br />
+                    The Space ID:&nbsp;<b>  {{ message_content.get('space_id','') }} </b>&nbsp; has not reverted to the enquiry ID:&nbsp;<b> {{ message_content.get('enq_id','') }} </b>&nbsp; for over 48 hours.<br />
                     Kindly follow up.
 				</p>
             </td>

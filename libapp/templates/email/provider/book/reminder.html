@@ -3,10 +3,10 @@
   <table width="100%" style="height: 100%;" cellpadding="15" cellspacing="0" border="0">
 		<tr>
             <td>
-                <p style="font-weight: 600">Dear {{ email_content.get('name' , '')|title }},</p>
+                <p>Dear {{ email_content.get('name' , '')|title }},</p>
 
 				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-				    This is just a gentle reminder for {{ email_content.get('ss_name' , '')|title }} booking on {{ email_content.get('date' , '')|title }}. Please be available during the check-in, verify identity of the visitor and ensure that all the facilities and amenities as mentioned in the booking summary are made available.
+				    This is just a gentle reminder for <b>{{ email_content.get('ss_name' , '')|title }}</b> booking on <b>{{ email_content.get('date' , '')|title }}.</b> Please be available during the check-in, verify identity of the visitor and ensure that all the facilities and amenities as mentioned in the booking summary are made available.
 				</p>
 
                 <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">

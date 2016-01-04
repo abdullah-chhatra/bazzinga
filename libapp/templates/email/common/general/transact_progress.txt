@@ -1,4 +1,3 @@
-Common: transaction progress email
 
 Dear {{ email_content.get('name','')|title }},
 

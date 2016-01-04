@@ -1,4 +1,3 @@
-Space Provider: booking: bookin cancel approva by admin
 
 Dear {{ message_content.get('name' , '')|title }},
 

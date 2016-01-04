@@ -3,7 +3,7 @@
   <table width="100%" style="height: 100%;" cellpadding="15" cellspacing="0" border="0">
 		<tr>
             <td>
-                <p style="font-weight: 600">Hi {{ message_content.get('name', '')|title }},</p>
+                <p>Hi {{ message_content.get('name', '')|title }},</p>
 
                 <p>We have great news for you!</p>
 
@@ -13,7 +13,6 @@
                     To view your listing you can click <a href="{{ message_content.get('link_space', '') }}">here.</a>
                 </p>
 
-                <p >
                     You can view and reply to the enquiries as well as see current bookings from your dashboard by clicking <a href="{{ message_content.get('link_dashboard', '') }}">here</a>.
                 </p>
             </td>

@@ -3,11 +3,11 @@
   <table width="100%" style="height: 100%;" cellpadding="15" cellspacing="0" border="0">
 		<tr>
             <td>
-                <p style="font-weight: 600">Dear {{message_content.get('name', '') }}|title,</p>
+                <p>Dear {{message_content.get('name', '') }}|title,</p>
 				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-                    Your booking (Booking ID:&nbsp;<span style="font-weight: 600;">{{message_content.get('book_id', '') }}
-                </span> ) for the Space ID:&nbsp;<span style="font-weight: 600;">{{ message_content.get('space_id', '') }}</span>
-                    is due on &nbsp;<span style="font-weight: 600;">{{ message_content.get('due_date', '') }}</span>
+                    Your booking (Booking ID:&nbsp;<b>{{message_content.get('book_id', '') }}
+               </b> ) for the Space ID:&nbsp;<b>{{ message_content.get('space_id', '') }}</b>
+                    is due on &nbsp;<b>{{ message_content.get('due_date', '') }}</b>
 				</p>
             </td>
         </tr>

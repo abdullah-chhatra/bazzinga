@@ -1,4 +1,3 @@
-Invite: New User: Invite Referral
 
 Dear {{ email_content.get('name','')|title }},
 
