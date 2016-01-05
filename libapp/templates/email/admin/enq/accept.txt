@@ -1,6 +1,6 @@
 
 Dear {{ message_content.get('name','') |title }},
 
-The Space ID: {{ message_content.get('space_id','') }}  has Accepted the Enquiry ID: {{ message_content.get('enq_id','') }}
+The Enquiry for Space: {{ message_content.get('space_title','') }}  has Accepted the
 
 {% include "footer.html" ignore missing %}

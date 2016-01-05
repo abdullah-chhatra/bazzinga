@@ -1,5 +1,5 @@
 Dear {{ message_content.get('name', '')|title }},
 
-Congratulations! Your enquiry (Enquiry ID: {{ message_content.get('enq_id', '') }} ) for the Space ID: {{ message_content.get('space_id', '') }} has been accepted.
+Congratulations! Your enquiry  for the Space : {{ message_content.get('space_title', '') }} has been accepted.
 
 {% include "footer.html" ignore missing %}

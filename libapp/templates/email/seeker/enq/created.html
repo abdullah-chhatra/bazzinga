@@ -8,6 +8,10 @@
 				   You have generated enquiry for the Space in <b>({{ message_content.get('location', '') }})</b>
 				</p>
                  <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
+                <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
+                    <a style="text-decoration: none; letter-spacing: 1px;" href="{{ message_content.get('link_reply', '') }}" target="_blank">Click here</a>
+                </p>
+
                     Our executive will shortly get in touch and share the details of the space with you.
 				</p>
             </td>

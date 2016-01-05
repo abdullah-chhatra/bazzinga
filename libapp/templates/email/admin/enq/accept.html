@@ -5,7 +5,8 @@
             <td>
                 <p>Dear {{ message_content.get('name','')|title }},</p>
 				<p style="line-height: 1.8; font-size: 15px; font-family: Verdana;">
-                    The Space ID:&nbsp;<b> {{ message_content.get('space_id','') }} </b>&nbsp; has Accepted the Enquiry ID:&nbsp;<span style="font-weight: 600;">  {{ message_content.get('enq_id','') }} </span>
+                    The enquiry for Space :&nbsp;<b> {{ message_content.get('space_title','') }} </b>&nbsp;
+                    A reply to  <a href="{{message_content.get('link_space', '')}}" target="_blank"> Click Here</a>  has Accepted
 				</p>
             </td>
         </tr>
