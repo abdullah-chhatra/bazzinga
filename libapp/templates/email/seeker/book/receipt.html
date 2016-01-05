@@ -5,13 +5,12 @@
             <td>
                 <p>Dear {{ message_content.get('name', '')|title }},</p>
 				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-                    Congratulations! Your booking (Booking ID:&nbsp;<b> {{ message_content.get('book_id', '') }} </b>) has been confirmed.<br />
+                    Congratulations! Your booking Booking ID:&nbsp;<b> {{ message_content.get('book_id', '') }} </b> has been confirmed.<br />
 				</p>
                 <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
                     Your booking details are:<br />
                     Your Booking Id is:&nbsp;<b>  {{ message_content.get('book_id', '') }} </b><br />
                     Your Space ID is:&nbsp;<b>  {{ message_content.get('space_id', '') }} </b><br />
-                    Your Enquiry Id is:&nbsp;<b>  {{ message_content.get('enq_id', '') }} </b><br />
 				</p>
                 <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
                     Please find attached the payment voucher for the booking.
