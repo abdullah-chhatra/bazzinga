@@ -5,21 +5,13 @@
             <td>
                 <p>Hi {{ message_content.get('name', '')|title }}</p>
 				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-				    A reply to  <a href="{{message_content.get('link_space', '')}}" target="_blank">{{ message_content.get('title', '')}}</a> enquiry has been posted as follows:
-                    <table width="100%" cellpadding="15" cellspacing="0" border="0">
-                        <tr>
-                            <td width="80px">
-                                <img width="40px" height="40px" src="{{ message_content.get('msg', '') }}" />
-                            </td>
-                            <td width="80px">
-                                 <span style="font-family: verdana; font-size:15px; line-height: 1.5;">{{ message_content.get('name', '') }}</span>
-                            </td>
-                            <td width="300px">
-                                <span style="font-family: verdana; font-size:15px; line-height: 1.5;">{{ message_content.get('msg', '') }}</span>
-                            </td>
-                        </tr>
-                    </table>
-                    <br />
+                    {{ message_content.get('ss_name') }}  has viewed and replied to enquiry for (<a href="{{message_content.get('link_space', '')}}" target="_blank">{{ message_content.get('title', '')}}</a>)
+				</p>
+                <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
+                    {{ message_content.get('ss_name') }}’s Reply: <br />
+                    “<span style="font-family: verdana; font-size:15px; line-height: 1.5;">{{ message_content.get('msg', '') }}</span>”
+                </p>
+                <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
                     <a href="{{message_content.get('link_reply', '')}}" target="_blank" style="display: inline-block; background-color: black; color: white; text-decoration: none; padding: 5px 25px; border: 2px solid gray;">Reply</a>
 				</p>
             </td>

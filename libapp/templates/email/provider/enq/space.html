@@ -7,16 +7,15 @@
                 <p>Hi {{ message_content.get('name', '')|title }},</p>
 
 				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-				    <b>{{ message_content.get('ss_name', '') }}</b>  has enquired for your office in ({{ message_content.get('location', '') }}).<br /><br />
+				    <b>{{ message_content.get('ss_name', '') }}</b>  has enquired for your office in (<a href="{{message_content.get('link_space', '')}}" target="_blank">{{ message_content.get('location', '') }}</a>).<br /><br />
+
                     <b>{{ message_content.get('ss_name', '') }}'s message:</b><br />
                     {{ message_content.get('ss_msg', '') }}
                 </p>
-                <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-                    <a style="text-decoration: none; letter-spacing: 1px;" href="{{ message_content.get('link_reply', '') }}" target="_blank">Click here</a> to respond to {{ message_content.get('ss_name', '') }}
-                </p>
 
                 <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-                  We have shared your contact details and address with <b>{{ message_content.get('ss_name', '') }}</b>. He should call you soon.
+                  Please reply to <b>{{ message_content.get('ss_name', '') }}'s enquiry</b>.<br />
+                    <a href="{{message_content.get('link_reply', '')}}" target="_blank" style="display: inline-block; background-color: black; color: white; text-decoration: none; padding: 5px 25px; border: 2px solid gray;">Reply</a>
                 </p>
 
                 <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">

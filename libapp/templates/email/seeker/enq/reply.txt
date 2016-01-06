@@ -1,7 +1,7 @@
 
 Hi {{ message_content.get('name', '')|title }}
 
-{{ message_content.get('so_name', '') }}  has viewed and replied to your enquiry for ({{ message_content.get('space_id', '') }})
+{{ message_content.get('so_name', '') }}  has viewed and replied to your enquiry for space ({{ message_content.get('title', '') }})
 
 {{ message_content.get('so_name', '') }}'s Reply:
 

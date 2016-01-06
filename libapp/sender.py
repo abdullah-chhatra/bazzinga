@@ -36,8 +36,8 @@ def subscribe_msg():
             message_content = msg_dict.get("message_content", "")
 
             if isinstance(message_content, unicode):
-                app.logger.error("Error: {data}".format(data=type(message_content)))
-                app.logger.error("Data: {data}".format(data=message_content))
+                app.logger.info("Error: {data}".format(data=type(message_content)))
+                app.logger.info("Data: {data}".format(data=message_content))
                 message_content = ast.literal_eval(message_content)
 
             if msg_type == "email":
