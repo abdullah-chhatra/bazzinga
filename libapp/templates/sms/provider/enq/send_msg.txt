@@ -2,3 +2,4 @@ Dear {{ message_content.get('name' , '')|title }},
 
  {{ message_content.get('admin_name' , '') }} has sent you a private message
   Message :"{{ message_content.get('message' , '') }}"
+{% include "footer.html" ignore missing %}
