@@ -1,4 +1,4 @@
-Hi {{ email_content.get('name', '')|title }},
+Dear {{ email_content.get('name', '')|title }},
 
 Status of your enquiry has been changed to {{ email_content.get('status', '')}}
 

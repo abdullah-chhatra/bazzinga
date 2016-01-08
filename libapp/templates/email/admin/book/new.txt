@@ -14,6 +14,5 @@ From Date:  {{ message_content.get('from_content','') }}
 To Date:  {{ message_content.get('to_date','') }}
 From Time:   {{ message_content.get('from_time','') }}
 To Time:  {{ message_content.get('to_time','') }}
-Facilities included: {{ message_content.get('facility','') }}
 
 {% include "footer.html" ignore missing %}

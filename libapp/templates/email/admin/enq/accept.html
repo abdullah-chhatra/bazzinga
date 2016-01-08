@@ -4,9 +4,9 @@
 		<tr>
             <td>
                 <p>Dear {{ message_content.get('name','')|title }},</p>
-				<p style="line-height: 1.8; font-size: 15px; font-family: Verdana;">
-                    The enquiry for Space :&nbsp;<b> {{ message_content.get('space_title','') }} </b>&nbsp;
-                    A reply to  <a href="{{message_content.get('link_space', '')}}" target="_blank"> Click Here</a>  has Accepted
+				< style="line-height: 1.8; font-size: 15px; font-family: Verdana;">
+                    The enquiry for Space :&nbsp;<> <a href="{{message_content.get('link_space', '')}}" target="_blank" > {{ message_content.get('space_title','') }}</a>&nbsp;
+                      has Accepted
 				</p>
             </td>
         </tr>
