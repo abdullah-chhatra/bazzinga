@@ -5,9 +5,9 @@
 		<tr>
             <td>
                 <p>Dear {{ message_content.get('name' , '')|title }},</p>
-                    <p style="line-height: 1.8; font-size: 15px; font-family: Verdana;">
-                    {{ message_content.get('admin_name' , '') }} has sent you a private message <br />
-                    Message :&nbsp;&nbsp;"{{ message_content.get('message' , '') }}"<br />
+                    <br style="line-height: 1.8; font-size: 15px; font-family: Verdana;">
+                    {{ message_content.get('admin_name' , '') }} from MCO has sent you a private message as follows:<br /><br />
+                        "{{ message_content.get('message' , '') }}"<br />
                     </p>
 
             </td>

@@ -1,3 +1,5 @@
 Hi {{ message_content.get('name', '')|title }},
 
 {{ message_content.get('ss_name', '') }} has enquired for your office in ({{ message_content.get('location', '') }}).
+
+{% include "footer.html" ignore missing %}
