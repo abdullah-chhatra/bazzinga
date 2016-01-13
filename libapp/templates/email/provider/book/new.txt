@@ -13,9 +13,6 @@ Date: {{ message_content.get('from_date' , '') }} to {{ message_content.get('to_
 
 Timings: {{ message_content.get('from_time' , '') }} to {{ message_content.get('to_time' , '') }}
 
-Ameneties: {{message_content.get('ameneties' , '') }}
-
-
 Please confirm the booking by clicking here. We will process the payment within 7 working days of the check-in date.
 
 Click here to communicate with the user.
