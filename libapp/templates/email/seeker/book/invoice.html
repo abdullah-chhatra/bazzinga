@@ -7,9 +7,9 @@
         <td width="40%" valign="top" bgcolor="#C0C0C0">
             <p style="box-sizing: border-box; padding: 15px; font-size: 15px; line-height: 2;">
                             <b>PAYABLE TO </b><br>
-                            F 31, <br>
-                            Profit Centre,<br>
-                            Mahavir Nagar,<br>
+                            My Cute Office Pvt. Ltd.<br>
+                            F 31, Profit Centre,<br>
+                            Mahavir Nagar,<br />
                             Kandivali West, Mumbai - 400067
                             </p>
             <p  style="box-sizing: border-box; padding: 15px; font-size: 15px; line-height: 2;">
@@ -27,7 +27,7 @@
                     <td>
                         <p style="box-sizing: border-box; font-size: 15px; line-height: 2;">
                             <b>OVERVIEW</b><br>
-                            Space : {{ message_content.get('space_title' , '') }}<br>
+                            Space :&nbsp; <a href="{{message_content.get('link_space', '')}}" target="_blank" > {{ message_content.get('space_title','') }}</a>&nbsp;<br>
                             Booking type : {{ message_content.get('booking_type' , '') }}<br>
                             Date : {{ message_content.get('from_date' , '') }} - {{ message_content.get('to_date' , '') }}<br>
                             time : {{ message_content.get('from_time' , '') }} - {{ message_content.get('to_time' , '') }}<br>
@@ -41,13 +41,21 @@
                             <tr>
                                 <th align="left">PAID</th>
                             </tr>
-                            <tr> 
+                            <tr>
+                                <td>amount paid :</td>
+                                <td align="right">{{ message_content.get('amount' , '') }}</td>
+                            </tr>
+                            <tr>
                                 <td>payment mode :</td>
                                 <td align="right">{{ message_content.get('payment_mode' , '') }}</td>
                             </tr>
                             <tr style="font-size: 15px;">
                                 <td>payment method :</td>
-                                <td align="right">{{ (message_content.get('payment_method' , '')|replace('&lt;', '<'))|replace('&gt;','>') }}</td>
+                                {% if message_content.get('payment_method' , '') == 'paytm' %}
+                                <td align="right"> <img src="https://mycuteoffice.com/sites/all/modules/custom-contrib/commerce_paytm/paytm_label.png"></td>
+                                {% else %}
+                                <td align="right">{{ message_content.get('payment_method' , '') }}</td>
+                                {% endif %}
                             </tr>
                         </table>
                     <td>
