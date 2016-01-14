@@ -4,10 +4,24 @@
 		<tr>
             <td>
                 <p>Hi {{ message_content.get('name', '')|title }}</p>
+
+                 {% if message_content.get('role' , '') == 1 %}
+                   <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
+                        {{ message_content.get('admin', '') }} from MCO Team  has viewed and replied to your enquiry for space (<a href="{{message_content.get('link_space', '')}}" target="_blank">{{ message_content.get('title', '')}}</a>)<br /><br />
+                        {{ message_content.get('admin', '') }}'s Reply: <br />
+                        {{ message_content.get('msg', '') }}<br /><br />
+                    </p>
+
+                 {% else %}
+                    <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
+                        {{ message_content.get('so_name', '') }}  has viewed and replied to your enquiry for space (<a href="{{message_content.get('link_space', '')}}" target="_blank">{{ message_content.get('title', '')}}</a>)<br /><br />
+                        {{ message_content.get('so_name', '') }}'s Reply: <br />
+                        {{ message_content.get('msg', '') }}<br /><br />
+                    </p>
+
+                 {% endif %}
+
 				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-				    {{ message_content.get('so_name', '') }}  has viewed and replied to your enquiry for space (<a href="{{message_content.get('link_space', '')}}" target="_blank">{{ message_content.get('title', '')}}</a>)<br /><br />
-                    {{ message_content.get('so_name', '') }}'s Reply: <br />
-                    {{ message_content.get('msg', '') }}<br /><br />
                     You can reach us on +91-8286088707 or write to us on hello@mycuteoffice.com if you face any issues or need any clarifications.
 				</p>
             </td>

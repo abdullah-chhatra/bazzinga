@@ -1,11 +1,19 @@
 
 Hi {{ message_content.get('name', '')|title }}
 
+{% if message_content.get('role' , '') == 1 %}
+{{ message_content.get('admin') }}  from MCO Team has viewed and replied to enquiry for ({{ message_content.get('title', '')}})
+
+{{ message_content.get('admin') }}’s Reply:
+
+"{{ message_content.get('msg', '') }}"
+
+{% else %}
 {{ message_content.get('ss_name') }}  has viewed and replied to enquiry for ({{ message_content.get('title', '')}})
 
-	{{ message_content.get('ss_name') }}’s Reply:
-	"{{ message_content.get('msg', '') }}"
+{{ message_content.get('ss_name') }}’s Reply:
 
+"{{ message_content.get('msg', '') }}"
+{% endif %}
 
 {% include "footer.html" ignore missing %}
-

@@ -1,9 +1,16 @@
-Dear {{ message_content.get('name', '')|title }}
 
+Hi {{ message_content.get('name', '')|title }}
+
+{% if message_content.get('role' , '') == 1 %}
+{{ message_content.get('admin', '') }} had replied to your enquiry:
+
+{{ message_content.get('msg', '') }}
+
+{% else %}
 {{ message_content.get('so_name', '') }} had replied to your enquiry:
 
 {{ message_content.get('msg', '') }}
 
+{% endif %}
+
 {% include "footer.html" ignore missing %}
-
-
