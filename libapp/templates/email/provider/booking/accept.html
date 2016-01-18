@@ -5,7 +5,9 @@
             <td>
                 <p>Dear {{ message_content.get('name','')|title}},</p>
 				<p style="line-height: 1.8; font-size: 15px; font-family: Verdana;">
-                    The booking ID:&nbsp;&nbsp;<b>{{ message_content.get('book_id','') }}</b>&nbsp;&nbsp;has been accepted by the space provider.
+                    You have accepted booking for Space :&nbsp;<> <a href="{{message_content.get('link_space', '')}}" target="_blank" > {{ message_content.get('space_title','') }}</a>&nbsp;
+                    with booking ID: {{ message_content.get('book_id','') }}
+
 				</p>
             </td>
         </tr>

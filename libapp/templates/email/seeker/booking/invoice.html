@@ -43,18 +43,18 @@
                             </tr>
                             <tr>
                                 <td>amount paid :</td>
-                                <td align="right">{{ message_content.get('amount' , '') }}</td>
+                                <td >{{ message_content.get('amount' , '') }}</td>
                             </tr>
                             <tr>
                                 <td>payment mode :</td>
-                                <td align="right">{{ message_content.get('payment_mode' , '') }}</td>
+                                <td >{{ message_content.get('payment_mode' , '') }}</td>
                             </tr>
                             <tr style="font-size: 15px;">
                                 <td>payment method :</td>
                                 {% if message_content.get('payment_method' , '') == 'paytm' %}
-                                <td align="right"> <img src="https://mycuteoffice.com/sites/all/modules/custom-contrib/commerce_paytm/paytm_label.png"></td>
+                                <td > <img src="https://mycuteoffice.com/sites/all/modules/custom-contrib/commerce_paytm/paytm_label.png"></td>
                                 {% else %}
-                                <td align="right">{{ message_content.get('payment_method' , '') }}</td>
+                                <td >{{ message_content.get('payment_method' , '') }}</td>
                                 {% endif %}
                             </tr>
                         </table>
