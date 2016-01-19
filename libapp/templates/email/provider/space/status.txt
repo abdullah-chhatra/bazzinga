@@ -2,4 +2,6 @@ Dear {{ message_content.get('name', '')|title }},
 
 Status of your space has been changed to {{ message_content.get('status', '')}}
 
+MCO Admin comment :{{ message_content.get('admin_message', '') }}
+
 {% include "footer.html" ignore missing %}

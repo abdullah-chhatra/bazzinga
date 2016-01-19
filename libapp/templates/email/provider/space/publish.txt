@@ -4,7 +4,7 @@ We have great news for you!
 
 Your space is now live and visible to thousands of space seekers.
 
-To view your listing you can click {{ message_content.get('link_space', '') }} here.
+MCO Admin comment :{{ message_content.get('admin_message', '') }}
 
 You can view and reply to the enquiries as well as see current bookings from your dashboard by clicking {{ message_content.get('link_dashboard', '') }} here.
 
