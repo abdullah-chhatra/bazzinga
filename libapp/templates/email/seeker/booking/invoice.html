@@ -23,6 +23,18 @@
                         <!-- ============ RIGHT COLUMN (CONTENT) ============== -->
         <td width="60%" valign="top" bgcolor="#C4C3D0">
             <table width="100%" style="height: 100%;" cellpadding="10" cellspacing="0" border="0">
+
+                 <tr>
+                    <td>
+                        <p style="box-sizing: border-box; font-size: 15px; line-height: 2;">
+                            <b>BOOKING DETAILS</b><br>
+                            Transaction Id : {{ message_content.get('book_id' , '') }}<br>
+                            Order Id : {{ message_content.get('order_id' , '') }}<br>
+                            Date of transaction : {{ message_content.get('date' , '') }}<br>
+                        </p>
+                    </td>
+                </tr>
+
                 <tr>
                     <td>
                         <p style="box-sizing: border-box; font-size: 15px; line-height: 2;">

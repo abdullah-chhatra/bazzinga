@@ -2,9 +2,11 @@
 Dear {{ message_content.get('name', '')|title }},
 
 Congratulations! Your booking (Booking has been confirmed.
+
 Your booking details are:
-Your Booking Id is: {{ message_content.get('book_id', '') }}
-Your Space ID is: {{ message_content.get('space_title', '') }}
-Please find attached the payment voucher for the booking.
+Transaction Id is: {{ message_content.get('book_id', '') }}
+Order Id : {{ message_content.get('order_id' , '') }}
+Date of transaction : {{ message_content.get('date' , '') }}
+Space : {{ message_content.get('space_title', '') }}
 
 {% include "footer.html" ignore missing %}
