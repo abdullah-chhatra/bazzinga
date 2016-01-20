@@ -5,7 +5,7 @@ Hi {{ message_content.get('name', '')|title }},
 
    {{ message_content.get('ss_name', '') }}'s message:
 
-   {{ message_content.get('ss_msg', '') }}
+   {{ message_content.get('ss_msg', '')|safe }}
 
   Click here to respond to {{ message_content.get('ss_name', '') }}
 

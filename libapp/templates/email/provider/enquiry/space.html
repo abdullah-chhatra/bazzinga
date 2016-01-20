@@ -10,7 +10,7 @@
 				    <b>{{ message_content.get('ss_name', '') }}</b>  has enquired for your office in (<a href="{{message_content.get('link_space', '')}}" target="_blank">{{ message_content.get('location', '') }}</a>).<br /><br />
 
                     <b>{{ message_content.get('ss_name', '') }}'s message:</b><br />
-                    {{ message_content.get('ss_msg', '') }}
+                    {{ message_content.get('ss_msg', '')|safe }}
                 </p>
 
                 <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">

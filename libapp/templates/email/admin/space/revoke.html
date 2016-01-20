@@ -9,7 +9,7 @@
 				</p>
                 <p style="line-height: 1.8; font-size: 15px; font-family: Verdana;">
                    <b><u>Reason for Revoking:</u></b><br />
-                    {{ message_content.get('msg','') }}
+                    {{ message_content.get('msg','')|safe }}
 				</p>
             </td>
         </tr>

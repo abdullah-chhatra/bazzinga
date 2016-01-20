@@ -9,14 +9,14 @@
                    <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
                         {{ message_content.get('admin', '') }} from MCO Team  has viewed and replied to your enquiry for space (<a href="{{message_content.get('link_space', '')}}" target="_blank">{{ message_content.get('title', '')}}</a>)<br /><br />
                         {{ message_content.get('admin', '') }}'s Reply: <br />
-                        {{ message_content.get('msg', '') }}<br /><br />
+                        {{ message_content.get('msg', '')|safe }}<br /><br />
                     </p>
 
                  {% else %}
                     <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
                         {{ message_content.get('so_name', '') }}  has viewed and replied to your enquiry for space (<a href="{{message_content.get('link_space', '')}}" target="_blank">{{ message_content.get('title', '')}}</a>)<br /><br />
                         {{ message_content.get('so_name', '') }}'s Reply: <br />
-                        {{ message_content.get('msg', '') }}<br /><br />
+                        {{ message_content.get('msg', '')|safe }}<br /><br />
                     </p>
 
                  {% endif %}

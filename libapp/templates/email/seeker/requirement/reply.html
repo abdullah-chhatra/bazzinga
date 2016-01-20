@@ -8,7 +8,7 @@
                 <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
                     My Cute Office Representative has viewed and replied to your requirement
                     My Cute Office representatives  Reply: <br />
-                    “<span style="font-family: verdana; font-size:15px; line-height: 1.5;">{{ message_content.get('msg', '') }}</span>”
+                    “<span style="font-family: verdana; font-size:15px; line-height: 1.5;">{{ message_content.get('msg', '')|safe }}</span>”
                 </p>
 
             </td>

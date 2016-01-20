@@ -9,7 +9,7 @@
                     Space ID:&nbsp;&nbsp; {{ message_content.get('space_id' , '') }}<br />
                     Name:&nbsp;&nbsp; {{ message_content.get('enquirer_name' , '') }}<br />
                     Mobile:&nbsp;&nbsp; {{ message_content.get('mobile' , '') }}<br />
-                    Message:&nbsp;&nbsp; {{ message_content.get('msg' , '') }}<br />
+                    Message:&nbsp;&nbsp; {{ message_content.get('msg' , '')|safe }}<br />
                     Contact Person:&nbsp;&nbsp; {{ message_content.get('contact_person' , '') }}<br />
                     Phone:&nbsp;&nbsp; {{ message_content.get('contact_mobile' , '') }}<br />
                 </p>

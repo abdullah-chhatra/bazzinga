@@ -3,7 +3,7 @@ Hi {{ message_content.get('name', '')}},
 
 The status of your space has been changed from Published to {{ message_content.get('space_status', '')}}
 
-MCO Admin comment :{{ message_content.get('admin_message', '') }}
+MCO Admin comment :{{ message_content.get('admin_message', '')|safe }}
 
 If you wish to publish the space again in the future,
 

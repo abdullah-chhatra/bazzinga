@@ -7,7 +7,7 @@
                 
                 <p>The status of your space has been changed from Published to {{ message_content.get('space_status', '')}}</p>
 
-                <p>MCO Admin comment :  "{{ message_content.get('admin_message', '') }}" </p>
+                <p>MCO Admin comment :  "{{ message_content.get('admin_message', '')|safe }}" </p>
 
                 <p>If you wish to publish the space again in the future,.</p>
 

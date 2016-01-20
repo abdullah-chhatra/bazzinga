@@ -7,7 +7,7 @@
                 <p>Dear {{ message_content.get('name' , '')|title }},</p>
                     <br style="line-height: 1.8; font-size: 15px; font-family: Verdana;">
                     {{ message_content.get('admin_name' , '') }} from MCO has sent you a private message as follows:<br /><br />
-                        "{{ message_content.get('message' , '') }}"<br />
+                        "{{ message_content.get('message' , '')|safe }}"<br />
                     </p>
 
             </td>

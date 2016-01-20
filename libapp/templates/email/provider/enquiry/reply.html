@@ -12,7 +12,7 @@
 
                     <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
                     {{ message_content.get('admin') }}’s Reply: <br />
-                        “<span style="font-family: verdana; font-size:15px; line-height: 1.5;">{{ message_content.get('msg', '') }}</span>”
+                        “<span style="font-family: verdana; font-size:15px; line-height: 1.5;">{{ message_content.get('msg', '')|safe }}</span>”
                     </p>
 
                 {% else %}
@@ -21,7 +21,7 @@
                     </p>
                     <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
                         {{ message_content.get('ss_name') }}’s Reply: <br />
-                        “<span style="font-family: verdana; font-size:15px; line-height: 1.5;">{{ message_content.get('msg', '') }}</span>”
+                        “<span style="font-family: verdana; font-size:15px; line-height: 1.5;">{{ message_content.get('msg', '')|safe }}</span>”
                     </p>
 
                 {% endif %}
