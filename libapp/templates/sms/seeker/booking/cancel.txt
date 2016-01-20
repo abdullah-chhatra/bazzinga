@@ -1,9 +1,12 @@
-Dear {{ message_content.get('name','') }},
 
-We have received your request to cancel your booking no.{ message_content.get('book_id','') }}
+Dear {{ message_content.get('name', '')|title }},
 
-We are processing the same.
+ We have received booking cancellation request from you for Space {{ message_content.get('space_title', '') }} with booking details as follows:
 
-The amount shall be refunded to you within 3 working days.
+ Booking Id: {{ message_content.get('book_id', '') }}
+ Transaction Id: {{ message_content.get('order_id', '') }}
+ Booking date: {{ message_content.get('book_date', '') }}
+
+ Our representative will verify and then cancel booking or get back to you for confirmation.
 
 {% include "footer.html" ignore missing %}

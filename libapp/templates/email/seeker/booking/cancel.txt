@@ -1,10 +1,12 @@
 
-Dear {{ email_content.get('name', '')|title }},
+Dear {{ message_content.get('name', '')|title }},
 
-We have received your request to cancel the booking ID: {{ email_content.get('book_id', '') }}
+ We have received booking cancellation request from you for Space {{ message_content.get('space_title', '') }} with booking details as follows:
 
-The request has been received by the Space ID: {{ email_content.get('space_id', '') }}
+ Booking Id: {{ message_content.get('book_id', '') }}
+ Transaction Id: {{ message_content.get('order_id', '') }}
+ Booking date: {{ message_content.get('book_date', '') }}
 
-You will receive a notification when the request is approved or disapproved.
+ Our representative will verify and then cancel booking or get back to you for confirmation.
 
 {% include "footer.html" ignore missing %}
