@@ -2,8 +2,9 @@
 Hi {{ message_content.get('name', '')}},
 
 The status of your space has been changed from Published to {{ message_content.get('space_status', '')}}
+because of following reason
 
-MCO Admin comment :{{ message_content.get('admin_message', '')|safe }}
+{{ message_content.get('admin_message', '')|safe }}
 
 If you wish to publish the space again in the future,
 

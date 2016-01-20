@@ -6,8 +6,9 @@
                 <p>Dear  {{ message_content.get('name', '')|title }},</p>
 				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
 				    Status of your space has been changed to {{ message_content.get('status', '') }}
+                    because of following reason :
 				</p>
-                <p>MCO Admin comment : "{{ message_content.get('admin_message', '')|safe }}" </p>
+                <p>"{{ message_content.get('admin_message', '')|safe }}" </p>
 
             </td>
         </tr>
