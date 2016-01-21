@@ -11,17 +11,22 @@
         </tr>
         <tr>
             <td>
-                <table width="100%" style="border: 2px solid #F0F0F0" bgcolor="#F8F8F8" cellpadding="15" cellspacing="0" border="0">
+                <table width="100%" cellpadding="0" cellspacing="10" border="0">
                     {% for workspace in message_content.get('workspaces') %}
                     {% if loop.index%2 == 1 %}
                     <tr>
                     {% endif %}
                         <td valign="top">
                             <a href="{{workspace['link_space']}}" target="_blank"  style="text-decoration: none;">
-                                <img width="225px" height="150px" src=" {{ workspace['image_src']}}">
-                                <p style="background-color: #474747; color: white; padding: 5px; margin: 0; text-align: center; line-height: 1.5; font-size: 11px; opacity: 0.4">
-                                    <span>{{ workspace['space_name']|truncate(32) }}</span><br />
-                                    <span style="color: white;">{{ workspace['display_cost']}} / {{ workspace['display_label']}} / {{ workspace['type']}}</span>
+                                <img width="235px" height="150px" src=" {{ workspace['image_src']}}">
+                                <p style="background-color: #FFFFFF; color: #333333; border: 1px solid #DDDDDD; padding: 5px; margin: 0; text-align: center; line-height: 1.5; font-size: 12px;">
+                                    {% set capacity = 'people' %}
+                                    {% if workspace['capacity'] == 1 %}
+                                        {% set capacity = 'person' %}
+                                    {% endif %}
+                                    <span style="color: #2EB16F;">Rs. <span style="font-size: 14px;"><b>{{ workspace['display_cost'] }}</b></span> {{ workspace['display_label'] }}</span><br>
+                                    <span><b>{{ workspace['capacity'] }} {{ capacity }} {{ workspace['type'] }}</b></span><br>
+                                    <span style="color: #337ab7">{{ workspace['locality']|truncate(38) }}</span>
                                 </p>
                             </a>
                         </td>
