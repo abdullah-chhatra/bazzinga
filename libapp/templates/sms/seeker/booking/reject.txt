@@ -4,6 +4,6 @@ We are really sorry! Unfortunately, your Booking No. {{ message_content.get('boo
 
 We regret the inconvenience caused to you.
 
-The amount shall be refunded to you within 3 working days.
+The amount shall be refunded to you within 5 working days.
 
 {% include "footer.html" ignore missing %}
