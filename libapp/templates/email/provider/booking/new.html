@@ -6,7 +6,7 @@
                 <p>Dear {{ message_content.get('name' , '')|title }},</p>
 
 				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-				    We have received the payment for booking for your space in ({{ message_content.get('location', '') }})<br /><br />
+				    We have received the payment for booking for your Space :&nbsp; <a href="{{message_content.get('link_space', '')}}" target="_blank" > {{ message_content.get('space_title','') }}</a>&nbsp;<br /><br />
                     Booking Details: <br />
                     Capacity: {{ message_content.get('capacity' , '') }}<br />
                     Address: {{ message_content.get('address' , '') }}<br />
