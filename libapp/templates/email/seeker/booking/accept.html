@@ -4,14 +4,16 @@
 		<br>
             <br>
                 <p>Dear {{ message_content.get('name','')|title}},</p>
-				<br style="line-height: 1.8; font-size: 15px; font-family: Verdana;">
+				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
                     The booking ID:&nbsp;&nbsp;<b>{{ message_content.get('book_id','') }}</b>&nbsp;&nbsp;has been accepted by the space provider.</br>
 
-                    Date :{{ message_content.get('date','') }}</br>
+                    Space : <a href="{{message_content.get('link_space', '')}}" target="_blank" > {{ message_content.get('space_title','') }}</a> <br/>
 
-                    Owner Name : {{ message_content.get('Owner_name', '') }},</br>
+                    Date :{{ message_content.get('date','') }}<br/>
 
-                    Contact : {{ message_content.get('Owner_contact', '')}},</br>
+                    Owner Name : {{ message_content.get('owner_name', '') }},<br/>
+
+                    Contact : {{ message_content.get('owner_contact', '')}},<br/>
 
                     The address is: {{ message_content.get('address','') }}.
 
