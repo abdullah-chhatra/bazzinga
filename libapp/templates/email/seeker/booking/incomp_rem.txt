@@ -6,14 +6,8 @@ We saw you were interested in booking the space but could not go ahead.
 If you are facing any issues with your booking, you can call us on +91 7738888577
 
 
-You can revisit ({{ message_content.get('space_id', '') }}) by clicking here
-
-You can resume your booking by clicking here
-
-
-You will get the (offer) for booking within the next 24 hours by using coupon code ({{ message_content.get('code', '') }}).
+You can revisit ({{ message_content.get('space_title', '') }})
 
 You can reach us on +91-8286088707 or write to us on hello@mycuteoffice.com if you face any issues or need any clarifications.
-
 
 {% include "footer.html" ignore missing %}
