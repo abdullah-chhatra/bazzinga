@@ -4,8 +4,9 @@
 		<tr>
             <td>
                 <p>Dear {{ message_content.get('name','') |title }},</p>
-				<p style="line-height: 1.8; font-size: 15px; font-family: Verdana;">
-                    The booking confirmation for booking ID:&nbsp;<b>{{ message_content.get('book_id','') }}</b>&nbsp;for the Workspace ID:&nbsp;<b>{{ message_content.get('workspace_id','') }}</b>&nbsp;is overdue.<br />
+				<br style="line-height: 1.8; font-size: 15px; font-family: Verdana;">
+                    The booking confirmation for booking ID:&nbsp;<b>{{ message_content.get('book_id','') }}</b>&nbsp;for the space:<a href="{{message_content.get('link_space', '')}}" target="_blank" > {{ message_content.get('space_title','') }}</a> ,</br>
+                    Workspace ID : &nbsp;<b>{{ message_content.get('workspace_id','') }}</b>&nbsp;is overdue.<br />
                     Kindly contact the space provider.
 				</p>
             </td>
