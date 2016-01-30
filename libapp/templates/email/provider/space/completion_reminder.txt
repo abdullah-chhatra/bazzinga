@@ -1,5 +1,5 @@
 
-Hi {{ email_content.get('name', '')|title }},
+Hi {{ message_content.get('name', '')|title }},
 
 I noticed you have not been able to complete your space listing on My Cute Office. Just checking if you want to have a call to discuss any issues you may be facing? I am available on call on +91-8286088707.
 

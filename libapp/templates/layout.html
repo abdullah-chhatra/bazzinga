@@ -8,7 +8,6 @@
 {% block body %}
 <table width="100%" style="padding: 30px 0px; font-family:arial; background-color: #F5F5F5;" border="0">
 
-
     <tr>
         <td>
             <table align="center" bgcolor="#FFF" cellpadding="0" cellspacing="0" style="width:90%; min-width: 400px; max-width: 600px; padding:0px; border:1px solid #E7E7E7;">
@@ -40,8 +39,12 @@
                                 <tr>
                                     <td colspan="2" valign="top" align="left" style="padding: 0px 15px;">
                                         <h3 style="font-style: italic; font-weight: 600;">THANK YOU!</h3>
+                                        {% if 'signature' in message_content %}
+                                            <p style="font-size: 12px; color: #696969; font-weight: 200; font-style: italic; line-height: 1.5; letter-spacing: 0.7; font-family: verdana;">{{ message_content.get('signature', '')|title }}</p>
+                                        {% else %}
                                         <p style="font-size: 12px; color: #696969; font-weight: 200; font-style: italic; line-height: 1.5; letter-spacing: 0.7; font-family: verdana;">Neelay Jain</p>
                                         <p style="font-size: 12px; color: #696969; font-weight: 200; font-style: italic; line-height: 1.5; letter-spacing: 0.7; font-family: verdana;">Co-Founder, My Cute Office</p>
+                                        {% endif %}
                                         <p style="font-size: 12px; color: #696969; font-weight: 200; font-style: italic; line-height: 1.5; letter-spacing: 0.7; font-family: verdana;">Creating values from innovative workspaces</p>
                                         <div class="mco-app-logo">
                                         <a href="https://play.google.com/store/apps/details?id=com.mycuteoffice.mcoapp" target="_blank">
