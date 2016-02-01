@@ -40,7 +40,7 @@
                                     <td colspan="2" valign="top" align="left" style="padding: 0px 15px;">
                                         <h3 style="font-style: italic; font-weight: 600;">THANK YOU!</h3>
                                         {% if 'signature' in message_content %}
-                                            <p style="font-size: 12px; color: #696969; font-weight: 200; font-style: italic; line-height: 1.5; letter-spacing: 0.7; font-family: verdana;">{{ message_content.get('signature', '')|title }}</p>
+                                            <p style="font-size: 12px; color: #696969; font-weight: 200; font-style: italic; line-height: 1.5; letter-spacing: 0.7; font-family: verdana;">{{ message_content.get('signature', '')|safe }}</p>
                                         {% else %}
                                         <p style="font-size: 12px; color: #696969; font-weight: 200; font-style: italic; line-height: 1.5; letter-spacing: 0.7; font-family: verdana;">Neelay Jain</p>
                                         <p style="font-size: 12px; color: #696969; font-weight: 200; font-style: italic; line-height: 1.5; letter-spacing: 0.7; font-family: verdana;">Co-Founder, My Cute Office</p>
