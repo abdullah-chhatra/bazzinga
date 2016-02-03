@@ -24,16 +24,13 @@ class Push(Notification):
         """
         Get message object for push
         """
+        gcm_keys = ["registration_id", "registration_ids", "topic", "retries"]
         message = {}
         message['data'] = {}
 
         for key in kwargs.keys():
             if key not in kwargs.get("ignore", pushconf.IGNORE_KEYS):
-                if key == "registration_id" and kwargs.get(key, None) is not None:
-                    message[key] = kwargs.get(key, "")
-                elif key == "registration_ids" and kwargs.get(key, None) is not None:
-                    message[key] = kwargs.get(key, "")
-                elif key == "topic" and kwargs.get("topic", None) is not None:
+                if key in gcm_keys and kwargs.get(key, None) is not None:
                     message[key] = kwargs.get(key, "")
                 elif kwargs.get(key, None) is not None:
                     message['data'].update({key: kwargs.get(key, "")})
