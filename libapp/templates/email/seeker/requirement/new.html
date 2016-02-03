@@ -5,7 +5,7 @@
             <td>
                 <p>Dear {{ message_content.get('name', '')|title }},</p>
 				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-                    We have received your requirement on My Cute Office with the following message.<br />
+                    We have received your requirement on My Cute Office for a location : "{{ message_content.get('location', '')}}"  with the following message.<br />
 
                     {{ message_content.get('msg', '')|safe }}
                 </p>

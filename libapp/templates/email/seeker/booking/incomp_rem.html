@@ -11,13 +11,13 @@
 				</p>
 
                 <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-                 You can revisit ({{ message_content.get('space_id', '') }}) by clicking <a href="{{ message_content.get('link_revisit_space', '') }}" target="_blank">here</a>
+                 You can revisit the Space : <a href="{{message_content.get('link_revisit_space', '')}}" target="_blank" > {{ message_content.get('space_title','') }}</a>
                     You can resume your booking by clicking <a href="{{ message_content.get('link_resume_booking', '') }}" target="_blank">here</a>
 				</p>
 
-                <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
+                {# <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
                  You will get the (offer) for booking within the next 24 hours by using coupon code ({{ message_content.get('code', '') }}).
-				</p>
+				</p> #}
 
                 <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
                  You can reach us on +91-8286088707 or write to us on hello@mycuteoffice.com if you face any issues or need any clarifications.

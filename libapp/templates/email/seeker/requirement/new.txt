@@ -1,6 +1,6 @@
 Dear {{ message_content.get('name', '')|title }},
 
-We have received your requirement on My Cute Office with the following message.
+We have received your requirement on My Cute Office for a location "{{ message_content.get('location', '')}}" with the following message.
 
 {{ message_content.get('msg', '')|safe }}
 

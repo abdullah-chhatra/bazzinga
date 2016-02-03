@@ -1,5 +1,9 @@
 THANK YOU!
 
+{% if 'signature' in message_content %}
+{{ message_content.get('signature', '')|replace('<div>', ', <div>')|striptags }}
+{% else %}
 Neelay Jain
 Co-Founder, My Cute Office
 Creating values from innovative workspaces
+{% endif %}

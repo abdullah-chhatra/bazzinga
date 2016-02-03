@@ -5,7 +5,8 @@
             <td>
                 <p>Dear {{ message_content.get('name','')|title }},</p>
 				<p style="line-height: 1.8; font-size: 15px; font-family: Verdana;">
-                    The Space ID:&nbsp;<b>  {{ message_content.get('space_id','') }} </b>&nbsp; has not reverted to the enquiry ID:&nbsp;<b> {{ message_content.get('enq_id','') }} </b>&nbsp; for over 48 hours.<br />
+                    The user {{ message_content.get('user_name','') }} has not reverted to the Space :<a href="{{message_content.get('link_space', '')}}" target="_blank" > {{ message_content.get('space_title','') }}</a>
+                    Enquiry ID:&nbsp;<b> {{ message_content.get('enq_id','') }} </b>&nbsp; for over 48 hours.<br />
                     Kindly follow up.
 				</p>
             </td>
