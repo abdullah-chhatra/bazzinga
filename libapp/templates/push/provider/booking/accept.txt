@@ -1,2 +1,1 @@
-Dear {{ message_content.get('name','') |title }},
-You have accepted booking for the booking ID:  {{ message_content.get('book_id','') }}.
+You have Confirmed the booking ID:{{ message_content.get('book_id','') }}

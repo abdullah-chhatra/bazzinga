@@ -1,5 +1,1 @@
-Dear {{ message_content.get('name', '')|title }},
-
-You have generated enquiry for the Space in ({{ message_content.get('location', '') }})
-
-Our executive will shortly get in t ouch and share the details of the space with you.
+You have generated enquiry for the Space

@@ -1,6 +1,1 @@
-Dear {{ message_content.get('name', '')|title }}
-
-{{ message_content.get('so_name', '') }} had replied to your inquiry:
-
-{{ message_content.get('msg', '') }}
-
+A new reply has been posted for your Enquiry ID: {{ message_content.get('enq_id', '') }}

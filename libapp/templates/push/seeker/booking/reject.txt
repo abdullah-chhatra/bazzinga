@@ -1,4 +1,1 @@
-Dear {{ message_content.get('name','')}},
-We are really sorry! Unfortunately, your Booking No.{{ message_content.get('book_id','') }} has not been confirmed.
-We regret the inconvenience caused to you.
-The amount shall be refunded to you within 3 working days.
+Status of Booking ID: {{ message_content.get('book_id','') }} is Rejected

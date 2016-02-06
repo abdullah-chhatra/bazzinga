@@ -1,2 +1,1 @@
-Dear {{ message_content.get('name', '')|title }},
 You have disapproved the cancellation request for booking ID: {{ message_content.get('book_id', '') }}.

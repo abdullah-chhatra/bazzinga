@@ -1,5 +1,1 @@
-Hi {{ message_content.get('name', '')|title }}
-
-A reply to {{ message_content.get('title', '')}} enquiry has been posted by {{ message_content.get('name', '') }} as follows:
-
-{{ message_content.get('msg', '') }}
+New reply for your Enquiry
