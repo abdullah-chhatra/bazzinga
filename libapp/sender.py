@@ -17,8 +17,8 @@ def publish_msg(source_q=libconf.PUB_EMAIL_Q, dest_q=libconf.EMAIL_Q):
     app.logger.info("Publisher {queue} length: {data}".format(queue=source_q, data=q_length))
     if q_length > 0:
         for x in range(q_length):
-            mail_data = queue.rpop(source_q)
-            queue.publish(dest_q, mail_data)
+            msg_data = queue.rpop(source_q)
+            queue.publish(dest_q, msg_data)
 
 
 def subscribe_msg():
@@ -37,7 +37,6 @@ def subscribe_msg():
 
             if isinstance(message_content, unicode):
                 app.logger.info("Error: {data}".format(data=type(message_content)))
-                app.logger.info("Data: {data}".format(data=message_content))
                 message_content = ast.literal_eval(message_content)
 
             if msg_type == "email":
@@ -74,15 +73,7 @@ def subscribe_msg():
                     registration_ids = to
                 else:
                     pass
-                """
-                registration_id = msg_dict.get("registration_id", None)
-                if "registration_ids" in msg_dict and len(msg_dict.get("registration_ids")) == 1:
-                    registration_id = msg_dict.get("registration_ids")[0]
-                    del msg_dict["registration_ids"]
-                    is_json = False
 
-                registration_ids = msg_dict.get("registration_ids", None)
-                """
                 # Call push notifier
                 push_obj = Push()
                 push_obj.message_notifier(msg_type=msg_type, author=author, category=category, template=template,

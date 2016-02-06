@@ -3,7 +3,7 @@ API_KEY = "AIzaSyBOUrsenRnqXBuoC4uhqwS2vOxsZYUwYsI"
 PROXY = None
 TIMEOUT = 5
 DEBUG = True
-RETRIES = 4
+RETRIES = 1
 
 # ignore key list
 IGNORE_KEYS = ["message_content"]
