@@ -55,7 +55,7 @@
                             {{ message_content.get('duration', '') }}
                         </td>
                         <td align="right">
-                            600
+                            {{ message_content.get('total', '') }}
                         </td>
                     </tr>
                     <tr>
@@ -63,12 +63,12 @@
                             <b>Total</b>
                         </td>
                         <td align="right">
-                            600
+                            {{ message_content.get('total', '') }}
                         </td>
                     </tr>
                     <tr>
                         <td colspan="5">
-                            Rs. Six Hundred only
+                            Rs. {{ message_content.get('total_in_words', '')|title }}
                         </td>
                     </tr>
                 </table>

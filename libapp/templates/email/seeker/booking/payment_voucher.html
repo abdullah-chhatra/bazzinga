@@ -14,8 +14,8 @@
                         </td>
                         <td width="50%" valign="top">
                             <h2>PAYMENT VOUCHER</h2>
-                            <b>VOUCHER NO. 2016/JAN-PV-LT-MUM-3</b><br>
-                            <b>DATE: 06 January 2016</b>
+                            <b>VOUCHER NO. {{ message_content.get('voucher_no', '') }}</b><br>
+                            <b>DATE: {{ message_content.get('date', '') }}</b>
                         </td>
                     </tr>
                 </table>
@@ -24,15 +24,15 @@
         <tr>
             <td>
                 <b>User Details</b><br>
-                Anupama Kapoor on behalf of Bean Stalk India<br>
+                {{ message_content.get('name', '') }} from {{ message_content.get('company_name', '') }}<br>
             </td>
         </tr>
         <tr>
             <td>
                 <b>Space Provider:</b><br>
-                E wing 309 Third Floor, Crystal Plaza, <br>
-                Opp. Infinity Mall, Andheri Link Road, <br>
-                Andheri West, Mumbai – 400053<br>
+                {{ message_content.get('address1', '') }}, <br>
+                {{ message_content.get('city', '') }}, <br>
+                {{ message_content.get('pincode', '') }}<br>
             </td>
         </tr>
         <tr>
@@ -42,8 +42,8 @@
         </tr>
         <tr>
             <td>
-                <b>Start Date: 06th January 2016<br>
-                End Date  : 05th February, 2016<br>
+                <b>Start Date: {{ message_content.get('start_date', '') }}<br>
+                End Date  : {{ message_content.get('end_date', '') }}<br>
                 Date of Payment: 6th January 2016</b><br>
             </td>
         </tr>
@@ -59,7 +59,7 @@
                             Advance Rent
                         </td>
                         <td align="right">
-                            7,500
+                            {{ message_content.get('advance', '') }}
                         </td>
                     </tr>
                     <tr>
@@ -67,7 +67,7 @@
                             Refundable Deposit
                         </td>
                         <td align="right">
-                            7,500
+                            {{ message_content.get('deposit', '') }}
                         </td>
                     </tr>
                     <tr>
@@ -75,7 +75,7 @@
                             Documentation & Service Charges
                         </td>
                         <td align="right">
-                            500
+                            {{ message_content.get('doc_and_service', '') }}
                         </td>
                     </tr>
                     <tr>
@@ -83,7 +83,7 @@
                             Total Amount Received
                         </td>
                         <td align="right">
-                            15,500
+                            {{ message_content.get('total_amount', '') }}
                         </td>
                     </tr>
                 </table>
@@ -91,12 +91,12 @@
         </tr>
         <tr>
             <td>
-                <b>Amount in Rupees:</b> Fifteen Thousand Five Hundred Only
+                <b>Amount in Rupees:</b> {{ message_content.get('amount_in_words', '') }}
             </td>
         </tr>
         <tr>
             <td>
-                Received with thanks from Anupama Kapoor (Bean Stalk) the above mentioned amount.
+                Received with thanks from {{ message_content.get('name', '') }} ({{ message_content.get('company_name', '') }}) the above mentioned amount.
             </td>
         </tr>
         <tr>
