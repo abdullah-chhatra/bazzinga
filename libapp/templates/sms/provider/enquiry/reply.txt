@@ -8,12 +8,18 @@ Hi {{ message_content.get('name', '')|title }}
 
 {{ message_content.get('msg', '') }}
 
+{{message_content.get('link_reply', '')}}
+
+
 {% else %}
 {{ message_content.get('ss_name') }}  has viewed and replied to enquiry for ({{ message_content.get('title', '')}})
 
 {{ message_content.get('ss_name') }}’s Reply:
 
 {{ message_content.get('msg', '')|safe }}
+
+{{message_content.get('link_reply', '')}}
+
 {% endif %}
 
 {% include "footer.html" ignore missing %}
