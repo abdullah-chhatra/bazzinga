@@ -1,3 +1,3 @@
-Status of your enquiry has been changed to {{ email_content.get('status', '')}}
+Status of your enquiry is changed to {{ message_content.get('status', '')}}
 
 
