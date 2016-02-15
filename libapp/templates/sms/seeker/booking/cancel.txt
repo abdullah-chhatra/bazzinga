@@ -1,7 +1,7 @@
 
 Dear {{ message_content.get('name', '')|title }},
 
- We have received booking cancellation request from you for Space {{ message_content.get('space_title', '') }} with booking details as follows:
+ We have received booking cancellation request from you for Space "{{message_content.get('link_space', '')}}" with booking details as follows:<br />
 
  Booking Id: {{ message_content.get('book_id', '') }}
  Transaction Id: {{ message_content.get('order_id', '') }}

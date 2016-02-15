@@ -1,6 +1,6 @@
 Dear {{ message_content.get('name', '')|title }},
 
-Congratulations! Your enquiry  for the Space : {{ message_content.get('space_title', '') }} has been accepted.
+Congratulations! Your enquiry  for the Space : {{ message_content.get('link_space', '') }} has been accepted.
 
 Name ; {{ message_content.get('Owner_name' , '') }}
 Contact : {{ message_content.get('Owner_contact' , '') }}
