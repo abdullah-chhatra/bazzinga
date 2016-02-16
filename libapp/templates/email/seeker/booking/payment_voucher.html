@@ -37,14 +37,14 @@
         </tr>
         <tr>
             <td>
-                <b>Nature of Service: </b>Deskspace<br>
+                <b>Nature of Service: </b>{{ message_content.get('workspace_type', '') }}<br>
             </td>
         </tr>
         <tr>
             <td>
                 <b>Start Date: {{ message_content.get('start_date', '') }}<br>
                 End Date  : {{ message_content.get('end_date', '') }}<br>
-                Date of Payment: 6th January 2016</b><br>
+                Date of Payment: {{ message_content.get('date', '') }}</b><br>
             </td>
         </tr>
         <tr>
