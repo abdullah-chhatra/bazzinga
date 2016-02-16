@@ -46,7 +46,7 @@
                             Billed for – {{ message_content.get('billed_for', '') }}<br>
                         </td>
                         <td>
-                            600
+                            {{ message_content.get('brok_amount', '') }}
                         </td>
                         <td>
                             {{ message_content.get('quantity', '') }}
