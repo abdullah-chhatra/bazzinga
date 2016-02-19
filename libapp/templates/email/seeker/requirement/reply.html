@@ -11,6 +11,10 @@
                     “<span style="font-family: verdana; font-size:15px; line-height: 1.5;">{{ message_content.get('msg', '')|safe }}</span>”
                 </p>
 
+                <p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
+                    <a href="{{message_content.get('link_reply', '')}}" target="_blank" style="display: inline-block; background-color: black; color: white; text-decoration: none; padding: 5px 25px; border: 2px solid gray;">Reply</a>
+				</p>
+
             </td>
         </tr>
   </table>

@@ -1,10 +1,10 @@
 
-We have received requirement for work space at {{ message_content.get('land_mark' , '') }} landmark.
+Dear {{ message_content.get('name', '')|title }},
 
-Name:   {{ message_content.get('user_name' , '') }}
+We have received your requirement on My Cute Office for a location "{{ message_content.get('location', '')}}" with the following message.
 
-Email:   {{ message_content.get('email' , '') }}
+{{ message_content.get('msg', '')|safe }}
 
-Mobile:   {{ message_content.get('mobile' , '') }}
+You can reach us on +91-8286088707 or write to us on hello@mycuteoffice.comif you face any issues or need any clarifications.
 
 {% include "footer.html" ignore missing %}
