@@ -4,8 +4,8 @@
 		<tr>
             <td>
                 <p>Dear {{ message_content.get('name', '')|title }},</p>
-				<p style="line-height: 25px; font-size: 15px; font-family: Verdana;">
-                    Below are the spaces that match your requirement.
+				<p style="font-size: 15px; font-family: Verdana;">
+                    {{ message_content.get('seeker_message', '')|safe }}
 				</p>
             </td>
         </tr>
