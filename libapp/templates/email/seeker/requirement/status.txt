@@ -2,4 +2,9 @@ Dear {{ message_content.get('name','')|title }},
 
 The status for  your Requirement in {{ message_content.get('address','')}} ,({{ message_content.get('req_id','') }})
 is changed to {{ message_content.get('status','')}}
-due to following reason {{ message_content.get('admin_msg','')}}
+
+ {% if message_content.get('admin_msg' , '') != '' %}
+ due to following reason : ' {{ message_content.get('admin_msg','')}}'
+ {% endif %}
+
+{% include "footer.html" ignore missing %}

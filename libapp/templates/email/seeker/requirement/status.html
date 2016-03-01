@@ -6,8 +6,12 @@
                 <p>Dear {{ message_content.get('name','')|title }},</p>
                 <p style="line-height: 1.8; font-size: 15px; font-family: Verdana;">
                     The status for  your Requirement in {{ message_content.get('address','')}} ,({{ message_content.get('req_id','') }})<br />
-                    is changed to {{ message_content.get('status','')}} due to following reason<br />
-                   ' {{ message_content.get('admin_msg','')}}'
+                    is changed to {{ message_content.get('status','')}} <br/>
+
+                    {% if message_content.get('admin_msg' , '') != '' %}
+                    due to following reason : ' {{ message_content.get('admin_msg','')}}'
+
+                    {% endif %}
 				</p>
             </td>
         </tr>
