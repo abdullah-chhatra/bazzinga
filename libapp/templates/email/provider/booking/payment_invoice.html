@@ -41,7 +41,7 @@
                     <tr>
                         <td>
                             Client Name – {{ message_content.get('name', '') }} ({{ message_content.get('company_name', '') }})<br>
-                            Brokerage: 9%<br>
+                            Brokerage: {{ message_content.get('brok_percent', '') }} <br>
                             Transaction Value – Rs.{{ message_content.get('unit_rate', 0) }} per {{ message_content.get('offer_type', '') }}<br>
                             Billed for – {{ message_content.get('billed_for', '') }}<br>
                         </td>
