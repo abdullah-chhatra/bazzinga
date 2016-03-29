@@ -5,6 +5,7 @@ TIMEOUT = 5
 DEBUG = True
 RETRIES = 1
 
+IS_JSON = False
 # ignore key list
 IGNORE_KEYS = ["message_content"]
 # delete key list

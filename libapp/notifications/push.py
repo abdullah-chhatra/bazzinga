@@ -1,5 +1,6 @@
 import os
 import gcm
+from gcm.gcm import GCMNotRegisteredException
 from flask import render_template
 from .notifications import Notification
 from .. import app
@@ -37,6 +38,10 @@ class Push(Notification):
                 else:
                     # Not sure what to do ;)
                     pass
+            elif key == 'message_content':
+                msg_content = kwargs.get(key, None)
+                for msg_key in msg_content:
+                    message['data'].update({msg_key: msg_content.get(msg_key, "")})
 
         return message
 
@@ -44,12 +49,25 @@ class Push(Notification):
         """
         Send message to receiver via gateway
         """
-        if "registration_id" in message:
-            resp = gs.plaintext_request(**message)
-        elif "registration_ids" in message:
-            resp = gs.send_downstream_message(**message)
-        else:
-            resp = gs.send_topic_message(**message)
+        resp = None
+        try:
+            if "registration_id" in message:
+                resp = gs.plaintext_request(**message)
+            elif "registration_ids" in message:
+                resp = gs.send_downstream_message(**message)
+            else:
+                resp = gs.send_topic_message(**message)
+        except GCMNotRegisteredException as e:
+            app.logger.error("exception: {error}".format(error=e))
+            if "registration_id" in message:
+                app.logger.error("Registration Id: {error}".format(error=message.get("registration_id", None)))
+            elif "registration_ids" in message:
+                app.logger.error("Registration Ids: {error}".format(error=message.get("registration_ids", None)))
+            else:
+                app.logger.error("Topic: {error}".format(error=message.get("topic", None)))
+        except:
+            app.logger.exception('Got exception while sending message')
+            raise
         return resp
 
     def message_notifier(self, **kwargs):

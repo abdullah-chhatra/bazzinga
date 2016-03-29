@@ -61,8 +61,15 @@ def subscribe_msg():
                                          message_content=message_content)
             elif msg_type == "push":
                 # It is Push notification
-                is_json = msg_dict.get("is_json", False)
-                retries = msg_dict.get("retries", pushconf.RETRIES)
+                is_json = pushconf.IS_JSON
+                retries = pushconf.RETRIES
+                if "is_json" in message_content:
+                    is_json = message_content.get("is_json", False)
+                    message_content.pop("is_json", None)
+                if "retries" in message_content:
+                    retries = message_content.get("retries", pushconf.RETRIES)
+                    message_content.pop("retries", None)
+
 
                 registration_id = None
                 registration_ids = None
