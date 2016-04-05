@@ -1,4 +1,3 @@
-
 # Redis configurations
 SHORTNER_HOST = "localhost"
 SHORTNER_PORT = 6379
