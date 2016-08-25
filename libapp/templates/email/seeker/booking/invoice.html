@@ -47,7 +47,7 @@
                             <tr>
                                 <td colspan="2" align="center">
                                     <p style="margin-top:0;">({{message_content.get('duration', '')}}{{message_content.get('booking_type', '')}}
-                                        x Rs.{{message_content.get('unit_price', '')}}/{{message_content.get('booking_type', '')}} x 1{{message_content.get('workspace_type', '')}})</p>
+                                        x Rs.{{message_content.get('unit_price', '')}}/{{message_content.get('booking_type', '')}} x {{message_content.get('quantity', '')}}{{message_content.get('workspace_type', '')}})</p>
                                 </td>
                             </tr>
                             {% if message_content.get('discount') %}
@@ -67,6 +67,16 @@
                                 </td>
                                 <td align="right">
                                     <p style="margin-top:0;">Rs. {{ message_content.get('service_charge') }}</p>
+                                </td>
+                            </tr>
+                            {% endif %}
+                            {% if message_content.get('service_tax') %}
+                            <tr>
+                                <td>
+                                    <p style="margin-top:0;">Service Tax:</p>
+                                </td>
+                                <td align="right">
+                                    <p style="margin-top:0;">Rs. {{ message_content.get('service_tax') }}</p>
                                 </td>
                             </tr>
                             {% endif %}

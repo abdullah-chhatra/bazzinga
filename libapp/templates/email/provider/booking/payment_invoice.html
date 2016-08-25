@@ -55,7 +55,15 @@
                             {{ message_content.get('duration', '') }}
                         </td>
                         <td align="right">
-                            {{ message_content.get('total', '') }}
+                            {{ message_content.get('total_brok', '') }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" align="right">
+                            TDS
+                        </td>
+                        <td align="right">
+                            -{{ message_content.get('tds', '') }}
                         </td>
                     </tr>
                     <tr>
